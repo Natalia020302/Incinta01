@@ -9,10 +9,10 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
-import pe.edu.upc.dao.IHorarioDao;
-import pe.edu.upc.entity.Horario;
+import pe.edu.upc.dao.IObstetraDao;
+import pe.edu.upc.entity.Obstetra;
 
-public class HorarioDaoImpl implements IHorarioDao, Serializable{
+public class ObstetraDaoImpl implements IObstetraDao, Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -22,28 +22,27 @@ public class HorarioDaoImpl implements IHorarioDao, Serializable{
 	
 	@Transactional
 	@Override
-	public void insertar(Horario horario) {
+	public void insertar(Obstetra obstetra) {
 		// TODO Auto-generated method stub
 		
 	}
 	
-	
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Horario> listar() {
-		List<Horario> lista = new ArrayList<Horario>();
-		Query q =em.createQuery("select h from Horario h");
-		lista =(List<Horario>) q.getResultList();
+	public List<Obstetra> listar() {
+		List<Obstetra> lista = new ArrayList<Obstetra>();
+		Query q =em.createQuery("select obs from Obstetra obs");
+		lista =(List<Obstetra>) q.getResultList();
 		
 		return lista;
 	}
 
 	@Transactional 
 	@Override
-	public void eliminar(int idHorario) {
-		Horario horario = new Horario();
-		horario = em.getReference(Horario.class, horario);
-		em.remove(horario);
+	public void eliminar(int idObstetra) {
+		Obstetra obstetra = new Obstetra();
+		obstetra = em.getReference(Obstetra.class, obstetra);
+		em.remove(obstetra);
 		
 	}
 
