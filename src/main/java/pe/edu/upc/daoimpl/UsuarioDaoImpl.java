@@ -46,9 +46,6 @@ public class UsuarioDaoImpl implements IUsuarioDao, Serializable{
 		em.remove(usuario);
 		
 	}
-wuenas noches
-
-wuenos dias
 
 	
 }
