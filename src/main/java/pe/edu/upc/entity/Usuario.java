@@ -37,6 +37,8 @@ public class Usuario implements Serializable{
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
 
 	public Usuario(int id, String nombreU, String apellido, String correo, String passwordu, int idIdent, Date fechaN) {
 		super();
