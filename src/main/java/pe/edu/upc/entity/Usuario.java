@@ -50,6 +50,8 @@ public class Usuario implements Serializable{
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
 
 
 	public Usuario(int usuarioID, String nUsuario, String uApellido, String correo, String uPassword,
