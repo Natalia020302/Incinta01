@@ -1,9 +1,11 @@
-	package pe.edu.upc.entity;
+
+package pe.edu.upc.entity;
+
 
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,7 +17,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name="FichaRegistroMedico")
 
-	public class FichaRegistroMedico implements Serializable{
+
+public class FichaRegistroMedico implements Serializable{
+
 
 	private static final long serialVersionUID = 1L;
 	
@@ -115,5 +119,4 @@ import javax.persistence.Table;
 	public void setUsuarioID(int usuarioID) {
 		UsuarioID = usuarioID;
 	}
-	
 }

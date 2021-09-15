@@ -50,7 +50,7 @@ public class UsuarioController implements Serializable {
 	}
 	
 	public void eliminar(Usuario usuario) {
-		uService.eliminar(usuario.getId());
+		uService.eliminar(usuario.getUsuarioID());
 	}
 	
 	
