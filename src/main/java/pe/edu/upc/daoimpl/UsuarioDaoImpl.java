@@ -47,5 +47,8 @@ public class UsuarioDaoImpl implements IUsuarioDao, Serializable{
 		
 	}
 wuenas noches
+
+wuenos dias
+
 	
 }
