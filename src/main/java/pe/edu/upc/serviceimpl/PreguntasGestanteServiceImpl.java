@@ -13,7 +13,7 @@ import pe.edu.upc.service.IPreguntasGestanteService;
 
 @Named
 @RequestScoped
-public class PreguntasGestanteServiceImpl2 implements IPreguntasGestanteService, Serializable{
+public class PreguntasGestanteServiceImpl implements IPreguntasGestanteService, Serializable{
 
 	private static final long serialVersionUID = 1L;
 
