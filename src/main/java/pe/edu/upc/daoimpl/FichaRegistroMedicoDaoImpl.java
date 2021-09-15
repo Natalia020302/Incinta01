@@ -42,7 +42,7 @@ public class FichaRegistroMedicoDaoImpl implements IFichaRegistroMedicoDao, Seri
 	@Override
 	public void eliminar(int idFicha) {
 		FichaRegistroMedico ficharegistromedico = new FichaRegistroMedico();
-		usuario = em.getReference(FichaRegistroMedico.class, ficharegistromedico);
+		ficharegistromedico = em.getReference(FichaRegistroMedico.class, ficharegistromedico);
 		em.remove(ficharegistromedico);
 		
 	}

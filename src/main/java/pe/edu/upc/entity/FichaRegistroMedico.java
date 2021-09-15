@@ -119,4 +119,4 @@ public class FichaRegistroMedico implements Serializable{
 	public void setUsuarioID(int usuarioID) {
 		UsuarioID = usuarioID;
 	}
-
+}
