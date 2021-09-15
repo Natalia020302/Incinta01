@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,92 +20,143 @@ public class Usuario implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private int UsuarioID;
 	
 	@Column(name="NombreUsuario", nullable=false, length=30)
-	private String NombreU;
+	private String NUsuario;
 	
-	private String Apellido;
+	private String UApellido;
 	
-	private String correo;
+	private String Correo;
 	
-	private String passwordu;
+	private String UPassword;
 	
-	private int idIdent;
+	private int NumIdentificacion;
 	
-	private Date fechaN;
+	private Date D_Nacimiento;
+	
+	
+	@ManyToOne
+	@JoinColumn(name="ID_TipoIdentificacion", nullable=false)
+	private int ID_TipoIdentificacion;
+	
+	
+	@ManyToOne
+	@JoinColumn(name="ID_Pais", nullable=false)
+	private int ID_Pais;
+	
 
 	public Usuario() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Usuario(int id, String nombreU, String apellido, String correo, String passwordu, int idIdent, Date fechaN) {
+
+	public Usuario(int usuarioID, String nUsuario, String uApellido, String correo, String uPassword,
+			int numIdentificacion, Date d_Nacimiento, int iD_TipoIdentificacion, int iD_Pais) {
 		super();
-		this.id = id;
-		NombreU = nombreU;
-		Apellido = apellido;
-		this.correo = correo;
-		this.passwordu = passwordu;
-		this.idIdent = idIdent;
-		this.fechaN = fechaN;
+		UsuarioID = usuarioID;
+		NUsuario = nUsuario;
+		UApellido = uApellido;
+		Correo = correo;
+		UPassword = uPassword;
+		NumIdentificacion = numIdentificacion;
+		D_Nacimiento = d_Nacimiento;
+		ID_TipoIdentificacion = iD_TipoIdentificacion;
+		ID_Pais = iD_Pais;
 	}
 
-	public int getId() {
-		return id;
+
+	public int getUsuarioID() {
+		return UsuarioID;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+
+	public void setUsuarioID(int usuarioID) {
+		UsuarioID = usuarioID;
 	}
 
-	public String getNombreU() {
-		return NombreU;
+
+	public String getNUsuario() {
+		return NUsuario;
 	}
 
-	public void setNombreU(String nombreU) {
-		NombreU = nombreU;
+
+	public void setNUsuario(String nUsuario) {
+		NUsuario = nUsuario;
 	}
 
-	public String getApellido() {
-		return Apellido;
+
+	public String getUApellido() {
+		return UApellido;
 	}
 
-	public void setApellido(String apellido) {
-		Apellido = apellido;
+
+	public void setUApellido(String uApellido) {
+		UApellido = uApellido;
 	}
+
 
 	public String getCorreo() {
-		return correo;
+		return Correo;
 	}
+
 
 	public void setCorreo(String correo) {
-		this.correo = correo;
+		Correo = correo;
 	}
 
-	public String getPasswordu() {
-		return passwordu;
+
+	public String getUPassword() {
+		return UPassword;
 	}
 
-	public void setPasswordu(String passwordu) {
-		this.passwordu = passwordu;
+
+	public void setUPassword(String uPassword) {
+		UPassword = uPassword;
 	}
 
-	public int getIdIdent() {
-		return idIdent;
+
+	public int getNumIdentificacion() {
+		return NumIdentificacion;
 	}
 
-	public void setIdIdent(int idIdent) {
-		this.idIdent = idIdent;
+
+	public void setNumIdentificacion(int numIdentificacion) {
+		NumIdentificacion = numIdentificacion;
 	}
 
-	public Date getFechaN() {
-		return fechaN;
+
+	public Date getD_Nacimiento() {
+		return D_Nacimiento;
 	}
 
-	public void setFechaN(Date fechaN) {
-		this.fechaN = fechaN;
+
+	public void setD_Nacimiento(Date d_Nacimiento) {
+		D_Nacimiento = d_Nacimiento;
 	}
+
+
+	public int getID_TipoIdentificacion() {
+		return ID_TipoIdentificacion;
+	}
+
+
+	public void setID_TipoIdentificacion(int iD_TipoIdentificacion) {
+		ID_TipoIdentificacion = iD_TipoIdentificacion;
+	}
+
+
+	public int getID_Pais() {
+		return ID_Pais;
+	}
+
+
+	public void setID_Pais(int iD_Pais) {
+		ID_Pais = iD_Pais;
+	}
+
+	
 	
 	
 
