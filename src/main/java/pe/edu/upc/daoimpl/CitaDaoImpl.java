@@ -9,10 +9,10 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
-import pe.edu.upc.dao.IHorarioDao;
-import pe.edu.upc.entity.Horario;
+import pe.edu.upc.dao.ICitaDao;
+import pe.edu.upc.entity.Cita;
 
-public class HorarioDaoImpl implements IHorarioDao, Serializable{
+public class CitaDaoImpl implements ICitaDao, Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -22,28 +22,27 @@ public class HorarioDaoImpl implements IHorarioDao, Serializable{
 	
 	@Transactional
 	@Override
-	public void insertar(Horario horario) {
+	public void insertar(Cita cita) {
 		// TODO Auto-generated method stub
-		
 	}
 	
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Horario> listar() {
-		List<Horario> lista = new ArrayList<Horario>();
-		Query q =em.createQuery("select h from Horario h");
-		lista =(List<Horario>) q.getResultList();
+	public List<Cita> listar() {
+		List<Cita> lista = new ArrayList<Cita>();
+		Query q =em.createQuery("select c from Cita c");
+		lista =(List<Cita>) q.getResultList();
 		
 		return lista;
 	}
 
 	@Transactional 
 	@Override
-	public void eliminar(int idHorario) {
-		Horario horario = new Horario();
-		horario = em.getReference(Horario.class, horario);
-		em.remove(horario);
+	public void eliminar(int idCita) {
+		Cita cita = new Cita();
+		cita = em.getReference(Cita.class, cita);
+		em.remove(cita);
 		
 	}
 

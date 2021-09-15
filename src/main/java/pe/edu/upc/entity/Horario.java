@@ -52,6 +52,16 @@ public class Horario implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
+	
+	
+	public int getID_Horario() {
+		return ID_Horario;
+	}
+
+	public void setID_Horario(int iD_Horario) {
+		ID_Horario = iD_Horario;
+	}
+
 	public int getID_Dia() {
 		return ID_Dia;
 	}
@@ -137,7 +147,7 @@ public class Horario implements Serializable{
 		Referencia_Centro = referencia_Centro;
 		Hora_disponible = hora_disponible;
 	}
-
+	
 }
 
 //WUAAA

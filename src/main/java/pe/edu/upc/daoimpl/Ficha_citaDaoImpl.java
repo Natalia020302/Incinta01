@@ -9,10 +9,10 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
-import pe.edu.upc.dao.IHorarioDao;
-import pe.edu.upc.entity.Horario;
+import pe.edu.upc.dao.IFicha_citaDao;
+import pe.edu.upc.entity.Ficha_cita;
 
-public class HorarioDaoImpl implements IHorarioDao, Serializable{
+public class Ficha_citaDaoImpl implements IFicha_citaDao, Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -22,28 +22,27 @@ public class HorarioDaoImpl implements IHorarioDao, Serializable{
 	
 	@Transactional
 	@Override
-	public void insertar(Horario horario) {
+	public void insertar(Ficha_cita fc) {
 		// TODO Auto-generated method stub
 		
 	}
 	
-	
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Horario> listar() {
-		List<Horario> lista = new ArrayList<Horario>();
-		Query q =em.createQuery("select h from Horario h");
-		lista =(List<Horario>) q.getResultList();
+	public List<Ficha_cita> listar() {
+		List<Ficha_cita> lista = new ArrayList<Ficha_cita>();
+		Query q =em.createQuery("select fc from Ficha_cita fc");
+		lista =(List<Ficha_cita>) q.getResultList();
 		
 		return lista;
 	}
 
 	@Transactional 
 	@Override
-	public void eliminar(int idHorario) {
-		Horario horario = new Horario();
-		horario = em.getReference(Horario.class, horario);
-		em.remove(horario);
+	public void eliminar(int idFC) {
+		Ficha_cita fc = new Ficha_cita();
+		fc = em.getReference(Ficha_cita.class, fc);
+		em.remove(fc);
 		
 	}
 
