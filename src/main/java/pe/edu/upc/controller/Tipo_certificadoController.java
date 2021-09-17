@@ -68,5 +68,15 @@ public class Tipo_certificadoController implements Serializable {
 	public void setListaTipo_certificado(List<Tipo_certificado> listaTipo_certificado) {
 		this.listaTipo_certificado = listaTipo_certificado;
 	}
+
+	public ITipo_certificadoService getuService() {
+		return uService;
+	}
+
+	public void setuService(ITipo_certificadoService uService) {
+		this.uService = uService;
+	}
+	
+	
 	
 }

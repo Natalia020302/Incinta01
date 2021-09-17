@@ -79,10 +79,4 @@ public class Preguntas_GestanteController implements Serializable {
 	
 	
 	
-	
-
-
-	//wuenas noches
-	
-	
 }

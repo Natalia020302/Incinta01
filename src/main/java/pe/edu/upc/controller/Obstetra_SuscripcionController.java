@@ -146,5 +146,15 @@ public class Obstetra_SuscripcionController implements Serializable {
 	public void setListaObstetra(List<Obstetra> listaObstetra) {
 		this.listaObstetra = listaObstetra;
 	}
+
+	public IObstetra_SuscripcionService getuService() {
+		return uService;
+	}
+
+	public void setuService(IObstetra_SuscripcionService uService) {
+		this.uService = uService;
+	}
+	
+	
 	
 }

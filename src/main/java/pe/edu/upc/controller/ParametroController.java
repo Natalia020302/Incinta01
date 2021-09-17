@@ -70,6 +70,14 @@ public class ParametroController implements Serializable {
 	public void setListaParametros(List<Parametro> listaParametros) {
 		this.listaParametros = listaParametros;
 	}
+
+	public IParametroService getParaService() {
+		return paraService;
+	}
+
+	public void setParaService(IParametroService paraService) {
+		this.paraService = paraService;
+	}
 	
 	
 	

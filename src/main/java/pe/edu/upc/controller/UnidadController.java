@@ -72,6 +72,18 @@ public class UnidadController implements Serializable {
 	public void setListaUnidads(List<Unidad> listaUnidad) {
 		this.listaUnidad = listaUnidad;
 	}
+
+	public IUnidadService getuService() {
+		return uService;
+	}
+
+	public void setuService(IUnidadService uService) {
+		this.uService = uService;
+	}
+
+	public void setListaUnidad(List<Unidad> listaUnidad) {
+		this.listaUnidad = listaUnidad;
+	}
 	
 
 	

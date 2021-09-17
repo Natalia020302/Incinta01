@@ -68,6 +68,15 @@ public class SuscripcionController implements Serializable {
 	public void setListaSuscripcion(List<Suscripcion> listaSuscripcion) {
 		this.listaSuscripcion = listaSuscripcion;
 	}
+
+	public ISuscripcionService getuService() {
+		return uService;
+	}
+
+	public void setuService(ISuscripcionService uService) {
+		this.uService = uService;
+	}
+	
 	
 	
 }

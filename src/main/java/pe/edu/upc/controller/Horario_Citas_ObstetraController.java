@@ -110,6 +110,15 @@ public class Horario_Citas_ObstetraController implements Serializable {
 	public void setListaObstetra(List<Obstetra> listaObstetra) {
 		this.listaObstetra = listaObstetra;
 	}
+
+	public IHorario_Citas_ObstetraService getuService() {
+		return uService;
+	}
+
+	public void setuService(IHorario_Citas_ObstetraService uService) {
+		this.uService = uService;
+	}
+	
 	
 	
 }

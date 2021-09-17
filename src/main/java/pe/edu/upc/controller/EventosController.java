@@ -72,6 +72,14 @@ public class EventosController implements Serializable {
 	public void setListaEventoss(List<Eventos> listaEventoss) {
 		this.listaEventoss = listaEventoss;
 	}
+
+	public IEventosService getuService() {
+		return uService;
+	}
+
+	public void setuService(IEventosService uService) {
+		this.uService = uService;
+	}
 	
 
 	
