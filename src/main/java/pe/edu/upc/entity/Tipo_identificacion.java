@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Identificacion")
+@Table(name="Tipo_Identificacion")
 public class Tipo_identificacion implements Serializable{
 
 	private static final long serialVersionUID = 1L;

@@ -52,8 +52,10 @@ public class Usuario implements Serializable{
 	@JoinColumn(name="ID_Metodo_Pago", nullable=false)
 	private int IDMetodo_Pago;
 	
+	@Column(name="Numero_Targeta", nullable=false)
 	private int NumMetodo_Pago;
 	
+	@Column(name="Imagen_Perfil", nullable=true)
 	private Image imgPerfilUsuario;
 
 	public Usuario(int usuarioID, String nUsuario, String uApellido, String correo, String uPassword,
@@ -174,6 +176,12 @@ public class Usuario implements Serializable{
 	public void setImgPerfilUsuario(Image imgPerfilUsuario) {
 		this.imgPerfilUsuario = imgPerfilUsuario;
 	}
+	
+	
+
+
+
+	
 	
 	
 
