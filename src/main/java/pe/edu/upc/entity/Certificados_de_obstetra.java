@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
+//holiiiiiii
 @Entity
 @Table(name="Certificados_de_obstetra")
 public class Certificados_de_obstetra implements Serializable{
