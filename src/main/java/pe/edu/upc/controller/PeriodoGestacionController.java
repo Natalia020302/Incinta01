@@ -72,6 +72,14 @@ public class PeriodoGestacionController implements Serializable {
 	public void setListaPeriodoGestacions(List<PeriodoGestacion> listaPeriodoGestacions) {
 		this.listaPeriodoGestacions = listaPeriodoGestacions;
 	}
+
+	public IPeriodoGestacionService getuService() {
+		return uService;
+	}
+
+	public void setuService(IPeriodoGestacionService uService) {
+		this.uService = uService;
+	}
 	
 
 	

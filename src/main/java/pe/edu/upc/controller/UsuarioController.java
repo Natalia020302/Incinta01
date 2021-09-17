@@ -72,8 +72,14 @@ public class UsuarioController implements Serializable {
 	public void setListaUsuarios(List<Usuario> listaUsuarios) {
 		this.listaUsuarios = listaUsuarios;
 	}
-	
 
+	public IUsuarioService getuService() {
+		return uService;
+	}
+
+	public void setuService(IUsuarioService uService) {
+		this.uService = uService;
+	}
 	
 	
 }

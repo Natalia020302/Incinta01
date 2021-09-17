@@ -79,9 +79,4 @@ public class ComentariosController implements Serializable {
 	
 	
 	
-	
-
-	//wuenas noches
-	
-	
 }

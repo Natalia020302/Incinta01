@@ -72,6 +72,14 @@ public class RegistroController implements Serializable {
 	public void setListaRegistros(List<Registro> listaRegistros) {
 		this.listaRegistros = listaRegistros;
 	}
+
+	public IRegistroService getuService() {
+		return uService;
+	}
+
+	public void setuService(IRegistroService uService) {
+		this.uService = uService;
+	}
 	
 
 	

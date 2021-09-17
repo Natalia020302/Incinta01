@@ -70,6 +70,14 @@ public class Metodo_de_pagoController implements Serializable {
 	public void setListaMetodo_de_pago(List<Metodo_de_pago> listaMetodo_de_pago) {
 		this.listaMetodo_de_pago = listaMetodo_de_pago;
 	}
+
+	public IMetodo_de_pagoService getMetService() {
+		return metService;
+	}
+
+	public void setMetService(IMetodo_de_pagoService metService) {
+		this.metService = metService;
+	}
 	
 	
 	
