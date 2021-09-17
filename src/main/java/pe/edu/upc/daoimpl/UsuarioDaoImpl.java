@@ -47,5 +47,5 @@ public class UsuarioDaoImpl implements IUsuarioDao, Serializable{
 		
 	}
 
-	
+	//a
 }
