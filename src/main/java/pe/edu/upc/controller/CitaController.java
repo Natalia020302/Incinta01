@@ -79,10 +79,4 @@ public class CitaController implements Serializable {
 	
 	
 	
-	
-
-
-	//wuenas noches
-	
-	
 }
