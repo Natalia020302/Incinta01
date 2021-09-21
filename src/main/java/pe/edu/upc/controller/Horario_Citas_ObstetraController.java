@@ -46,7 +46,7 @@ public class Horario_Citas_ObstetraController implements Serializable {
 	}
 
 	public String nuevoUsuario() {
-		this.setHorario_Citas_Obstetra(new Horario_Citas_Obstetra());
+		this.setHco(new Horario_Citas_Obstetra());
 		return "Horario_Citas_Obstetra.xhtml";
 	}
 	
