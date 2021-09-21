@@ -68,7 +68,7 @@ public class Registro_CitaController implements Serializable {
 	}
 	
 	public void eliminar(Registro_Cita registro_Cita) {
-		uService.eliminar(registro_Cita.getID_RegistroCita(), registro_Cita.getID_RegistroCita());
+		uService.eliminar(registro_Cita.getID_RegistroCita());
 	}
 
 	public IRegistro_CitaService getuService() {

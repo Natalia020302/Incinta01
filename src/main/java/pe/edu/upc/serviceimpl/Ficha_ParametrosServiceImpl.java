@@ -34,8 +34,8 @@ public class Ficha_ParametrosServiceImpl implements IFicha_ParametrosService, Se
 	}
 
 	@Override
-	public void eliminar(int idFicha_Parametros) {
-		mD.eliminar(idFicha_Parametros);
+	public void eliminar(int idFicha_Parametros, int ID_RegistroCita) {
+		mD.eliminar(idFicha_Parametros, ID_RegistroCita);
 	}
 	
 	

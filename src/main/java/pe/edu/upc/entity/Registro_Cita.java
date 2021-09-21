@@ -26,14 +26,14 @@ public class Registro_Cita implements Serializable{
 	@JoinColumn(name="ID_HorarioCita", nullable=false)
 	private int ID_HorarioCita;
 	
-	private Text T_Anotaciones;
+	private String T_Anotaciones;
 
 	public Registro_Cita() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Registro_Cita(int iD_RegistroCita, int iD_HorarioCita, Text t_Anotaciones) {
+	public Registro_Cita(int iD_RegistroCita, int iD_HorarioCita, String t_Anotaciones) {
 		super();
 		ID_RegistroCita = iD_RegistroCita;
 		ID_HorarioCita = iD_HorarioCita;
@@ -56,11 +56,11 @@ public class Registro_Cita implements Serializable{
 		ID_HorarioCita = iD_HorarioCita;
 	}
 
-	public Text getT_Anotaciones() {
+	public String getT_Anotaciones() {
 		return T_Anotaciones;
 	}
 
-	public void setT_Anotaciones(Text t_Anotaciones) {
+	public void setT_Anotaciones(String t_Anotaciones) {
 		T_Anotaciones = t_Anotaciones;
 	}
 
