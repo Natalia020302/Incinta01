@@ -85,7 +85,7 @@ public class Ficha_ParametrosController implements Serializable {
 	}
 	
 	public void eliminar(Ficha_Parametros ficha_Parametros) {
-		uService.eliminar(ficha_Parametros.getID_RegistroCita());
+		uService.eliminar(ficha_Parametros.getIDParametro(), ficha_Parametros.getID_RegistroCita());
 	}
 
 	public IFicha_ParametrosService getuService() {

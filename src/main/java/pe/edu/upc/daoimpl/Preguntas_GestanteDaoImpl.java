@@ -40,7 +40,7 @@ public class Preguntas_GestanteDaoImpl implements IPreguntas_GestanteDao, Serial
 
 	@Transactional 
 	@Override
-	public void eliminar(int idPreguntas_Gestante) {
+	public void eliminar(int idPreguntas_Gestante, int IDGestante) {
 		Preguntas_Gestante preguntas_Gestante = new Preguntas_Gestante();
 		preguntas_Gestante = em.getReference(Preguntas_Gestante.class, preguntas_Gestante);
 		em.remove(preguntas_Gestante);

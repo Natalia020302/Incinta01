@@ -9,6 +9,6 @@ public interface IPreguntas_GestanteDao {
 	
 	public List<Preguntas_Gestante> listar();
 	
-	public void eliminar(int idPreguntas_Gestante);
+	public void eliminar(int idPreguntas_Gestante, int IDGestante);
 
 }

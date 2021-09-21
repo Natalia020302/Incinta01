@@ -34,8 +34,8 @@ public class Preguntas_GestanteServiceImpl implements IPreguntas_GestanteService
 	}
 
 	@Override
-	public void eliminar(int idPreguntas_Gestante) {
-		mD.eliminar(idPreguntas_Gestante);
+	public void eliminar(int idPreguntas_Gestante, int IDGestante) {
+		mD.eliminar(idPreguntas_Gestante, IDGestante);
 	}
 	
 	

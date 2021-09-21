@@ -30,14 +30,14 @@ public class Comentarios implements Serializable{
 	@JoinColumn(name="IDObstetra", nullable=false)
 	private int IDObstetra;
 
-	private Text TComentario;
+	private String TComentario;
 
 	public Comentarios() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Comentarios(int iDComentario, int usuarioID, int iDObstetra, Text tComentario) {
+	public Comentarios(int iDComentario, int usuarioID, int iDObstetra, String tComentario) {
 		super();
 		IDComentario = iDComentario;
 		UsuarioID = usuarioID;
@@ -69,11 +69,11 @@ public class Comentarios implements Serializable{
 		IDObstetra = iDObstetra;
 	}
 
-	public Text getTComentario() {
+	public String getTComentario() {
 		return TComentario;
 	}
 
-	public void setTComentario(Text tComentario) {
+	public void setTComentario(String tComentario) {
 		TComentario = tComentario;
 	}
 
