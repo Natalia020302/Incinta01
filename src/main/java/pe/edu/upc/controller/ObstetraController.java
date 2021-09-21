@@ -97,6 +97,12 @@ public class ObstetraController implements Serializable {
 		uService.eliminar(obstetra.getIDObstetra());
 	}
 
+
+
+	
+	
+	
+	
 	public IObstetraService getuService() {
 		return uService;
 	}
@@ -105,6 +111,7 @@ public class ObstetraController implements Serializable {
 		this.uService = uService;
 	}
 
+	
 	public IPaisService getpService() {
 		return pService;
 	}
