@@ -9,6 +9,6 @@ public interface IFicha_ParametrosDao {
 	
 	public List<Ficha_Parametros> listar();
 	
-	public void eliminar(int idFicha_Parametros);
+	public void eliminar(int idFicha_Parametros, int ID_RegistroCita);
 
 }

@@ -26,14 +26,14 @@ public class Queja implements Serializable{
 	@JoinColumn(name="ID_HorarioCita", nullable=false)
 	private int ID_HorarioCita;
 	
-	private Text TQueja;
+	private String TQueja;
 
 	public Queja() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Queja(int iD_Queja, int iD_HorarioCita, Text tQueja) {
+	public Queja(int iD_Queja, int iD_HorarioCita, String tQueja) {
 		super();
 		ID_Queja = iD_Queja;
 		ID_HorarioCita = iD_HorarioCita;
@@ -56,11 +56,11 @@ public class Queja implements Serializable{
 		ID_HorarioCita = iD_HorarioCita;
 	}
 
-	public Text getTQueja() {
+	public String getTQueja() {
 		return TQueja;
 	}
 
-	public void setTQueja(Text tQueja) {
+	public void setTQueja(String tQueja) {
 		TQueja = tQueja;
 	}
 	

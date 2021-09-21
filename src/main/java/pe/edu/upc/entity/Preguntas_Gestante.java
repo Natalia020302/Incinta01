@@ -30,7 +30,7 @@ public class Preguntas_Gestante implements Serializable{
 	
 	private int NTitulo;
 
-	private Text TPregunta;
+	private String TPregunta;
 	
 	private Date Fecha;
 
@@ -39,7 +39,7 @@ public class Preguntas_Gestante implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Preguntas_Gestante(int iDPregunta, int iDGestante, int nTitulo, Text tPregunta, Date fecha) {
+	public Preguntas_Gestante(int iDPregunta, int iDGestante, int nTitulo, String tPregunta, Date fecha) {
 		super();
 		IDPregunta = iDPregunta;
 		IDGestante = iDGestante;
@@ -72,11 +72,11 @@ public class Preguntas_Gestante implements Serializable{
 		NTitulo = nTitulo;
 	}
 
-	public Text getTPregunta() {
+	public String getTPregunta() {
 		return TPregunta;
 	}
 
-	public void setTPregunta(Text tPregunta) {
+	public void setTPregunta(String tPregunta) {
 		TPregunta = tPregunta;
 	}
 

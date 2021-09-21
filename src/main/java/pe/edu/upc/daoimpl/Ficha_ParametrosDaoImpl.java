@@ -40,7 +40,7 @@ public class Ficha_ParametrosDaoImpl implements IFicha_ParametrosDao, Serializab
 
 	@Transactional 
 	@Override
-	public void eliminar(int idFicha_Parametros) {
+	public void eliminar(int idFicha_Parametros, int ID_RegistroCita) {
 		Ficha_Parametros ficha_Parametros = new Ficha_Parametros();
 		ficha_Parametros = em.getReference(Ficha_Parametros.class, ficha_Parametros);
 		em.remove(ficha_Parametros);
