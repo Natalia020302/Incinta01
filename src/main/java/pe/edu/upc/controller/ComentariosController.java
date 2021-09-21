@@ -10,7 +10,13 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import pe.edu.upc.entity.Comentarios;
+import pe.edu.upc.entity.Usuario;
+import pe.edu.upc.entity.Obstetra;
+
+
 import pe.edu.upc.service.IComentariosService;
+import pe.edu.upc.service.IUsuarioService;
+import pe.edu.upc.service.IObstetraService;
 
 
 @Named
@@ -21,14 +27,35 @@ public class ComentariosController implements Serializable {
 
 	@Inject
 	private IComentariosService uService;
+	@Inject
+	private IUsuarioService usService;
+	@Inject
+	private IObstetraService oService;
+	
+	
 	private Comentarios comentarios;
+	private Usuario usuario;
+	private Obstetra obstetra;
+	
 	List<Comentarios> listaComentarios;
+	List<Usuario> listaUsuario;
+	List<Obstetra> listaObstetra;
 	
 	@PostConstruct
 	public void init() {
 		this.listaComentarios = new ArrayList<Comentarios>();
+		this.listaUsuario = new ArrayList<Usuario>();
+		this.listaObstetra = new ArrayList<Obstetra>(); 
+		
+		
 		this.comentarios = new Comentarios();
+		this.usuario = new Usuario();
+		this.obstetra = new Obstetra();
+		
 		this.listar();
+		this.listarUsuario();
+		this.listarObstetra();
+		
 	}
 
 	public String nuevoComentarios() {
@@ -44,14 +71,25 @@ public class ComentariosController implements Serializable {
 	public void listar() {
 		listaComentarios = uService.listar();
 	}
+	public void listarUsuario() {
+		listaUsuario = usService.listar();
+	}
+	public void listarObstetra() {
+		listaObstetra = oService.listar();
+	}
+	
+	
 	
 	public void limpiarComentarios() {
 		this.init();
 	}
 	
+	
+	
 	public void eliminar(Comentarios comentarios) {
 		uService.eliminar(comentarios.getIDComentario());
 	}
+	
 
 	public IComentariosService getuService() {
 		return uService;
@@ -59,6 +97,22 @@ public class ComentariosController implements Serializable {
 
 	public void setuService(IComentariosService uService) {
 		this.uService = uService;
+	}
+
+	public IUsuarioService getUsService() {
+		return usService;
+	}
+
+	public void setUsService(IUsuarioService usService) {
+		this.usService = usService;
+	}
+
+	public IObstetraService getoService() {
+		return oService;
+	}
+
+	public void setoService(IObstetraService oService) {
+		this.oService = oService;
 	}
 
 	public Comentarios getComentarios() {
@@ -69,6 +123,22 @@ public class ComentariosController implements Serializable {
 		this.comentarios = comentarios;
 	}
 
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public Obstetra getObstetra() {
+		return obstetra;
+	}
+
+	public void setObstetra(Obstetra obstetra) {
+		this.obstetra = obstetra;
+	}
+
 	public List<Comentarios> getListaComentarios() {
 		return listaComentarios;
 	}
@@ -76,6 +146,23 @@ public class ComentariosController implements Serializable {
 	public void setListaComentarios(List<Comentarios> listaComentarios) {
 		this.listaComentarios = listaComentarios;
 	}
+
+	public List<Usuario> getListaUsuario() {
+		return listaUsuario;
+	}
+
+	public void setListaUsuario(List<Usuario> listaUsuario) {
+		this.listaUsuario = listaUsuario;
+	}
+
+	public List<Obstetra> getListaObstetra() {
+		return listaObstetra;
+	}
+
+	public void setListaObstetra(List<Obstetra> listaObstetra) {
+		this.listaObstetra = listaObstetra;
+	}
+
 	
 	
 	

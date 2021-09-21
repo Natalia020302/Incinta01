@@ -7,5 +7,5 @@ import pe.edu.upc.entity.Ficha_Parametros;
 public interface IFicha_ParametrosService {
 	public void insertar(Ficha_Parametros ficha_Parametros);
 	public List<Ficha_Parametros> listar();
-	public void eliminar(int idFicha_Parametros);
+	public void eliminar(int idFicha_Parametros, int ID_RegistroCita);
 }
