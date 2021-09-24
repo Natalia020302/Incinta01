@@ -12,78 +12,90 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.lowagie.text.Image;
+
 @Entity
-@Table(name="Suscripcion")
+@Table(name="suscripcion")
 public class Suscripcion implements Serializable{
 
+	/* SERIALVERSIONUID */
+	
 	private static final long serialVersionUID = 1L;
+	
+	/* ATTRIBUTES */
+	/* CONSIDERATIONS: Lower case names and no "_" */
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int IDSuscripcion;
+	private int idsuscripcion;
 	
-	@Column(name="NombreSuscripcion", nullable=false, length=40)
-	private String NSuscripcion;
+	@Column(name="nombresuscripcion", nullable=false, length=40)
+	private String nsuscripcion;
 	
-	private int NumComision;
+	private int numcomision;
 	
-	private int NumDuracion;
+	private int numduracion;
 	
-	private String TCondiciones;
+	private String tcondiciones;
 
+	/* SUPER CLASS */
+	
 	public Suscripcion() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Suscripcion(int iDSuscripcion, String nSuscripcion, int numComision, int numDuracion, String tCondiciones) {
+	/* CONSTRUCTOR */
+	
+	public Suscripcion(int idsuscripcion, String nsuscripcion, int numcomision, int numduracion, String tcondiciones) {
 		super();
-		IDSuscripcion = iDSuscripcion;
-		NSuscripcion = nSuscripcion;
-		NumComision = numComision;
-		NumDuracion = numDuracion;
-		TCondiciones = tCondiciones;
-	}
-
-	public int getIDSuscripcion() {
-		return IDSuscripcion;
-	}
-
-	public void setIDSuscripcion(int iDSuscripcion) {
-		IDSuscripcion = iDSuscripcion;
-	}
-
-	public String getNSuscripcion() {
-		return NSuscripcion;
-	}
-
-	public void setNSuscripcion(String nSuscripcion) {
-		NSuscripcion = nSuscripcion;
-	}
-
-	public int getNumComision() {
-		return NumComision;
-	}
-
-	public void setNumComision(int numComision) {
-		NumComision = numComision;
-	}
-
-	public int getNumDuracion() {
-		return NumDuracion;
-	}
-
-	public void setNumDuracion(int numDuracion) {
-		NumDuracion = numDuracion;
-	}
-
-	public String getTCondiciones() {
-		return TCondiciones;
-	}
-
-	public void setTCondiciones(String tCondiciones) {
-		TCondiciones = tCondiciones;
+		this.idsuscripcion = idsuscripcion;
+		this.nsuscripcion = nsuscripcion;
+		this.numcomision = numcomision;
+		this.numduracion = numduracion;
+		this.tcondiciones = tcondiciones;
 	}
 	
+	/* GETTERS AND SETTERS */
 
+	public int getIdsuscripcion() {
+		return idsuscripcion;
+	}
+
+	public void setIdsuscripcion(int idsuscripcion) {
+		this.idsuscripcion = idsuscripcion;
+	}
+
+	public String getNsuscripcion() {
+		return nsuscripcion;
+	}
+
+	public void setNsuscripcion(String nsuscripcion) {
+		this.nsuscripcion = nsuscripcion;
+	}
+
+	public int getNumcomision() {
+		return numcomision;
+	}
+
+	public void setNumcomision(int numcomision) {
+		this.numcomision = numcomision;
+	}
+
+	public int getNumduracion() {
+		return numduracion;
+	}
+
+	public void setNumduracion(int numduracion) {
+		this.numduracion = numduracion;
+	}
+
+	public String getTcondiciones() {
+		return tcondiciones;
+	}
+
+	public void setTcondiciones(String tcondiciones) {
+		this.tcondiciones = tcondiciones;
+	}
+S
 }

@@ -23,8 +23,8 @@ public class SuscripcionServiceImpl implements ISuscripcionService, Serializable
 	
 	
 	@Override
-	public void insertar(Suscripcion idsus) {
-		mD.insertar(idsus);
+	public void insertar(Suscripcion sus) {
+		mD.insertar(sus);
 		
 	}
 

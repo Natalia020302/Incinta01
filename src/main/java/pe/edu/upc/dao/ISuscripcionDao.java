@@ -5,7 +5,7 @@ import java.util.List;
 import pe.edu.upc.entity.Suscripcion;
 
 public interface ISuscripcionDao {
-	public void insertar(Suscripcion susc);
+	public void insertar(Suscripcion suscripcion);
 	
 	public List<Suscripcion> listar();
 	

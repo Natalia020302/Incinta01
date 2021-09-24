@@ -12,7 +12,7 @@ import javax.transaction.Transactional;
 import pe.edu.upc.dao.IObstetraDao;
 import pe.edu.upc.entity.Obstetra;
 
-public class ObstetraDaoImpl implements IObstetraDao, Serializable{
+public class ModeloDaoImpl implements IObstetraDao, Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -22,9 +22,9 @@ public class ObstetraDaoImpl implements IObstetraDao, Serializable{
 	
 	@Transactional
 	@Override
-	public void insertar(Obstetra obs) {
+	public void insertar(Obstetra a) {
 		// TODO Auto-generated method stub
-		em.persist(obs);
+		em.persist(a);
 	}
 	
 	
@@ -41,9 +41,9 @@ public class ObstetraDaoImpl implements IObstetraDao, Serializable{
 	@Transactional 
 	@Override
 	public void eliminar(int idObstetra) {
-		Obstetra obs = new Obstetra();
-		obs = em.getReference(Obstetra.class, obs);
-		em.remove(obs);
+		Obstetra a = new Obstetra();
+		a = em.getReference(Obstetra.class, a);
+		em.remove(a);
 		
 	}
 

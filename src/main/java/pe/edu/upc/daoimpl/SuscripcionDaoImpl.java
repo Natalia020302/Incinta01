@@ -22,9 +22,9 @@ public class SuscripcionDaoImpl implements ISuscripcionDao, Serializable{
 	
 	@Transactional
 	@Override
-	public void insertar(Suscripcion sus) {
+	public void insertar(Suscripcion s) {
 		// TODO Auto-generated method stub
-		
+		em.persist(s);
 	}
 	
 	
@@ -32,7 +32,7 @@ public class SuscripcionDaoImpl implements ISuscripcionDao, Serializable{
 	@Override
 	public List<Suscripcion> listar() {
 		List<Suscripcion> lista = new ArrayList<Suscripcion>();
-		Query q =em.createQuery("select sus from Suscripcion sus");
+		Query q =em.createQuery("select obs from Obstetra obs");
 		lista =(List<Suscripcion>) q.getResultList();
 		
 		return lista;
@@ -40,10 +40,10 @@ public class SuscripcionDaoImpl implements ISuscripcionDao, Serializable{
 
 	@Transactional 
 	@Override
-	public void eliminar(int idSuscripcion) {
-		Suscripcion sus = new Suscripcion();
-		sus = em.getReference(Suscripcion.class, sus);
-		em.remove(sus);
+	public void eliminar(int idS) {
+		Suscripcion s = new Suscripcion();
+		s = em.getReference(Suscripcion.class, s);
+		em.remove(s);
 		
 	}
 

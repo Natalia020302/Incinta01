@@ -10,28 +10,35 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import pe.edu.upc.entity.Suscripcion;
-import pe.edu.upc.service.ISuscripcionService;
 
+import pe.edu.upc.service.ISuscripcionService;
 
 @Named
 @RequestScoped
 public class SuscripcionController implements Serializable {
 
-	private static final long serialVersionUID = -94864798955465036L;
+	private static final long serialVersionUID = 1L;
 
 	@Inject
 	private ISuscripcionService uService;
+	
 	private Suscripcion suscripcion;
-	List<Suscripcion> listaSuscripcion;
+	
+	
+	List<Suscripcion> listasuscripcion;
+	
 	
 	@PostConstruct
 	public void init() {
-		this.listaSuscripcion = new ArrayList<Suscripcion>();
+		this.listasuscripcion = new ArrayList<Suscripcion>();
+		
 		this.suscripcion = new Suscripcion();
+		
 		this.listar();
+
 	}
 
-	public String nuevoSuscripcion() {
+	public String nuevoObstetra() {
 		this.setSuscripcion(new Suscripcion());
 		return "Suscripcion.xhtml";
 	}
@@ -42,15 +49,26 @@ public class SuscripcionController implements Serializable {
 	}
 	
 	public void listar() {
-		listaSuscripcion = uService.listar();
+		listasuscripcion = uService.listar();
 	}
+	
 	
 	public void limpiarSuscripcion() {
 		this.init();
 	}
 	
 	public void eliminar(Suscripcion suscripcion) {
-		uService.eliminar(suscripcion.getIDSuscripcion());
+		uService.eliminar(suscripcion.getIdsuscripcion());
+	}
+	
+	/* GETTERS AND SETTERS */
+
+	public ISuscripcionService getuService() {
+		return uService;
+	}
+
+	public void setuService(ISuscripcionService uService) {
+		this.uService = uService;
 	}
 
 	public Suscripcion getSuscripcion() {
@@ -61,22 +79,12 @@ public class SuscripcionController implements Serializable {
 		this.suscripcion = suscripcion;
 	}
 
-	public List<Suscripcion> getListaSuscripcion() {
-		return listaSuscripcion;
+	public List<Suscripcion> getListasuscripcion() {
+		return listasuscripcion;
 	}
 
-	public void setListaSuscripcion(List<Suscripcion> listaSuscripcion) {
-		this.listaSuscripcion = listaSuscripcion;
+	public void setListasuscripcion(List<Suscripcion> listasuscripcion) {
+		this.listasuscripcion = listasuscripcion;
 	}
-
-	public ISuscripcionService getuService() {
-		return uService;
-	}
-
-	public void setuService(ISuscripcionService uService) {
-		this.uService = uService;
-	}
-	
-	
 	
 }
