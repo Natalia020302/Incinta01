@@ -14,6 +14,9 @@ import pe.edu.upc.entity.Usuario;
 import pe.edu.upc.entity.Parametro;
 
 
+
+
+
 import pe.edu.upc.service.IRegistroService;
 import pe.edu.upc.service.IUsuarioService;
 import pe.edu.upc.service.IParametroService;
@@ -25,15 +28,14 @@ import pe.edu.upc.service.IParametroService;
 @RequestScoped
 public class RegistroController implements Serializable {
 
-	private static final long serialVersionUID = -94864798955465036L;
-
-	@Inject
-	private IRegistroService uService;
-	@Inject
-	private IUsuarioService usuService;
-	@Inject
-	private IParametroService pService;
+	private static final long serialVersionUID = 1L;
 	
+	@Inject
+	private IRegistroService rService;
+	private IUsuarioService uService;
+	private IParametroService pService;
+
+
 	
 	private Registro registro;
 	private Usuario usuario;
@@ -43,47 +45,47 @@ public class RegistroController implements Serializable {
 	List<Registro> listaRegistros;
 	List<Usuario> listaUsuarios;
 	List<Parametro> listaParametros;
-	
-	
-	
+
+
 	
 	@PostConstruct
 	public void init() {
 		this.listaRegistros = new ArrayList<Registro>();
 		this.listaUsuarios = new ArrayList<Usuario>();
 		this.listaParametros = new ArrayList<Parametro>();
-		
+
 		
 		this.registro = new Registro();
-		this.usuario = new Usuario();
 		this.parametro = new Parametro();
-		
-		
-		this.listar();
-		this.listarParametro();
-		this.listarUsuario();
+		this.usuario = new Usuario();
+
+		this.listarregistro();
+		this.listarparametro();
+		this.listarusuario();
+
 	}
 
 	public String nuevoRegistro() {
 		this.setRegistro(new Registro());
-		return "Registro.xhtml";
+		return "registro.xhtml";
 	}
 	
 	public void insertar() {
-		uService.insertar(registro);
+		rService.insertar(registro);
 		limpiarRegistro();
+		this.listarregistro();
 	}
 	
-	public void listar() {
-		listaRegistros = uService.listar();
+	public void listarregistro() {
+		listaRegistros = rService.listar();
 	}
 	
-	public void listarParametro() {
+	public void listarparametro() {
 		listaParametros = pService.listar();
 	}
 	
-	public void listarUsuario() {
-		listaUsuarios = usuService.listar();
+	public void listarusuario() {
+		listaUsuarios = uService.listar();
 	}
 	
 	public void limpiarRegistro() {
@@ -91,23 +93,23 @@ public class RegistroController implements Serializable {
 	}
 	
 	public void eliminar(Registro registro) {
-		uService.eliminar(registro.getID_Registro());
+		rService.eliminar(registro.getiDRegistro());
 	}
 
-	public IRegistroService getuService() {
+	public IRegistroService getrService() {
+		return rService;
+	}
+
+	public void setrService(IRegistroService rService) {
+		this.rService = rService;
+	}
+
+	public IUsuarioService getuService() {
 		return uService;
 	}
 
-	public void setuService(IRegistroService uService) {
+	public void setuService(IUsuarioService uService) {
 		this.uService = uService;
-	}
-
-	public IUsuarioService getUsuService() {
-		return usuService;
-	}
-
-	public void setUsuService(IUsuarioService usuService) {
-		this.usuService = usuService;
 	}
 
 	public IParametroService getpService() {
@@ -165,12 +167,25 @@ public class RegistroController implements Serializable {
 	public void setListaParametros(List<Parametro> listaParametros) {
 		this.listaParametros = listaParametros;
 	}
+
+	
+
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
 	
 
+	
 
+	
+	
 	
 	
 }

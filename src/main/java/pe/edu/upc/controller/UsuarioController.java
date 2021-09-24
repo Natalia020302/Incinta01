@@ -10,16 +10,16 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import pe.edu.upc.entity.Usuario;
-import pe.edu.upc.entity.Tipo_identificacion;
+import pe.edu.upc.entity.TipoIdentificacion;
 import pe.edu.upc.entity.Pais;
-import pe.edu.upc.entity.Metodo_de_pago;
+import pe.edu.upc.entity.MetodoDePago;
 
 
 
 import pe.edu.upc.service.IUsuarioService;
-import pe.edu.upc.service.ITipo_identificacionService;
+import pe.edu.upc.service.ITipoIdentificacionService;
 import pe.edu.upc.service.IPaisService;
-import pe.edu.upc.service.IMetodo_de_pagoService;
+import pe.edu.upc.service.IMetodoDePagoService;
 
 
 
@@ -28,49 +28,52 @@ import pe.edu.upc.service.IMetodo_de_pagoService;
 @RequestScoped
 public class UsuarioController implements Serializable {
 
-	private static final long serialVersionUID = -94864798955465036L;
+	private static final long serialVersionUID = 1L;
 
 	@Inject
 	private IUsuarioService uService;
+	
 	@Inject
-	private ITipo_identificacionService tipService;
+	private ITipoIdentificacionService tipService;
+	
 	@Inject
 	private IPaisService paService;
+	
 	@Inject
-	private IMetodo_de_pagoService mService;
+	private IMetodoDePagoService mService;
 	
 	
 	private Usuario usuario;
-	private Tipo_identificacion tipo_identificacion;
+	private TipoIdentificacion tipoidentificacion;
 	private Pais pais;
-	private Metodo_de_pago metodo_de_pago;
+	private MetodoDePago metododepago;
 	
 	
 	
 	List<Usuario> listaUsuarios;
-	List<Tipo_identificacion> listatipo_identificacion;
+	List<TipoIdentificacion> listatipoidentificacion;
 	List<Pais> listapaises;
-	List<Metodo_de_pago> listametodo_de_pago;
+	List<MetodoDePago> listametododepago;
 	
 	@PostConstruct
 	public void init() {
 		this.listaUsuarios = new ArrayList<Usuario>();
-		this.listatipo_identificacion = new ArrayList<Tipo_identificacion>();
+		this.listatipoidentificacion = new ArrayList<TipoIdentificacion>();
 		this.listapaises = new ArrayList<Pais>();
-		this.listametodo_de_pago = new ArrayList<Metodo_de_pago>();
+		this.listametododepago = new ArrayList<MetodoDePago>();
 		
 		
 		
 		this.usuario = new Usuario();
-		this.tipo_identificacion = new Tipo_identificacion();
+		this.tipoidentificacion = new TipoIdentificacion();
 		this.pais = new Pais();
-		this.metodo_de_pago = new Metodo_de_pago();
+		this.metododepago = new MetodoDePago();
 		
 		
 		this.listar();
-		this.listarTipo_identificacion();
+		this.listarTipoIdentificacion();
 		this.listarpais();
-		this.listarmetodo_de_pago();
+		this.listarmetododepago();
 	}
 
 	public String nuevoUsuario() {
@@ -81,22 +84,23 @@ public class UsuarioController implements Serializable {
 	public void insertar() {
 		uService.insertar(usuario);
 		limpiarUsuario();
+		this.listar();
 	}
 	
 	public void listar() {
 		listaUsuarios = uService.listar();
 	}
 	
-	public void listarTipo_identificacion() {
-		listatipo_identificacion = tipService.listar();
+	public void listarTipoIdentificacion() {
+		listatipoidentificacion = tipService.listar();
 	}
 	
 	public void listarpais() {
 		listapaises = paService.listar();
 	}
 	
-	public void listarmetodo_de_pago() {
-		listametodo_de_pago = mService.listar();
+	public void listarmetododepago() {
+		listametododepago = mService.listar();
 	}
 	
 	public void limpiarUsuario() {
@@ -115,11 +119,11 @@ public class UsuarioController implements Serializable {
 		this.uService = uService;
 	}
 
-	public ITipo_identificacionService getTipService() {
+	public ITipoIdentificacionService getTipService() {
 		return tipService;
 	}
 
-	public void setTipService(ITipo_identificacionService tipService) {
+	public void setTipService(ITipoIdentificacionService tipService) {
 		this.tipService = tipService;
 	}
 
@@ -131,11 +135,11 @@ public class UsuarioController implements Serializable {
 		this.paService = paService;
 	}
 
-	public IMetodo_de_pagoService getmService() {
+	public IMetodoDePagoService getmService() {
 		return mService;
 	}
 
-	public void setmService(IMetodo_de_pagoService mService) {
+	public void setmService(IMetodoDePagoService mService) {
 		this.mService = mService;
 	}
 
@@ -147,28 +151,32 @@ public class UsuarioController implements Serializable {
 		this.usuario = usuario;
 	}
 
-	public Tipo_identificacion getTipo_identificacion() {
-		return tipo_identificacion;
+	public TipoIdentificacion getTipoidentificacion() {
+		return tipoidentificacion;
 	}
 
-	public void setTipo_identificacion(Tipo_identificacion tipo_identificacion) {
-		this.tipo_identificacion = tipo_identificacion;
+	public void setTipoidentificacion(TipoIdentificacion tipoidentificacion) {
+		this.tipoidentificacion = tipoidentificacion;
 	}
 
 	public Pais getPais() {
 		return pais;
 	}
+	
+	
+	
+	
 
 	public void setPais(Pais pais) {
 		this.pais = pais;
 	}
 
-	public Metodo_de_pago getMetodo_de_pago() {
-		return metodo_de_pago;
+	public MetodoDePago getMetododepago() {
+		return metododepago;
 	}
 
-	public void setMetodo_de_pago(Metodo_de_pago metodo_de_pago) {
-		this.metodo_de_pago = metodo_de_pago;
+	public void setMetododepago(MetodoDePago metododepago) {
+		this.metododepago = metododepago;
 	}
 
 	public List<Usuario> getListaUsuarios() {
@@ -179,12 +187,12 @@ public class UsuarioController implements Serializable {
 		this.listaUsuarios = listaUsuarios;
 	}
 
-	public List<Tipo_identificacion> getListatipo_identificacion() {
-		return listatipo_identificacion;
+	public List<TipoIdentificacion> getListatipoidentificacion() {
+		return listatipoidentificacion;
 	}
 
-	public void setListatipo_identificacion(List<Tipo_identificacion> listatipo_identificacion) {
-		this.listatipo_identificacion = listatipo_identificacion;
+	public void setListatipoidentificacion(List<TipoIdentificacion> listatipoidentificacion) {
+		this.listatipoidentificacion = listatipoidentificacion;
 	}
 
 	public List<Pais> getListapaises() {
@@ -195,14 +203,14 @@ public class UsuarioController implements Serializable {
 		this.listapaises = listapaises;
 	}
 
-	public List<Metodo_de_pago> getListametodo_de_pago() {
-		return listametodo_de_pago;
+	public List<MetodoDePago> getListametododepago() {
+		return listametododepago;
 	}
 
-	public void setListametodo_de_pago(List<Metodo_de_pago> listametodo_de_pago) {
-		this.listametodo_de_pago = listametodo_de_pago;
+	public void setListametododepago(List<MetodoDePago> listametododepago) {
+		this.listametododepago = listametododepago;
 	}
-	
+
 	
 	
 	

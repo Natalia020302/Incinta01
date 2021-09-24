@@ -9,6 +9,3 @@ public interface IParametroService {
 	public List<Parametro> listar();
 	public void eliminar(int idParametro);
 }
-
-
-

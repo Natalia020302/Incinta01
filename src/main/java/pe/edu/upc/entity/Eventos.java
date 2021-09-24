@@ -1,8 +1,6 @@
 package pe.edu.upc.entity;
 
-
 import java.io.Serializable;
-
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -22,160 +20,121 @@ public class Eventos implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int ID_Evento;
-	
+	private int iDEvento;
 	
 	@ManyToOne
-	@JoinColumn(name="UsuarioID", nullable=false)
-	private int UsuarioID;
-
-	
-	
-	@Column(name="Titulo", nullable=false, length=30)
-	private String T_Titulo;
-	
-	
-	@Column(name="Descripcion", nullable=true)
-	private String T_Descripcion;
-	
-	
-	@Column(name="Fecha", nullable=false)
-	private Date Fecha_evento;
-	
-	
-	@Column(name="Hora_Inicio", nullable=false)
-	private String HInicio;
-	
-	
-	@Column(name="Hora_Fin", nullable=false)
-	private String HFin;
-
-	@Column(name="Todo_el_dia")
-	private Boolean Bool_Todo_dia;
+	@JoinColumn(name="gestanteID", nullable=false)
+	private Usuario iDGestante;
 	
 
-	@Column(name="Repeticion", nullable=false)
-	private int QRepeticion;
+	@Column(name="titulo", nullable=false, length=30)
+	private String titulo;
 	
+	@Column(name="descripcion", nullable=true)
+	private String descripcion;
 	
+	@Column(name="fechaEvento", nullable=false)
+	private Date fechaEvento;
+	
+	private String hInicio;
+	
+	private String hFin;
+	
+	@Column(name="todoElDia", nullable=false)
+	private Boolean boolTodoDia;
+	
+	private int qRepeticion;
+
 	public Eventos() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-
-	public Eventos(int iD_Evento, int usuarioID, String t_Titulo, String t_Descripcion, Date fecha_evento,
-			String hInicio, String hFin, Boolean bool_Todo_dia, int qRepeticion) {
+	public Eventos(int iDEvento, Usuario iDGestante, String titulo, String descripcion, Date fechaEvento,
+			String hInicio, String hFin, Boolean boolTodoDia, int qRepeticion) {
 		super();
-		ID_Evento = iD_Evento;
-		UsuarioID = usuarioID;
-		T_Titulo = t_Titulo;
-		T_Descripcion = t_Descripcion;
-		Fecha_evento = fecha_evento;
-		HInicio = hInicio;
-		HFin = hFin;
-		Bool_Todo_dia = bool_Todo_dia;
-		QRepeticion = qRepeticion;
+		this.iDEvento = iDEvento;
+		this.iDGestante = iDGestante;
+		this.titulo = titulo;
+		this.descripcion = descripcion;
+		this.fechaEvento = fechaEvento;
+		this.hInicio = hInicio;
+		this.hFin = hFin;
+		this.boolTodoDia = boolTodoDia;
+		this.qRepeticion = qRepeticion;
 	}
 
-
-	public int getID_Evento() {
-		return ID_Evento;
+	public int getiDEvento() {
+		return iDEvento;
 	}
 
-
-	public void setID_Evento(int iD_Evento) {
-		ID_Evento = iD_Evento;
+	public void setiDEvento(int iDEvento) {
+		this.iDEvento = iDEvento;
 	}
 
-
-	public int getUsuarioID() {
-		return UsuarioID;
+	public Usuario getiDGestante() {
+		return iDGestante;
 	}
 
-
-	public void setUsuarioID(int usuarioID) {
-		UsuarioID = usuarioID;
+	public void setiDGestante(Usuario iDGestante) {
+		this.iDGestante = iDGestante;
 	}
 
-
-	public String getT_Titulo() {
-		return T_Titulo;
+	public String getTitulo() {
+		return titulo;
 	}
 
-
-	public void setT_Titulo(String t_Titulo) {
-		T_Titulo = t_Titulo;
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
 
-
-	public String getT_Descripcion() {
-		return T_Descripcion;
+	public String getDescripcion() {
+		return descripcion;
 	}
 
-
-	public void setT_Descripcion(String t_Descripcion) {
-		T_Descripcion = t_Descripcion;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
-
-	public Date getFecha_evento() {
-		return Fecha_evento;
+	public Date getFechaEvento() {
+		return fechaEvento;
 	}
 
-
-	public void setFecha_evento(Date fecha_evento) {
-		Fecha_evento = fecha_evento;
+	public void setFechaEvento(Date fechaEvento) {
+		this.fechaEvento = fechaEvento;
 	}
 
-
-	public String getHInicio() {
-		return HInicio;
+	public String gethInicio() {
+		return hInicio;
 	}
 
-
-	public void setHInicio(String hInicio) {
-		HInicio = hInicio;
+	public void sethInicio(String hInicio) {
+		this.hInicio = hInicio;
 	}
 
-
-	public String getHFin() {
-		return HFin;
+	public String gethFin() {
+		return hFin;
 	}
 
-
-	public void setHFin(String hFin) {
-		HFin = hFin;
+	public void sethFin(String hFin) {
+		this.hFin = hFin;
 	}
 
-
-	public Boolean getBool_Todo_dia() {
-		return Bool_Todo_dia;
+	public Boolean getBoolTodoDia() {
+		return boolTodoDia;
 	}
 
-
-	public void setBool_Todo_dia(Boolean bool_Todo_dia) {
-		Bool_Todo_dia = bool_Todo_dia;
+	public void setBoolTodoDia(Boolean boolTodoDia) {
+		this.boolTodoDia = boolTodoDia;
 	}
 
-
-	public int getQRepeticion() {
-		return QRepeticion;
+	public int getqRepeticion() {
+		return qRepeticion;
 	}
 
-
-	public void setQRepeticion(int qRepeticion) {
-		QRepeticion = qRepeticion;
+	public void setqRepeticion(int qRepeticion) {
+		this.qRepeticion = qRepeticion;
 	}
-
 
 	
-
-
-
-
-
-
-	
-
 }

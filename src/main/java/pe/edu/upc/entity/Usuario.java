@@ -22,151 +22,151 @@ public class Usuario implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int UsuarioID;
+	private int usuarioID;
 	
-	@Column(name="NombreUsuario", nullable=false, length=30)
-	private String NUsuario;
+	@Column(name="nombreUsuario", nullable=false, length=30)
+	private String nUsuario;
 	
-	private String UApellido;
+	private String uApellido;
 	
-	private String Correo;
+	private String uCorreo;
 	
-	private String UPassword;
+	private String uPassword;
 	
-	private int NumIdentificacion;
+	private int numIdentificacion;
 	
-	private Date D_Nacimiento;
-	
-	
-	@ManyToOne
-	@JoinColumn(name="ID_TipoIdentificacion", nullable=false)
-	private int ID_TipoIdentificacion;
+	private Date dNacimiento;
 	
 	
 	@ManyToOne
-	@JoinColumn(name="ID_Pais", nullable=false)
-	private int ID_Pais;
+	@JoinColumn(name="iDTipoIdentificacion", nullable=false)
+	private TipoIdentificacion iDTipoIdentificacion;
 	
 	
 	@ManyToOne
-	@JoinColumn(name="ID_Metodo_Pago", nullable=false)
-	private int IDMetodo_Pago;
+	@JoinColumn(name="iDPais", nullable=false)
+	private Pais iDPais;
 	
-	@Column(name="Numero_Targeta", nullable=false)
-	private int NumMetodo_Pago;
 	
-	@Column(name="Imagen_Perfil", nullable=true)
+	@ManyToOne
+	@JoinColumn(name="idMetodoPago", nullable=false)
+	private MetodoDePago iDMetodoPago;
+	
+	@Column(name="numeroTargeta", nullable=false)
+	private int numMetodoPago;
+	
+	@Column(name="imagenPerfil", nullable=true)
 	private Image imgPerfilUsuario;
-
-	public Usuario(int usuarioID, String nUsuario, String uApellido, String correo, String uPassword,
-			int numIdentificacion, Date d_Nacimiento, int iD_TipoIdentificacion, int iD_Pais, int iDMetodo_Pago,
-			int numMetodo_Pago, Image imgPerfilUsuario) {
-		super();
-		UsuarioID = usuarioID;
-		NUsuario = nUsuario;
-		UApellido = uApellido;
-		Correo = correo;
-		UPassword = uPassword;
-		NumIdentificacion = numIdentificacion;
-		D_Nacimiento = d_Nacimiento;
-		ID_TipoIdentificacion = iD_TipoIdentificacion;
-		ID_Pais = iD_Pais;
-		IDMetodo_Pago = iDMetodo_Pago;
-		NumMetodo_Pago = numMetodo_Pago;
-		this.imgPerfilUsuario = imgPerfilUsuario;
-	}
 
 	public Usuario() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
+	public Usuario(int usuarioID, String nUsuario, String uApellido, String uCorreo, String uPassword,
+			int numIdentificacion, Date dNacimiento, TipoIdentificacion iDTipoIdentificacion, Pais iDPais,
+			MetodoDePago iDMetodoPago, int numMetodoPago, Image imgPerfilUsuario) {
+		super();
+		this.usuarioID = usuarioID;
+		this.nUsuario = nUsuario;
+		this.uApellido = uApellido;
+		this.uCorreo = uCorreo;
+		this.uPassword = uPassword;
+		this.numIdentificacion = numIdentificacion;
+		this.dNacimiento = dNacimiento;
+		this.iDTipoIdentificacion = iDTipoIdentificacion;
+		this.iDPais = iDPais;
+		this.iDMetodoPago = iDMetodoPago;
+		this.numMetodoPago = numMetodoPago;
+		this.imgPerfilUsuario = imgPerfilUsuario;
+	}
+
 	public int getUsuarioID() {
-		return UsuarioID;
+		return usuarioID;
 	}
 
 	public void setUsuarioID(int usuarioID) {
-		UsuarioID = usuarioID;
+		this.usuarioID = usuarioID;
 	}
 
-	public String getNUsuario() {
-		return NUsuario;
+	public String getnUsuario() {
+		return nUsuario;
 	}
 
-	public void setNUsuario(String nUsuario) {
-		NUsuario = nUsuario;
+	public void setnUsuario(String nUsuario) {
+		this.nUsuario = nUsuario;
 	}
 
-	public String getUApellido() {
-		return UApellido;
+	public String getuApellido() {
+		return uApellido;
 	}
 
-	public void setUApellido(String uApellido) {
-		UApellido = uApellido;
+	public void setuApellido(String uApellido) {
+		this.uApellido = uApellido;
 	}
 
-	public String getCorreo() {
-		return Correo;
+	public String getuCorreo() {
+		return uCorreo;
 	}
 
-	public void setCorreo(String correo) {
-		Correo = correo;
+	public void setuCorreo(String uCorreo) {
+		this.uCorreo = uCorreo;
 	}
 
-	public String getUPassword() {
-		return UPassword;
+	public String getuPassword() {
+		return uPassword;
 	}
 
-	public void setUPassword(String uPassword) {
-		UPassword = uPassword;
+	public void setuPassword(String uPassword) {
+		this.uPassword = uPassword;
 	}
 
 	public int getNumIdentificacion() {
-		return NumIdentificacion;
+		return numIdentificacion;
 	}
 
 	public void setNumIdentificacion(int numIdentificacion) {
-		NumIdentificacion = numIdentificacion;
+		this.numIdentificacion = numIdentificacion;
 	}
 
-	public Date getD_Nacimiento() {
-		return D_Nacimiento;
+	public Date getdNacimiento() {
+		return dNacimiento;
 	}
 
-	public void setD_Nacimiento(Date d_Nacimiento) {
-		D_Nacimiento = d_Nacimiento;
+	public void setdNacimiento(Date dNacimiento) {
+		this.dNacimiento = dNacimiento;
 	}
 
-	public int getID_TipoIdentificacion() {
-		return ID_TipoIdentificacion;
+	public TipoIdentificacion getiDTipoIdentificacion() {
+		return iDTipoIdentificacion;
 	}
 
-	public void setID_TipoIdentificacion(int iD_TipoIdentificacion) {
-		ID_TipoIdentificacion = iD_TipoIdentificacion;
+	public void setiDTipoIdentificacion(TipoIdentificacion iDTipoIdentificacion) {
+		this.iDTipoIdentificacion = iDTipoIdentificacion;
 	}
 
-	public int getID_Pais() {
-		return ID_Pais;
+	public Pais getiDPais() {
+		return iDPais;
 	}
 
-	public void setID_Pais(int iD_Pais) {
-		ID_Pais = iD_Pais;
+	public void setiDPais(Pais iDPais) {
+		this.iDPais = iDPais;
 	}
 
-	public int getIDMetodo_Pago() {
-		return IDMetodo_Pago;
+	public MetodoDePago getiDMetodoPago() {
+		return iDMetodoPago;
 	}
 
-	public void setIDMetodo_Pago(int iDMetodo_Pago) {
-		IDMetodo_Pago = iDMetodo_Pago;
+	public void setiDMetodoPago(MetodoDePago iDMetodoPago) {
+		this.iDMetodoPago = iDMetodoPago;
 	}
 
-	public int getNumMetodo_Pago() {
-		return NumMetodo_Pago;
+	public int getNumMetodoPago() {
+		return numMetodoPago;
 	}
 
-	public void setNumMetodo_Pago(int numMetodo_Pago) {
-		NumMetodo_Pago = numMetodo_Pago;
+	public void setNumMetodoPago(int numMetodoPago) {
+		this.numMetodoPago = numMetodoPago;
 	}
 
 	public Image getImgPerfilUsuario() {
@@ -176,6 +176,8 @@ public class Usuario implements Serializable{
 	public void setImgPerfilUsuario(Image imgPerfilUsuario) {
 		this.imgPerfilUsuario = imgPerfilUsuario;
 	}
+	
+
 	
 	
 

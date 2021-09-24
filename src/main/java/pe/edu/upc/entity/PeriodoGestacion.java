@@ -5,7 +5,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -20,16 +21,19 @@ public class PeriodoGestacion implements Serializable{
 	
 
 	@Id
-	@ManyToOne
-	@JoinColumn(name="UsuarioID", nullable=false)
-	private int UsuarioID;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int idPeriodo;
 	
-	@Id
-	@Column(name="Fecha_Actualizacion", nullable=false)
-	private Date Fecha_Actualizacion; 
+	@ManyToOne
+	@JoinColumn(name="usuarioID", nullable=false)
+	private Usuario usuarioID;
+	
+	
+	@Column(name="fechaActualizacion", nullable=false)
+	private Date fechaActualizacion; 
 
-	@Column(name="Semana_Gestacion", nullable=false)
-	private int NumSemanaGestacion;
+	@Column(name="semanaGestacion", nullable=false)
+	private int numSemanaGestacion;
 
 
 	public PeriodoGestacion() {
@@ -38,45 +42,59 @@ public class PeriodoGestacion implements Serializable{
 	}
 
 
-	public PeriodoGestacion(int usuarioID, Date fecha_Actualizacion, int numSemanaGestacion) {
+	public PeriodoGestacion(int idPeriodo, Usuario usuarioID, Date fechaActualizacion, int numSemanaGestacion) {
 		super();
-		UsuarioID = usuarioID;
-		Fecha_Actualizacion = fecha_Actualizacion;
-		NumSemanaGestacion = numSemanaGestacion;
+		this.idPeriodo = idPeriodo;
+		this.usuarioID = usuarioID;
+		this.fechaActualizacion = fechaActualizacion;
+		this.numSemanaGestacion = numSemanaGestacion;
 	}
 
 
-	public int getUsuarioID() {
-		return UsuarioID;
+	public int getIdPeriodo() {
+		return idPeriodo;
 	}
 
 
-	public void setUsuarioID(int usuarioID) {
-		UsuarioID = usuarioID;
+	public void setIdPeriodo(int idPeriodo) {
+		this.idPeriodo = idPeriodo;
 	}
 
 
-	public Date getFecha_Actualizacion() {
-		return Fecha_Actualizacion;
+	public Usuario getUsuarioID() {
+		return usuarioID;
 	}
 
 
-	public void setFecha_Actualizacion(Date fecha_Actualizacion) {
-		Fecha_Actualizacion = fecha_Actualizacion;
+	public void setUsuarioID(Usuario usuarioID) {
+		this.usuarioID = usuarioID;
+	}
+
+
+	public Date getFechaActualizacion() {
+		return fechaActualizacion;
+	}
+
+
+	public void setFechaActualizacion(Date fechaActualizacion) {
+		this.fechaActualizacion = fechaActualizacion;
 	}
 
 
 	public int getNumSemanaGestacion() {
-		return NumSemanaGestacion;
+		return numSemanaGestacion;
 	}
 
 
 	public void setNumSemanaGestacion(int numSemanaGestacion) {
-		NumSemanaGestacion = numSemanaGestacion;
+		this.numSemanaGestacion = numSemanaGestacion;
 	}
 
 
+	
 
+
+	
 	
 
 }

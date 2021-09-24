@@ -20,27 +20,27 @@ public class Registro implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int ID_Registro;
+	private int iDRegistro;
 	
 
 	@ManyToOne
-	@JoinColumn(name="UsuarioID", nullable=false)
-	private int UsuarioID;
+	@JoinColumn(name="usuarioID", nullable=false)
+	private Usuario usuarioID;
 
 
-	@Column(name="Fecha", nullable=false)
-	private Date Fecha_ficha;
+	@Column(name="fecha", nullable=false)
+	private Date fechaFicha;
 	
-	@Column(name="Anotaciones", nullable=true)
-	private String T_Anotaciones; 
+	@Column(name="anotaciones", nullable=true)
+	private String tAnotaciones; 
 	
 	@ManyToOne
-	@JoinColumn(name="IDParametro", nullable=false)
-	private int IDParametro;
+	@JoinColumn(name="iDParametro", nullable=false)
+	private Parametro iDParametro;
 
 	
-	@Column(name="Valor", nullable=false)
-	private int NumValor;
+	@Column(name="valor", nullable=false)
+	private int numValor;
 
 
 	public Registro() {
@@ -49,76 +49,79 @@ public class Registro implements Serializable{
 	}
 
 
-	public Registro(int iD_Registro, int usuarioID, Date fecha_ficha, String t_Anotaciones, int iDParametro,
+	public Registro(int iDRegistro, Usuario usuarioID, Date fechaFicha, String tAnotaciones, Parametro iDParametro,
 			int numValor) {
 		super();
-		ID_Registro = iD_Registro;
-		UsuarioID = usuarioID;
-		Fecha_ficha = fecha_ficha;
-		T_Anotaciones = t_Anotaciones;
-		IDParametro = iDParametro;
-		NumValor = numValor;
+		this.iDRegistro = iDRegistro;
+		this.usuarioID = usuarioID;
+		this.fechaFicha = fechaFicha;
+		this.tAnotaciones = tAnotaciones;
+		this.iDParametro = iDParametro;
+		this.numValor = numValor;
 	}
 
 
-	public int getID_Registro() {
-		return ID_Registro;
+	public int getiDRegistro() {
+		return iDRegistro;
 	}
 
 
-	public void setID_Registro(int iD_Registro) {
-		ID_Registro = iD_Registro;
+	public void setiDRegistro(int iDRegistro) {
+		this.iDRegistro = iDRegistro;
 	}
 
 
-	public int getUsuarioID() {
-		return UsuarioID;
+	public Usuario getUsuarioID() {
+		return usuarioID;
 	}
 
 
-	public void setUsuarioID(int usuarioID) {
-		UsuarioID = usuarioID;
+	public void setUsuarioID(Usuario usuarioID) {
+		this.usuarioID = usuarioID;
 	}
 
 
-	public Date getFecha_ficha() {
-		return Fecha_ficha;
+	public Date getFechaFicha() {
+		return fechaFicha;
 	}
 
 
-	public void setFecha_ficha(Date fecha_ficha) {
-		Fecha_ficha = fecha_ficha;
+	public void setFechaFicha(Date fechaFicha) {
+		this.fechaFicha = fechaFicha;
 	}
 
 
-	public String getT_Anotaciones() {
-		return T_Anotaciones;
+	public String gettAnotaciones() {
+		return tAnotaciones;
 	}
 
 
-	public void setT_Anotaciones(String t_Anotaciones) {
-		T_Anotaciones = t_Anotaciones;
+	public void settAnotaciones(String tAnotaciones) {
+		this.tAnotaciones = tAnotaciones;
 	}
 
 
-	public int getIDParametro() {
-		return IDParametro;
+	public Parametro getiDParametro() {
+		return iDParametro;
 	}
 
 
-	public void setIDParametro(int iDParametro) {
-		IDParametro = iDParametro;
+	public void setiDParametro(Parametro iDParametro) {
+		this.iDParametro = iDParametro;
 	}
 
 
 	public int getNumValor() {
-		return NumValor;
+		return numValor;
 	}
 
 
 	public void setNumValor(int numValor) {
-		NumValor = numValor;
+		this.numValor = numValor;
 	}
+
+
+	
 
 
 	

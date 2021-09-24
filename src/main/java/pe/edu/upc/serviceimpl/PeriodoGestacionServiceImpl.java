@@ -1,7 +1,6 @@
 package pe.edu.upc.serviceimpl;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
@@ -24,8 +23,8 @@ public class PeriodoGestacionServiceImpl implements IPeriodoGestacionService, Se
 	
 	
 	@Override
-	public void insertar(PeriodoGestacion periodoGestacion) {
-		mD.insertar(periodoGestacion);
+	public void insertar(PeriodoGestacion periodogestacion) {
+		mD.insertar(periodogestacion);
 		
 	}
 
@@ -35,7 +34,7 @@ public class PeriodoGestacionServiceImpl implements IPeriodoGestacionService, Se
 	}
 
 	@Override
-	public void eliminar(int idPeriodoGestacion, Date fecha_actualizacion) {
+	public void eliminar(int idPeriodoGestacion) {
 		mD.eliminar(idPeriodoGestacion);
 	}
 	

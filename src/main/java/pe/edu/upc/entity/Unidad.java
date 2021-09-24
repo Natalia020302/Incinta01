@@ -17,10 +17,10 @@ public class Unidad implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int IDUnidad;
+	private int iDUnidad;
 	
-	@Column(name="NombreUnidad", nullable=false, length=30)
-	private String NUnidad;
+	@Column(name="nombreUnidad", nullable=false, length=30)
+	private String nUnidad;
 	
 
 	public Unidad() {
@@ -31,38 +31,33 @@ public class Unidad implements Serializable{
 
 	public Unidad(int iDUnidad, String nUnidad) {
 		super();
-		IDUnidad = iDUnidad;
-		NUnidad = nUnidad;
+		this.iDUnidad = iDUnidad;
+		this.nUnidad = nUnidad;
 	}
 
 
-	public int getIDUnidad() {
-		return IDUnidad;
+	public int getiDUnidad() {
+		return iDUnidad;
 	}
 
 
-	public void setIDUnidad(int iDUnidad) {
-		IDUnidad = iDUnidad;
+	public void setiDUnidad(int iDUnidad) {
+		this.iDUnidad = iDUnidad;
 	}
 
 
-	public String getNUnidad() {
-		return NUnidad;
+	public String getnUnidad() {
+		return nUnidad;
 	}
 
 
-	public void setNUnidad(String nUnidad) {
-		NUnidad = nUnidad;
+	public void setnUnidad(String nUnidad) {
+		this.nUnidad = nUnidad;
 	}
 
 
 	
 
 
-
-
-
-
 	
-
 }

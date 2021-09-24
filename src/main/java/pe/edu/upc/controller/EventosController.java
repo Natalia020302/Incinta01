@@ -17,36 +17,41 @@ import pe.edu.upc.service.IEventosService;
 import pe.edu.upc.service.IUsuarioService;
 
 
+
+
 @Named
 @RequestScoped
 public class EventosController implements Serializable {
 
-	private static final long serialVersionUID = -94864798955465036L;
-
-	@Inject
-	private IEventosService uService;
-	@Inject
-	private IUsuarioService usuService;
+	private static final long serialVersionUID = 1L;
 	
+	@Inject
+	private IEventosService rService;
+	private IUsuarioService uService;
+
+
 	
 	private Eventos eventos;
 	private Usuario usuario;
 	
 	
-	List<Eventos> listaEventoss;
-	List<Usuario> listaUsuario;
+	List<Eventos> listaEventos;
+	List<Usuario> listaUsuarios;
+
+
 	
 	@PostConstruct
 	public void init() {
-		this.listaEventoss = new ArrayList<Eventos>();
-		this.listaUsuario = new ArrayList<Usuario>();
+		this.listaEventos = new ArrayList<Eventos>();
+		this.listaUsuarios = new ArrayList<Usuario>();
+
 		
 		this.eventos = new Eventos();
 		this.usuario = new Usuario();
-		
-		
-		this.listar();
-		this.listarUsuario();
+
+		this.listareventos();
+		this.listarusuario();
+
 	}
 
 	public String nuevoEventos() {
@@ -55,16 +60,18 @@ public class EventosController implements Serializable {
 	}
 	
 	public void insertar() {
-		uService.insertar(eventos);
+		rService.insertar(eventos);
 		limpiarEventos();
+		this.listareventos();
 	}
 	
-	public void listar() {
-		listaEventoss = uService.listar();
+	public void listareventos() {
+		listaEventos = rService.listar();
 	}
 	
-	public void listarUsuario() {
-		listaUsuario = usuService.listar();
+	
+	public void listarusuario() {
+		listaUsuarios = uService.listar();
 	}
 	
 	public void limpiarEventos() {
@@ -72,23 +79,23 @@ public class EventosController implements Serializable {
 	}
 	
 	public void eliminar(Eventos eventos) {
-		uService.eliminar(eventos.getID_Evento());
+		rService.eliminar(eventos.getiDEvento());
 	}
 
-	public IEventosService getuService() {
+	public IEventosService getrService() {
+		return rService;
+	}
+
+	public void setrService(IEventosService rService) {
+		this.rService = rService;
+	}
+
+	public IUsuarioService getuService() {
 		return uService;
 	}
 
-	public void setuService(IEventosService uService) {
+	public void setuService(IUsuarioService uService) {
 		this.uService = uService;
-	}
-
-	public IUsuarioService getUsuService() {
-		return usuService;
-	}
-
-	public void setUsuService(IUsuarioService usuService) {
-		this.usuService = usuService;
 	}
 
 	public Eventos getEventos() {
@@ -107,21 +114,31 @@ public class EventosController implements Serializable {
 		this.usuario = usuario;
 	}
 
-	public List<Eventos> getListaEventoss() {
-		return listaEventoss;
+	public List<Eventos> getListaEventos() {
+		return listaEventos;
 	}
 
-	public void setListaEventoss(List<Eventos> listaEventoss) {
-		this.listaEventoss = listaEventoss;
+	public void setListaEventos(List<Eventos> listaEventos) {
+		this.listaEventos = listaEventos;
 	}
 
-	public List<Usuario> getListaUsuario() {
-		return listaUsuario;
+	public List<Usuario> getListaUsuarios() {
+		return listaUsuarios;
 	}
 
-	public void setListaUsuario(List<Usuario> listaUsuario) {
-		this.listaUsuario = listaUsuario;
+	public void setListaUsuarios(List<Usuario> listaUsuarios) {
+		this.listaUsuarios = listaUsuarios;
 	}
+
+	
+
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -129,6 +146,8 @@ public class EventosController implements Serializable {
 
 	
 
+	
+	
 	
 	
 }
