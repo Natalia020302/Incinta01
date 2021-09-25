@@ -38,9 +38,4 @@ public class TipoIdentificacionServiceImpl implements ITipoIdentificacionService
 		mD.eliminar(idTipoIdentificacion);
 	}
 	
-	
-
 }
-
-
-

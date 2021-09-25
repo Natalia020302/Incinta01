@@ -12,20 +12,14 @@ import javax.inject.Named;
 import pe.edu.upc.entity.Unidad;
 import pe.edu.upc.entity.Parametro;
 
-
-
 import pe.edu.upc.service.IUnidadService;
 import pe.edu.upc.service.IParametroService;
-
-
-
 
 @Named
 @RequestScoped
 public class ParametroController implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
 	
 	@Inject
 	private IUnidadService uService;
@@ -130,18 +124,6 @@ public class ParametroController implements Serializable {
 	public void setListaParametros(List<Parametro> listaParametros) {
 		this.listaParametros = listaParametros;
 	}
-
-	
-	
-	
-	
-	
-	
-
-	
-
-	
-	
 	
 	
 }

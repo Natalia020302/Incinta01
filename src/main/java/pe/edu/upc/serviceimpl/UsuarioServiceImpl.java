@@ -37,7 +37,5 @@ public class UsuarioServiceImpl implements IUsuarioService, Serializable{
 	public void eliminar(int idUsuario) {
 		mD.eliminar(idUsuario);
 	}
-	
-	
 
 }

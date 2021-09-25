@@ -24,7 +24,7 @@ public class ComentariosDaoImpl implements IComentariosDao, Serializable{
 	@Override
 	public void insertar(Comentarios comentarios) {
 		// TODO Auto-generated method stub
-		
+		em.persist(comentarios);
 	}
 	
 	

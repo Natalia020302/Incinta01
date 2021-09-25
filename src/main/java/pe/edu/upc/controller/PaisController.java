@@ -12,16 +12,12 @@ import javax.inject.Named;
 import pe.edu.upc.entity.Pais;
 import pe.edu.upc.service.IPaisService;
 
-
 @Named
 @RequestScoped
 public class PaisController implements Serializable {
 
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
+	
 	@Inject
 	private IPaisService uService;
 	private Pais pais;
@@ -33,11 +29,6 @@ public class PaisController implements Serializable {
 		this.pais = new Pais();
 		this.listar();
 	}
-	
-	
-	
-	
-	
 
 	public String nuevoPais() {
 		this.setPais(new Pais());
@@ -60,17 +51,6 @@ public class PaisController implements Serializable {
 	public void eliminar(Pais pais) {
 		uService.eliminar(pais.getIdPais());
 	}
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 	
 	public Pais getPais() {
 		return pais;
@@ -87,9 +67,5 @@ public class PaisController implements Serializable {
 	public void setListaPais(List<Pais> listaPais) {
 		this.listaPais = listaPais;
 	}
-	
-	
-	
-	
 	
 }

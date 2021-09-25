@@ -12,13 +12,8 @@ import javax.inject.Named;
 import pe.edu.upc.entity.PeriodoGestacion;
 import pe.edu.upc.entity.Usuario;
 
-
-
 import pe.edu.upc.service.IPeriodoGestacionService;
 import pe.edu.upc.service.IUsuarioService;
-
-
-
 
 @Named
 @RequestScoped
@@ -42,18 +37,12 @@ public class PeriodoGestacionController implements Serializable {
 	public void init() {
 		this.listaperiodos = new ArrayList<PeriodoGestacion>();
 		this.listaUsuarios = new ArrayList<Usuario>();
-
-		
 		
 		this.periodo = new PeriodoGestacion();
 		this.usuario = new Usuario();
 
-		
-		
-
 		this.listar();
 		this.listarUsuarios();
-
 
 	}
 
@@ -133,15 +122,6 @@ public class PeriodoGestacionController implements Serializable {
 	public void setListaUsuarios(List<Usuario> listaUsuarios) {
 		this.listaUsuarios = listaUsuarios;
 	}
-	
-	
-
-	
-
-	
-
-	
-	
 	
 	
 }

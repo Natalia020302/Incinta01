@@ -176,15 +176,5 @@ public class Usuario implements Serializable{
 	public void setImgPerfilUsuario(Image imgPerfilUsuario) {
 		this.imgPerfilUsuario = imgPerfilUsuario;
 	}
-	
-
-	
-	//wuenas
-
-
-
-	
-	
-	
 
 }

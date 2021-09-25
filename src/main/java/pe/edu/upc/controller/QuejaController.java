@@ -19,11 +19,8 @@ import pe.edu.upc.service.IParametroService;
 @RequestScoped
 public class QuejaController implements Serializable {
 
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
+	
 	@Inject
 	private IQuejaService qService;
 	@Inject
@@ -121,10 +118,5 @@ public class QuejaController implements Serializable {
 		this.listaParametro = listaParametro;
 	}
 
-	
-
-	
-	
-	
 	
 }

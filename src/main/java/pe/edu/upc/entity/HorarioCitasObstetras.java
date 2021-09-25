@@ -12,8 +12,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.lowagie.text.Image;
-
 @Entity
 @Table(name="horariocitasobstetras")
 public class HorarioCitasObstetras implements Serializable{

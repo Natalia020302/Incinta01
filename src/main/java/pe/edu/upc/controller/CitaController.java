@@ -17,15 +17,10 @@ import pe.edu.upc.service.ICitaService;
 import pe.edu.upc.service.IUsuarioService;
 import pe.edu.upc.service.IHorarioCitasObstetrasService;
 
-
 @Named
 @RequestScoped
 public class CitaController implements Serializable {
 
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	@Inject
 	private ICitaService cService;
@@ -92,9 +87,6 @@ public class CitaController implements Serializable {
 	}
 
 
-
-
-
 	public Cita getCita() {
 		return cita;
 	}
@@ -143,11 +135,4 @@ public class CitaController implements Serializable {
 		this.listaHorarioCitasObstetras = listaHorarioCitasObstetras;
 	}
 
-	
-
-
-
-
-	
-	
 }

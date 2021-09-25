@@ -11,12 +11,7 @@ import javax.inject.Named;
 
 import pe.edu.upc.entity.MetodoDePago;
 
-
-
 import pe.edu.upc.service.IMetodoDePagoService;
-
-
-
 
 @Named
 @RequestScoped
@@ -88,22 +83,4 @@ public class MetodoDePagoController implements Serializable {
 		this.listaMetodoDePagos = listaMetodoDePagos;
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-
-	
-	
-	
-	
 }

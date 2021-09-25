@@ -24,7 +24,7 @@ public class QuejaDaoImpl implements IQuejaDao, Serializable{
 	@Override
 	public void insertar(Queja queja) {
 		// TODO Auto-generated method stub
-		
+		em.persist(queja);
 	}
 	
 	

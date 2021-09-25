@@ -55,10 +55,5 @@ public class MetodoDePago implements Serializable{
 		this.nMetodoPago = nMetodoPago;
 	}
 
-
-	
-	
-
-
 	
 }

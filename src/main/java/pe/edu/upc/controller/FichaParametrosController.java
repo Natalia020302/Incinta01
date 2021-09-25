@@ -21,10 +21,6 @@ import pe.edu.upc.service.IRegistroCitaService;
 @RequestScoped
 public class FichaParametrosController implements Serializable {
 
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Inject

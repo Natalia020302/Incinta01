@@ -121,16 +121,4 @@ public class Registro implements Serializable{
 	}
 
 
-	
-
-
-	
-
-
-	
-
-
-
-	
-
 }

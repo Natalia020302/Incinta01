@@ -14,14 +14,10 @@ import pe.edu.upc.entity.TipoIdentificacion;
 import pe.edu.upc.entity.Pais;
 import pe.edu.upc.entity.MetodoDePago;
 
-
-
 import pe.edu.upc.service.IUsuarioService;
 import pe.edu.upc.service.ITipoIdentificacionService;
 import pe.edu.upc.service.IPaisService;
 import pe.edu.upc.service.IMetodoDePagoService;
-
-
 
 
 @Named
@@ -163,9 +159,6 @@ public class UsuarioController implements Serializable {
 		return pais;
 	}
 	
-	
-	
-	
 
 	public void setPais(Pais pais) {
 		this.pais = pais;
@@ -211,12 +204,5 @@ public class UsuarioController implements Serializable {
 		this.listametododepago = listametododepago;
 	}
 
-	
-	
-	
 
-	
-	
-	
-	
 }

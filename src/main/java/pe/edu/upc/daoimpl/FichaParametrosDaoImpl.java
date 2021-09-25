@@ -24,7 +24,7 @@ public class FichaParametrosDaoImpl implements IFichaParametrosDao, Serializable
 	@Override
 	public void insertar(FichaParametros fichaParametros) {
 		// TODO Auto-generated method stub
-		
+		em.persist(fichaParametros);
 	}
 	
 	

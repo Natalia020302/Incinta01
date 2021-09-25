@@ -9,7 +9,6 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-
 import pe.edu.upc.entity.ObstetraSuscripcion;
 import pe.edu.upc.entity.Suscripcion;
 import pe.edu.upc.entity.Obstetra;
@@ -17,7 +16,6 @@ import pe.edu.upc.entity.Obstetra;
 import pe.edu.upc.service.IObstetraSuscripcionService;
 import pe.edu.upc.service.ISuscripcionService;
 import pe.edu.upc.service.IObstetraService;
-
 
 @Named
 @RequestScoped

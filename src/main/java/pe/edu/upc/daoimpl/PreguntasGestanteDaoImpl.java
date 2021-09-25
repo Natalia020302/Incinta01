@@ -24,7 +24,7 @@ public class PreguntasGestanteDaoImpl implements IPreguntasGestanteDao, Serializ
 	@Override
 	public void insertar(PreguntasGestante preguntasGestante) {
 		// TODO Auto-generated method stub
-		
+		em.persist(preguntasGestante);
 	}
 	
 	

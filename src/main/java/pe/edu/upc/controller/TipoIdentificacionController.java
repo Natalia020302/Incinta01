@@ -12,15 +12,12 @@ import javax.inject.Named;
 import pe.edu.upc.entity.TipoIdentificacion;
 import pe.edu.upc.service.ITipoIdentificacionService;
 
-
 @Named
 @RequestScoped
 public class TipoIdentificacionController implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
+	
 	@Inject
 	private ITipoIdentificacionService uService;
 	private TipoIdentificacion tipoIdentificacion;
@@ -79,8 +76,5 @@ public class TipoIdentificacionController implements Serializable {
 		this.listaTipoIdentificacion = listaTipoIdentificacion;
 	}
 
-	
-	
-	
 
 }

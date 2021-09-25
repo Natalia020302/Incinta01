@@ -24,7 +24,7 @@ public class PaisDaoImpl implements IPaisDao, Serializable{
 	@Override
 	public void insertar(Pais pais) {
 		// TODO Auto-generated method stub
-		
+		em.persist(pais);
 	}
 	
 	

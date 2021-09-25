@@ -11,12 +11,7 @@ import javax.inject.Named;
 
 import pe.edu.upc.entity.Unidad;
 
-
-
 import pe.edu.upc.service.IUnidadService;
-
-
-
 
 @Named
 @RequestScoped
@@ -88,16 +83,6 @@ public class UnidadController implements Serializable {
 	public void setListaUnidades(List<Unidad> listaUnidades) {
 		this.listaUnidades = listaUnidades;
 	}
-	
-	
-	
-	
-	
-
-	
-
-	
-	
 	
 	
 }

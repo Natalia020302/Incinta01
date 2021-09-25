@@ -20,11 +20,8 @@ import pe.edu.upc.service.IUsuarioService;
 @RequestScoped
 public class PreguntasGestanteController implements Serializable {
 
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
+	
 	@Inject
 	private IPreguntasGestanteService pService;
 	@Inject
@@ -109,27 +106,6 @@ public class PreguntasGestanteController implements Serializable {
 	public void setListaUsuario(List<Usuario> listaUsuario) {
 		this.listaUsuario = listaUsuario;
 	}
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 	
 	
 }

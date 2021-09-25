@@ -13,15 +13,9 @@ import pe.edu.upc.entity.Registro;
 import pe.edu.upc.entity.Usuario;
 import pe.edu.upc.entity.Parametro;
 
-
-
-
-
 import pe.edu.upc.service.IRegistroService;
 import pe.edu.upc.service.IUsuarioService;
 import pe.edu.upc.service.IParametroService;
-
-
 
 
 @Named
@@ -168,24 +162,5 @@ public class RegistroController implements Serializable {
 		this.listaParametros = listaParametros;
 	}
 
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-
-	
-	
-	
 	
 }

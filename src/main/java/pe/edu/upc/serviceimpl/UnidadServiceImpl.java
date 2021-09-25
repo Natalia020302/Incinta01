@@ -37,7 +37,5 @@ public class UnidadServiceImpl implements IUnidadService, Serializable{
 	public void eliminar(int idUnidad) {
 		mD.eliminar(idUnidad);
 	}
-	
-	
 
 }

@@ -17,15 +17,12 @@ public class CitaServiceImpl implements ICitaService, Serializable{
 
 	private static final long serialVersionUID = 1L;
 
-	
 	@Inject
 	private ICitaDao mD;
-	
 	
 	@Override
 	public void insertar(Cita cita) {
 		mD.insertar(cita);
-		
 	}
 
 	@Override
@@ -37,7 +34,5 @@ public class CitaServiceImpl implements ICitaService, Serializable{
 	public void eliminar(int idCita) {
 		mD.eliminar(idCita);
 	}
-	
-	
 
 }

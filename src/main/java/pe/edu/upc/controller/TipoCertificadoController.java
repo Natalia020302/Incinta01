@@ -13,7 +13,6 @@ import pe.edu.upc.entity.TipoCertificado;
 
 import pe.edu.upc.service.ITipoCertificadoService;
 
-
 @Named
 @RequestScoped
 public class TipoCertificadoController implements Serializable {

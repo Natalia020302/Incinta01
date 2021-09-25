@@ -20,12 +20,7 @@ import pe.edu.upc.service.ICitaService;
 @RequestScoped
 public class RegistroCitaController implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
-
-
 	
 	@Inject
 	private IRegistroCitaService rService;
@@ -53,8 +48,6 @@ public class RegistroCitaController implements Serializable{
 		this.listarCita();
 	}
 	
-	
-	
 	public String nuevoRegistroCita() {
 		this.setRegistroCita(new RegistroCita());
 		return "RegistroCita.xhtml";
@@ -76,56 +69,38 @@ public class RegistroCitaController implements Serializable{
 	public void eliminar(RegistroCita registroCita) {
 		rService.eliminar(registroCita.getIdRegistroCita());
 	}
-
-
-
-
+	
 	public RegistroCita getRegistroCita() {
 		return registroCita;
 	}
-
-
 
 	public void setRegistroCita(RegistroCita registroCita) {
 		this.registroCita = registroCita;
 	}
 
-
-
 	public Cita getCita() {
 		return cita;
 	}
-
-
 
 	public void setCita(Cita cita) {
 		this.cita = cita;
 	}
 
-
-
 	public List<RegistroCita> getListaRegistroCita() {
 		return listaRegistroCita;
 	}
-
-
 
 	public void setListaRegistroCita(List<RegistroCita> listaRegistroCita) {
 		this.listaRegistroCita = listaRegistroCita;
 	}
 
-
-
 	public List<Cita> getListaCita() {
 		return listaCita;
 	}
 
-
-
 	public void setListaCita(List<Cita> listaCita) {
 		this.listaCita = listaCita;
 	}
-
 
 	
 }

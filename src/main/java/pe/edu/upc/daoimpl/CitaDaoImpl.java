@@ -24,7 +24,7 @@ public class CitaDaoImpl implements ICitaDao, Serializable{
 	@Override
 	public void insertar(Cita cita) {
 		// TODO Auto-generated method stub
-		
+		em.persist(cita);
 	}
 	
 	

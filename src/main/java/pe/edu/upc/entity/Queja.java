@@ -2,7 +2,6 @@ package pe.edu.upc.entity;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -62,13 +61,5 @@ public class Queja implements Serializable{
 	public void settQueja(String tQueja) {
 		this.tQueja = tQueja;
 	}
-
-
-	
-
-
-
-
-	
 
 }

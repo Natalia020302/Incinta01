@@ -17,8 +17,6 @@ import javax.persistence.Table;
 public class PeriodoGestacion implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-	
-	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -90,11 +88,5 @@ public class PeriodoGestacion implements Serializable{
 		this.numSemanaGestacion = numSemanaGestacion;
 	}
 
-
-	
-
-
-	
-	
 
 }

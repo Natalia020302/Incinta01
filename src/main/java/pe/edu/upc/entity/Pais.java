@@ -21,17 +21,11 @@ public class Pais implements Serializable{
 	
 	@Column(name="nombrePais", nullable=false, length=30)
 	private String nombrePais;
-	
-
-
 
 	public Pais() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-
-
 
 	public Pais(int idPais, String nombrePais) {
 		super();
@@ -39,44 +33,22 @@ public class Pais implements Serializable{
 		this.nombrePais = nombrePais;
 	}
 
-
-
-
 	public int getIdPais() {
 		return idPais;
 	}
 
-
-
-
 	public void setIdPais(int idPais) {
 		this.idPais = idPais;
 	}
-
-
-
 
 	public String getNombrePais() {
 		return nombrePais;
 	}
 
 
-
-
 	public void setNombrePais(String nombrePais) {
 		this.nombrePais = nombrePais;
 	}
 
-
-	
-	
-	
-
-
-
-
-
-
-	
 
 }

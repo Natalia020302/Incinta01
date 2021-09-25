@@ -24,7 +24,7 @@ public class RegistroCitaDaoImpl implements IRegistroCitaDao, Serializable{
 	@Override
 	public void insertar(RegistroCita registroCita) {
 		// TODO Auto-generated method stub
-		
+		em.persist(registroCita);
 	}
 	
 	

@@ -22,9 +22,7 @@ import pe.edu.upc.service.IObstetraService;
 @RequestScoped
 public class ComentariosController implements Serializable {
 
-
 	private static final long serialVersionUID = 1L;
-	//private static final long serialVersionUID = -94864798955465036L;
 
 	@Inject
 	private IComentariosService cService;
@@ -86,13 +84,10 @@ public class ComentariosController implements Serializable {
 		this.init();
 	}
 	
-	
-	
 	public void eliminar(Comentarios comentarios) {
 		cService.eliminar(comentarios.getIdComentario());
 	}
 
-	
 
 	public Comentarios getComentarios() {
 		return comentarios;
@@ -141,11 +136,5 @@ public class ComentariosController implements Serializable {
 	public void setListaObstetra(List<Obstetra> listaObstetra) {
 		this.listaObstetra = listaObstetra;
 	}
-
-
-
-
-
-	
 	
 }

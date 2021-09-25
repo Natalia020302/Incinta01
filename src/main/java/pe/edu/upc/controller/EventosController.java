@@ -16,9 +16,6 @@ import pe.edu.upc.entity.Usuario;
 import pe.edu.upc.service.IEventosService;
 import pe.edu.upc.service.IUsuarioService;
 
-
-
-
 @Named
 @RequestScoped
 public class EventosController implements Serializable {
@@ -29,15 +26,12 @@ public class EventosController implements Serializable {
 	private IEventosService rService;
 	private IUsuarioService uService;
 
-
-	
 	private Eventos eventos;
 	private Usuario usuario;
 	
 	
 	List<Eventos> listaEventos;
 	List<Usuario> listaUsuarios;
-
 
 	
 	@PostConstruct
@@ -129,25 +123,6 @@ public class EventosController implements Serializable {
 	public void setListaUsuarios(List<Usuario> listaUsuarios) {
 		this.listaUsuarios = listaUsuarios;
 	}
-
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-
-	
-	
 	
 	
 }

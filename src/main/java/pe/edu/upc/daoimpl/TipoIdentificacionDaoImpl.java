@@ -24,7 +24,7 @@ public class TipoIdentificacionDaoImpl implements ITipoIdentificacionDao, Serial
 	@Override
 	public void insertar(TipoIdentificacion tipoIdentificacion) {
 		// TODO Auto-generated method stub
-		
+		em.persist(tipoIdentificacion);
 	}
 	
 	

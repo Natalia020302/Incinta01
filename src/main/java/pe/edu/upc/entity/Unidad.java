@@ -54,10 +54,5 @@ public class Unidad implements Serializable{
 	public void setnUnidad(String nUnidad) {
 		this.nUnidad = nUnidad;
 	}
-
-
-	
-
-
 	
 }
