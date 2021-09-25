@@ -42,7 +42,7 @@ public class QuejaDaoImpl implements IQuejaDao, Serializable{
 	@Override
 	public void eliminar(int idQueja) {
 		Queja queja = new Queja();
-		queja = em.getReference(Queja.class, queja);
+		queja = em.getReference(Queja.class, idQueja);
 		em.remove(queja);
 		
 	}

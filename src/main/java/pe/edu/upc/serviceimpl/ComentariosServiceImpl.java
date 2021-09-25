@@ -34,8 +34,8 @@ public class ComentariosServiceImpl implements IComentariosService, Serializable
 	}
 
 	@Override
-	public void eliminar(int idComentarios) {
-		mD.eliminar(idComentarios);
+	public void eliminar(int idComentario) {
+		mD.eliminar(idComentario);
 	}
 	
 	

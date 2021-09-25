@@ -20,49 +20,50 @@ public class Queja implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int ID_Queja;
+	private int idQueja;
 	
 	@ManyToOne
-	@JoinColumn(name="ID_HorarioCita", nullable=false)
-	private int ID_HorarioCita;
+	@JoinColumn(name="idCita", nullable=false)
+	private Cita cita;
 	
-	private String TQueja;
+	private String tQueja;
 
 	public Queja() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Queja(int iD_Queja, int iD_HorarioCita, String tQueja) {
+	public Queja(int idQueja, Parametro parametro, String tQueja) {
 		super();
-		ID_Queja = iD_Queja;
-		ID_HorarioCita = iD_HorarioCita;
-		TQueja = tQueja;
+		this.idQueja = idQueja;
+		this.parametro = parametro;
+		this.tQueja = tQueja;
 	}
 
-	public int getID_Queja() {
-		return ID_Queja;
+	public int getIdQueja() {
+		return idQueja;
 	}
 
-	public void setID_Queja(int iD_Queja) {
-		ID_Queja = iD_Queja;
+	public void setIdQueja(int idQueja) {
+		this.idQueja = idQueja;
 	}
 
-	public int getID_HorarioCita() {
-		return ID_HorarioCita;
+	public Parametro getParametro() {
+		return parametro;
 	}
 
-	public void setID_HorarioCita(int iD_HorarioCita) {
-		ID_HorarioCita = iD_HorarioCita;
+	public void setParametro(Parametro parametro) {
+		this.parametro = parametro;
 	}
 
-	public String getTQueja() {
-		return TQueja;
+	public String gettQueja() {
+		return tQueja;
 	}
 
-	public void setTQueja(String tQueja) {
-		TQueja = tQueja;
+	public void settQueja(String tQueja) {
+		this.tQueja = tQueja;
 	}
+
 	
 	
 

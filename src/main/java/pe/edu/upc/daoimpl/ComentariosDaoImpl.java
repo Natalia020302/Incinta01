@@ -40,9 +40,9 @@ public class ComentariosDaoImpl implements IComentariosDao, Serializable{
 
 	@Transactional 
 	@Override
-	public void eliminar(int idComentarios) {
+	public void eliminar(int idComentario) {
 		Comentarios comentarios = new Comentarios();
-		comentarios = em.getReference(Comentarios.class, comentarios);
+		comentarios = em.getReference(Comentarios.class, idComentario);
 		em.remove(comentarios);
 		
 	}

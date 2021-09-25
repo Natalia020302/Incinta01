@@ -17,8 +17,11 @@ import pe.edu.upc.service.IPaisService;
 @RequestScoped
 public class PaisController implements Serializable {
 
-	private static final long serialVersionUID = -94864798955465036L;
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Inject
 	private IPaisService uService;
 	private Pais pais;
@@ -30,6 +33,11 @@ public class PaisController implements Serializable {
 		this.pais = new Pais();
 		this.listar();
 	}
+	
+	
+	
+	
+	
 
 	public String nuevoPais() {
 		this.setPais(new Pais());
@@ -50,17 +58,20 @@ public class PaisController implements Serializable {
 	}
 	
 	public void eliminar(Pais pais) {
-		uService.eliminar(pais.getID_Pais());
+		uService.eliminar(pais.getIdPais());
 	}
 
-	public IPaisService getuService() {
-		return uService;
-	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
-	public void setuService(IPaisService uService) {
-		this.uService = uService;
-	}
-
+	
 	public Pais getPais() {
 		return pais;
 	}

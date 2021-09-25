@@ -42,7 +42,7 @@ public class CitaDaoImpl implements ICitaDao, Serializable{
 	@Override
 	public void eliminar(int idCita) {
 		Cita cita = new Cita();
-		cita = em.getReference(Cita.class, cita);
+		cita = em.getReference(Cita.class, idCita);
 		em.remove(cita);
 		
 	}

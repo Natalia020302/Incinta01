@@ -18,57 +18,64 @@ public class Cita implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@ManyToOne
-	@JoinColumn(name="ID_HorarioCita", nullable=false)
-	private int ID_HorarioCita;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int idCita;
 	
 	@ManyToOne
-	@JoinColumn(name="UsuarioID", nullable=false)
-	private int UsuarioID;
+	@JoinColumn(name="idHorarioCita", nullable=false)
+	private HorarioCitasObstetra horarioCitasObstetra;
+	
+	@ManyToOne
+	@JoinColumn(name="usuarioID", nullable=false)
+	private Usuario usuario;
 
-	private int NumValoracion;
+	private int numValoracion;
 
 	public Cita() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Cita(int iD_HorarioCita, int usuarioID, int numValoracion) {
+	public Cita(int idCita, HorarioCitasObstetra horarioCitasObstetra, Usuario usuario, int numValoracion) {
 		super();
-		ID_HorarioCita = iD_HorarioCita;
-		UsuarioID = usuarioID;
-		NumValoracion = numValoracion;
+		this.idCita = idCita;
+		this.horarioCitasObstetra = horarioCitasObstetra;
+		this.usuario = usuario;
+		this.numValoracion = numValoracion;
 	}
 
-	public int getID_HorarioCita() {
-		return ID_HorarioCita;
+	public int getIdCita() {
+		return idCita;
 	}
 
-	public void setID_HorarioCita(int iD_HorarioCita) {
-		ID_HorarioCita = iD_HorarioCita;
+	public void setIdCita(int idCita) {
+		this.idCita = idCita;
 	}
 
-	public int getUsuarioID() {
-		return UsuarioID;
+	public HorarioCitasObstetra getHorarioCitasObstetra() {
+		return horarioCitasObstetra;
 	}
 
-	public void setUsuarioID(int usuarioID) {
-		UsuarioID = usuarioID;
+	public void setHorarioCitasObstetra(HorarioCitasObstetra horarioCitasObstetra) {
+		this.horarioCitasObstetra = horarioCitasObstetra;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 	public int getNumValoracion() {
-		return NumValoracion;
+		return numValoracion;
 	}
 
 	public void setNumValoracion(int numValoracion) {
-		NumValoracion = numValoracion;
+		this.numValoracion = numValoracion;
 	}
-	
 
 
-
-
-
-	
 
 }

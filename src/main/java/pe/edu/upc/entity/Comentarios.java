@@ -20,64 +20,62 @@ public class Comentarios implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int IDComentario;
+	private int idComentario;
 	
 	@ManyToOne
-	@JoinColumn(name="UsuarioID", nullable=false)
-	private int UsuarioID;
+	@JoinColumn(name="usuarioID", nullable=false)
+	private Usuario usuario;
 	
 	@ManyToOne
-	@JoinColumn(name="IDObstetra", nullable=false)
-	private int IDObstetra;
+	@JoinColumn(name="idObstetra", nullable=false)
+	private Obstetra obstetra;
 
-	private String TComentario;
+	private String tComentario;
 
 	public Comentarios() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Comentarios(int iDComentario, int usuarioID, int iDObstetra, String tComentario) {
+	public Comentarios(int idComentario, Usuario usuario, Obstetra obstetra, String tComentario) {
 		super();
-		IDComentario = iDComentario;
-		UsuarioID = usuarioID;
-		IDObstetra = iDObstetra;
-		TComentario = tComentario;
+		this.idComentario = idComentario;
+		this.usuario = usuario;
+		this.obstetra = obstetra;
+		this.tComentario = tComentario;
 	}
 
-	public int getIDComentario() {
-		return IDComentario;
+	public int getIdComentario() {
+		return idComentario;
 	}
 
-	public void setIDComentario(int iDComentario) {
-		IDComentario = iDComentario;
+	public void setIdComentario(int idComentario) {
+		this.idComentario = idComentario;
 	}
 
-	public int getUsuarioID() {
-		return UsuarioID;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
-	public void setUsuarioID(int usuarioID) {
-		UsuarioID = usuarioID;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
-	public int getIDObstetra() {
-		return IDObstetra;
+	public Obstetra getObstetra() {
+		return obstetra;
 	}
 
-	public void setIDObstetra(int iDObstetra) {
-		IDObstetra = iDObstetra;
+	public void setObstetra(Obstetra obstetra) {
+		this.obstetra = obstetra;
 	}
 
-	public String getTComentario() {
-		return TComentario;
+	public String gettComentario() {
+		return tComentario;
 	}
 
-	public void setTComentario(String tComentario) {
-		TComentario = tComentario;
+	public void settComentario(String tComentario) {
+		this.tComentario = tComentario;
 	}
-
-	
 
 
 

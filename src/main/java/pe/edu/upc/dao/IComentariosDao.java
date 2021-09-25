@@ -9,6 +9,6 @@ public interface IComentariosDao {
 	
 	public List<Comentarios> listar();
 	
-	public void eliminar(int idComentarios);
+	public void eliminar(int idComentario);
 
 }

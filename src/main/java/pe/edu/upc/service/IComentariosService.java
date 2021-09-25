@@ -7,5 +7,5 @@ import pe.edu.upc.entity.Comentarios;
 public interface IComentariosService {
 	public void insertar(Comentarios comentarios);
 	public List<Comentarios> listar();
-	public void eliminar(int idComentarios);
+	public void eliminar(int idComentario);
 }

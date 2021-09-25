@@ -34,7 +34,6 @@ public class PaisDaoImpl implements IPaisDao, Serializable{
 		List<Pais> lista = new ArrayList<Pais>();
 		Query q =em.createQuery("select m from Pais m");
 		lista =(List<Pais>) q.getResultList();
-		
 		return lista;
 	}
 
@@ -42,7 +41,7 @@ public class PaisDaoImpl implements IPaisDao, Serializable{
 	@Override
 	public void eliminar(int idPais) {
 		Pais pais = new Pais();
-		pais = em.getReference(Pais.class, pais);
+		pais = em.getReference(Pais.class, idPais);
 		em.remove(pais);
 		
 	}

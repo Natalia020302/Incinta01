@@ -17,11 +17,13 @@ public class Pais implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int ID_Pais;
+	private int idPais;
 	
-	@Column(name="NombrePais", nullable=false, length=30)
-	private String NPais;
+	@Column(name="nombrePais", nullable=false, length=30)
+	private String nombrePais;
 	
+
+
 
 	public Pais() {
 		super();
@@ -29,32 +31,43 @@ public class Pais implements Serializable{
 	}
 
 
-	public Pais(int iD_Pais, String nPais) {
+
+
+	public Pais(int idPais, String nombrePais) {
 		super();
-		ID_Pais = iD_Pais;
-		NPais = nPais;
+		this.idPais = idPais;
+		this.nombrePais = nombrePais;
 	}
 
 
-	public int getID_Pais() {
-		return ID_Pais;
+
+
+	public int getIdPais() {
+		return idPais;
 	}
 
 
-	public void setID_Pais(int iD_Pais) {
-		ID_Pais = iD_Pais;
+
+
+	public void setIdPais(int idPais) {
+		this.idPais = idPais;
 	}
 
 
-	public String getNPais() {
-		return NPais;
+
+
+	public String getNombrePais() {
+		return nombrePais;
 	}
 
 
-	public void setNPais(String nPais) {
-		NPais = nPais;
+
+
+	public void setNombrePais(String nombrePais) {
+		this.nombrePais = nombrePais;
 	}
-	
+
+
 	
 	
 	
