@@ -32,7 +32,7 @@ public class SuscripcionDaoImpl implements ISuscripcionDao, Serializable{
 	@Override
 	public List<Suscripcion> listar() {
 		List<Suscripcion> lista = new ArrayList<Suscripcion>();
-		Query q =em.createQuery("select obs from Obstetra obs");
+		Query q =em.createQuery("select obs from SuscripcionDao obs");
 		lista =(List<Suscripcion>) q.getResultList();
 		
 		return lista;
