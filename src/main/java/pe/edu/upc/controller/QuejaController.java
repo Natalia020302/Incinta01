@@ -10,9 +10,10 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import pe.edu.upc.entity.Queja;
+import pe.edu.upc.entity.Parametro;
 
 import pe.edu.upc.service.IQuejaService;
-
+import pe.edu.upc.service.IParametroService;
 
 @Named
 @RequestScoped
@@ -24,19 +25,29 @@ public class QuejaController implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Inject
-	private IQuejaService uService;
+	private IQuejaService qService;
+	
+	
+	@Inject
+	private IParametroService pService;
+	
 	
 	private Queja queja;
+	private Parametro parametro;
 	
 	List<Queja> listaQueja;
+	List<Parametro> listaParametro;
 	
 	@PostConstruct
 	public void init() {
 		this.listaQueja = new ArrayList<Queja>();
+		this.listaParametro = new ArrayList<Parametro>();
 		
 		this.queja = new Queja();
+		this.parametro = new Parametro();
 		
-		this.listar();
+		this.listarQuejas();
+		this.listarParametros();
 	}
 
 	public String nuevoQueja() {
@@ -45,11 +56,15 @@ public class QuejaController implements Serializable {
 	}
 	
 	public void insertar() {
-		uService.insertar(queja);
+		qService.insertar(queja);
 		limpiarQueja();
+		this.listarQuejas();
 	}
-	public void listar() {
-		listaQueja = uService.listar();
+	public void listarQuejas() {
+		listaQueja = qService.listar();
+	}
+	public void listarParametros() {
+		listaQueja = pService.listar();
 	}
 	
 	public void limpiarQueja() {
@@ -57,16 +72,25 @@ public class QuejaController implements Serializable {
 	}
 	
 	public void eliminar(Queja queja) {
-		uService.eliminar(queja.getIdQueja());
+		qService.eliminar(queja.getIdQueja());
 	}
 
 	
+
 	public Queja getQueja() {
 		return queja;
 	}
 
 	public void setQueja(Queja queja) {
 		this.queja = queja;
+	}
+
+	public Parametro getParametro() {
+		return parametro;
+	}
+
+	public void setParametro(Parametro parametro) {
+		this.parametro = parametro;
 	}
 
 	public List<Queja> getListaQueja() {
@@ -76,6 +100,16 @@ public class QuejaController implements Serializable {
 	public void setListaQueja(List<Queja> listaQueja) {
 		this.listaQueja = listaQueja;
 	}
+
+	public List<Parametro> getListaParametro() {
+		return listaParametro;
+	}
+
+	public void setListaParametro(List<Parametro> listaParametro) {
+		this.listaParametro = listaParametro;
+	}
+
+	
 
 	
 	

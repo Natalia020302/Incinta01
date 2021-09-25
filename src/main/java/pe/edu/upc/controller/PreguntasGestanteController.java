@@ -26,19 +26,28 @@ public class PreguntasGestanteController implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Inject
-	private IPreguntasGestanteService uService;
+	private IPreguntasGestanteService pService;
+	@Inject
+	private IUsuarioService uService;
+	
 	private PreguntasGestante preguntasGestante;
+	private PreguntasGestante usuario;
+	
+	
 	List<PreguntasGestante> listaPreguntasGestante;
+	List<PreguntasGestante> listaUsuario;
 	
 	
 	@PostConstruct
 	public void init() {
 		this.listaPreguntasGestante = new ArrayList<PreguntasGestante>();
+		this.listaUsuario = new ArrayList<Usuario>();
 		
 		this.preguntasGestante = new PreguntasGestante();
+		this.usuario = new Usuario();
 		
-		
-		this.listar();
+		this.listarPregunta();
+		this.listarUsuario();
 	}
 
 	public String nuevoPreguntasGestante() {
@@ -47,12 +56,17 @@ public class PreguntasGestanteController implements Serializable {
 	}
 	
 	public void insertar() {
-		uService.insertar(preguntasGestante);
+		pService.insertar(preguntasGestante);
 		limpiarPreguntasGestante();
+		this.listarPregunta();
 	}
 	
-	public void listar() {
-		listaPreguntasGestante = uService.listar();
+	public void listarPregunta() {
+		listaPreguntasGestante = pService.listar();
+	}
+	
+	public void listarUsuario() {
+		listaUsuario = uService.listar();
 	}
 
 	public void limpiarPreguntasGestante() {
@@ -60,10 +74,8 @@ public class PreguntasGestanteController implements Serializable {
 	}
 	
 	public void eliminar(PreguntasGestante preguntasGestante) {
-		uService.eliminar(preguntasGestante.getIdPregunta());
+		pService.eliminar(preguntasGestante.getIdPregunta());
 	}
-
-
 
 	public PreguntasGestante getPreguntasGestante() {
 		return preguntasGestante;
@@ -73,6 +85,14 @@ public class PreguntasGestanteController implements Serializable {
 		this.preguntasGestante = preguntasGestante;
 	}
 
+	public PreguntasGestante getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(PreguntasGestante usuario) {
+		this.usuario = usuario;
+	}
+
 	public List<PreguntasGestante> getListaPreguntasGestante() {
 		return listaPreguntasGestante;
 	}
@@ -80,6 +100,16 @@ public class PreguntasGestanteController implements Serializable {
 	public void setListaPreguntasGestante(List<PreguntasGestante> listaPreguntasGestante) {
 		this.listaPreguntasGestante = listaPreguntasGestante;
 	}
+
+	public List<PreguntasGestante> getListaUsuario() {
+		return listaUsuario;
+	}
+
+	public void setListaUsuario(List<PreguntasGestante> listaUsuario) {
+		this.listaUsuario = listaUsuario;
+	}
+
+
 
 	
 	
