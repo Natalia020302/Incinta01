@@ -12,7 +12,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.lowagie.text.Image;
 
 @Entity
 @Table(name="Usuario")
@@ -55,8 +54,7 @@ public class Usuario implements Serializable{
 	@Column(name="numeroTargeta", nullable=false)
 	private int numMetodoPago;
 	
-	@Column(name="imagenPerfil", nullable=true)
-	private Image imgPerfilUsuario;
+
 
 	public Usuario() {
 		super();
@@ -65,7 +63,7 @@ public class Usuario implements Serializable{
 
 	public Usuario(int usuarioID, String nUsuario, String uApellido, String uCorreo, String uPassword,
 			int numIdentificacion, Date dNacimiento, TipoIdentificacion iDTipoIdentificacion, Pais iDPais,
-			MetodoDePago iDMetodoPago, int numMetodoPago, Image imgPerfilUsuario) {
+			MetodoDePago iDMetodoPago, int numMetodoPago) {
 		super();
 		this.usuarioID = usuarioID;
 		this.nUsuario = nUsuario;
@@ -78,7 +76,7 @@ public class Usuario implements Serializable{
 		this.iDPais = iDPais;
 		this.iDMetodoPago = iDMetodoPago;
 		this.numMetodoPago = numMetodoPago;
-		this.imgPerfilUsuario = imgPerfilUsuario;
+
 	}
 
 	public int getUsuarioID() {
@@ -169,12 +167,6 @@ public class Usuario implements Serializable{
 		this.numMetodoPago = numMetodoPago;
 	}
 
-	public Image getImgPerfilUsuario() {
-		return imgPerfilUsuario;
-	}
-
-	public void setImgPerfilUsuario(Image imgPerfilUsuario) {
-		this.imgPerfilUsuario = imgPerfilUsuario;
-	}
+	
 
 }

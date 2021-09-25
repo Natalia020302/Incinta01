@@ -12,7 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.lowagie.text.Image;
+
 
 @Entity
 @Table(name="obstetra")
@@ -67,7 +67,7 @@ public class Obstetra implements Serializable{
 
 	
 	private int numometodopago;
-	private Image imgperfilobstetra;
+
 	
 	
 	/* SUPER CLASS */
@@ -79,7 +79,7 @@ public class Obstetra implements Serializable{
 	
 	public Obstetra(int idobstetra, String nobstetra, String napellidoobstetra, Pais pais, String correo,
 			String password, TipoIdentificacion tipoidentificacion, String numoidentificacion, Date donacimiento,
-			String ngenero, Date fechaegreso, MetodoDePago metododepago, int numometodopago, Image imgperfilobstetra) {
+			String ngenero, Date fechaegreso, MetodoDePago metododepago, int numometodopago) {
 		super();
 		this.idobstetra = idobstetra;
 		this.nobstetra = nobstetra;
@@ -94,7 +94,7 @@ public class Obstetra implements Serializable{
 		this.fechaegreso = fechaegreso;
 		this.metododepago = metododepago;
 		this.numometodopago = numometodopago;
-		this.imgperfilobstetra = imgperfilobstetra;
+
 	}/* GETTERS AND SETTERS */
 
 	public int getIdobstetra() {
@@ -197,14 +197,7 @@ public class Obstetra implements Serializable{
 	}
 
 
-	public Image getImgperfilobstetra() {
-		return imgperfilobstetra;
-	}
-
-
-	public void setImgperfilobstetra(Image imgperfilobstetra) {
-		this.imgperfilobstetra = imgperfilobstetra;
-	}
+	
 
 	public Pais getPais() {
 		return pais;
