@@ -31,11 +31,11 @@ public class PreguntasGestanteController implements Serializable {
 	private IUsuarioService uService;
 	
 	private PreguntasGestante preguntasGestante;
-	private PreguntasGestante usuario;
+	private Usuario usuario;
 	
 	
 	List<PreguntasGestante> listaPreguntasGestante;
-	List<PreguntasGestante> listaUsuario;
+	List<Usuario> listaUsuario;
 	
 	
 	@PostConstruct
@@ -77,6 +77,7 @@ public class PreguntasGestanteController implements Serializable {
 		pService.eliminar(preguntasGestante.getIdPregunta());
 	}
 
+	
 	public PreguntasGestante getPreguntasGestante() {
 		return preguntasGestante;
 	}
@@ -85,11 +86,11 @@ public class PreguntasGestanteController implements Serializable {
 		this.preguntasGestante = preguntasGestante;
 	}
 
-	public PreguntasGestante getUsuario() {
+	public Usuario getUsuario() {
 		return usuario;
 	}
 
-	public void setUsuario(PreguntasGestante usuario) {
+	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
 
@@ -101,16 +102,19 @@ public class PreguntasGestanteController implements Serializable {
 		this.listaPreguntasGestante = listaPreguntasGestante;
 	}
 
-	public List<PreguntasGestante> getListaUsuario() {
+	public List<Usuario> getListaUsuario() {
 		return listaUsuario;
 	}
 
-	public void setListaUsuario(List<PreguntasGestante> listaUsuario) {
+	public void setListaUsuario(List<Usuario> listaUsuario) {
 		this.listaUsuario = listaUsuario;
 	}
 
 
-
+	
+	
+	
+	
 	
 	
 	

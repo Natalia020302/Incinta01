@@ -10,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.websocket.Decoder.Text;
 
 @Entity
 @Table(name="Queja")
@@ -33,10 +32,10 @@ public class Queja implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Queja(int idQueja, Parametro parametro, String tQueja) {
+	public Queja(int idQueja, Cita cita, String tQueja) {
 		super();
 		this.idQueja = idQueja;
-		this.parametro = parametro;
+		this.cita = cita;
 		this.tQueja = tQueja;
 	}
 
@@ -48,12 +47,12 @@ public class Queja implements Serializable{
 		this.idQueja = idQueja;
 	}
 
-	public Parametro getParametro() {
-		return parametro;
+	public Cita getCita() {
+		return cita;
 	}
 
-	public void setParametro(Parametro parametro) {
-		this.parametro = parametro;
+	public void setCita(Cita cita) {
+		this.cita = cita;
 	}
 
 	public String gettQueja() {
@@ -64,7 +63,7 @@ public class Queja implements Serializable{
 		this.tQueja = tQueja;
 	}
 
-	
+
 	
 
 

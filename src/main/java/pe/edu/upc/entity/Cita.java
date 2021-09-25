@@ -22,8 +22,8 @@ public class Cita implements Serializable{
 	private int idCita;
 	
 	@ManyToOne
-	@JoinColumn(name="idHorarioCita", nullable=false)
-	private HorarioCitasObstetra horarioCitasObstetra;
+	@JoinColumn(name="idhorariocita", nullable=false)
+	private HorarioCitasObstetras horarioCitasObstetra;
 	
 	@ManyToOne
 	@JoinColumn(name="usuarioID", nullable=false)
@@ -36,7 +36,7 @@ public class Cita implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Cita(int idCita, HorarioCitasObstetra horarioCitasObstetra, Usuario usuario, int numValoracion) {
+	public Cita(int idCita, HorarioCitasObstetras horarioCitasObstetra, Usuario usuario, int numValoracion) {
 		super();
 		this.idCita = idCita;
 		this.horarioCitasObstetra = horarioCitasObstetra;
@@ -52,11 +52,11 @@ public class Cita implements Serializable{
 		this.idCita = idCita;
 	}
 
-	public HorarioCitasObstetra getHorarioCitasObstetra() {
+	public HorarioCitasObstetras getHorarioCitasObstetra() {
 		return horarioCitasObstetra;
 	}
 
-	public void setHorarioCitasObstetra(HorarioCitasObstetra horarioCitasObstetra) {
+	public void setHorarioCitasObstetra(HorarioCitasObstetras horarioCitasObstetra) {
 		this.horarioCitasObstetra = horarioCitasObstetra;
 	}
 
@@ -76,6 +76,6 @@ public class Cita implements Serializable{
 		this.numValoracion = numValoracion;
 	}
 
-
+	
 
 }

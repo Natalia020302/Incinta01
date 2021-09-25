@@ -76,7 +76,7 @@ public class ComentariosController implements Serializable {
 	}
 	
 	public void listarUsuarios() {
-		listaUsuario = cService.listar();
+		listaUsuario = uService.listar();
 	}
 	public void listarObstetras() {
 		listaObstetra = oService.listar();

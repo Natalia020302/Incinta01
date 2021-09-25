@@ -26,8 +26,6 @@ public class QuejaController implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Inject
 	private IQuejaService qService;
-	
-	
 	@Inject
 	private IParametroService pService;
 	
@@ -64,7 +62,7 @@ public class QuejaController implements Serializable {
 		listaQueja = qService.listar();
 	}
 	public void listarParametros() {
-		listaQueja = pService.listar();
+		listaParametro = pService.listar();
 	}
 	
 	public void limpiarQueja() {
@@ -75,7 +73,21 @@ public class QuejaController implements Serializable {
 		qService.eliminar(queja.getIdQueja());
 	}
 
-	
+	public IQuejaService getqService() {
+		return qService;
+	}
+
+	public void setqService(IQuejaService qService) {
+		this.qService = qService;
+	}
+
+	public IParametroService getpService() {
+		return pService;
+	}
+
+	public void setpService(IParametroService pService) {
+		this.pService = pService;
+	}
 
 	public Queja getQueja() {
 		return queja;
@@ -111,6 +123,7 @@ public class QuejaController implements Serializable {
 
 	
 
+	
 	
 	
 	
