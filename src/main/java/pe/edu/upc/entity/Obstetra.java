@@ -35,11 +35,9 @@ public class Obstetra implements Serializable{
 	@Column(name="apellidoobstetra", nullable=false, length=30)
 	private String napellidoobstetra;
 	
-	/*
 	@ManyToOne
 	@JoinColumn(name="paisid", nullable=false)
 	private Pais pais;
-	*/
 	
 	@Column(name="correo", nullable=false, length=40)
 	private String correo;
@@ -47,11 +45,9 @@ public class Obstetra implements Serializable{
 	@Column(name="password", nullable=false, length=15)
 	private String password;
 	
-	/*
 	@ManyToOne
 	@JoinColumn(name="tipoidentificacion", nullable=false)
-	private TipoIdentificación tipoidentificacion;
-	*/
+	private TipoIdentificacion tipoidentificacion;
 	
 	private String numoidentificacion;
 	
@@ -62,11 +58,9 @@ public class Obstetra implements Serializable{
 	
 	private Date fechaegreso;
 	
-	/*
 	@ManyToOne
 	@JoinColumn(name="metododepago", nullable=false)
 	private MetodoDePago metododepago;
-	*/
 	
 	private int numometodopago;
 	private Image imgperfilobstetra;
@@ -77,11 +71,28 @@ public class Obstetra implements Serializable{
 	public Obstetra() {
 		super();
 		// TODO Auto-generated constructor stub
+	} /* CONSTRUCTOR */	
+
+	public Obstetra(int idobstetra, String nobstetra, String napellidoobstetra, Pais pais, String correo,
+			String password, TipoIdentificacion tipoidentificacion, String numoidentificacion, Date donacimiento,
+			String ngenero, Date fechaegreso, MetodoDePago metododepago, int numometodopago, Image imgperfilobstetra) {
+		super();
+		this.idobstetra = idobstetra;
+		this.nobstetra = nobstetra;
+		this.napellidoobstetra = napellidoobstetra;
+		this.pais = pais;
+		this.correo = correo;
+		this.password = password;
+		this.tipoidentificacion = tipoidentificacion;
+		this.numoidentificacion = numoidentificacion;
+		this.donacimiento = donacimiento;
+		this.ngenero = ngenero;
+		this.fechaegreso = fechaegreso;
+		this.metododepago = metododepago;
+		this.numometodopago = numometodopago;
+		this.imgperfilobstetra = imgperfilobstetra;
 	}
-	
-	/* CONSTRUCTOR */
-	
-	
+
 
 	/* GETTERS AND SETTERS */
 	
@@ -192,6 +203,30 @@ public class Obstetra implements Serializable{
 
 	public void setImgperfilobstetra(Image imgperfilobstetra) {
 		this.imgperfilobstetra = imgperfilobstetra;
+	}
+
+	public Pais getPais() {
+		return pais;
+	}
+
+	public void setPais(Pais pais) {
+		this.pais = pais;
+	}
+
+	public TipoIdentificacion getTipoidentificacion() {
+		return tipoidentificacion;
+	}
+
+	public void setTipoidentificacion(TipoIdentificacion tipoidentificacion) {
+		this.tipoidentificacion = tipoidentificacion;
+	}
+
+	public MetodoDePago getMetododepago() {
+		return metododepago;
+	}
+
+	public void setMetododepago(MetodoDePago metododepago) {
+		this.metododepago = metododepago;
 	}
 
 }

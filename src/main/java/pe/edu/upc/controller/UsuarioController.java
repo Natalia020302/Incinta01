@@ -14,15 +14,10 @@ import pe.edu.upc.entity.TipoIdentificacion;
 import pe.edu.upc.entity.Pais;
 import pe.edu.upc.entity.MetodoDePago;
 
-
-
 import pe.edu.upc.service.IUsuarioService;
 import pe.edu.upc.service.ITipoIdentificacionService;
 import pe.edu.upc.service.IPaisService;
 import pe.edu.upc.service.IMetodoDePagoService;
-
-
-
 
 @Named
 @RequestScoped
@@ -210,13 +205,5 @@ public class UsuarioController implements Serializable {
 	public void setListametododepago(List<MetodoDePago> listametododepago) {
 		this.listametododepago = listametododepago;
 	}
-
-	
-	
-	
-
-	
-	
-	
 	
 }

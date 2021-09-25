@@ -16,9 +16,6 @@ import pe.edu.upc.entity.Usuario;
 import pe.edu.upc.service.IEventosService;
 import pe.edu.upc.service.IUsuarioService;
 
-
-
-
 @Named
 @RequestScoped
 public class EventosController implements Serializable {
