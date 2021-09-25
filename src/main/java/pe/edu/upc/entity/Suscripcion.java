@@ -97,5 +97,5 @@ public class Suscripcion implements Serializable{
 	public void setTcondiciones(String tcondiciones) {
 		this.tcondiciones = tcondiciones;
 	}
-S
+
 }
