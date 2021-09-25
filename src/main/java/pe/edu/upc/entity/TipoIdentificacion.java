@@ -27,6 +27,8 @@ public class TipoIdentificacion implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
+
+	
 	public TipoIdentificacion(int idTipoIdentificacion, String nIdentificacion) {
 		super();
 		this.idTipoIdentificacion = idTipoIdentificacion;
@@ -54,4 +56,6 @@ public class TipoIdentificacion implements Serializable{
 
 	
 
+
+	}
 }

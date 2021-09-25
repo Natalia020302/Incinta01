@@ -40,10 +40,16 @@ public class ModeloDaoImpl implements IObstetraDao, Serializable{
 
 	@Transactional 
 	@Override
+
 	public void eliminar(int idObstetra) {
 		Obstetra a = new Obstetra();
 		a = em.getReference(Obstetra.class, a);
 		em.remove(a);
+
+	public void eliminar(int idQueja) {
+		Queja queja = new Queja();
+		queja = em.getReference(Queja.class, idQueja);
+		em.remove(queja);
 		
 	}
 

@@ -3,9 +3,13 @@
   <display-name>Incinta01</display-name>
   <welcome-file-list>
 
+
     <welcome-file>template.xhtml</welcome-file>
 
     <welcome-file>/WEB-INF/template/template.xhtml</welcome-file>
+
+
+    <welcome-file>/registro.xhtml</welcome-file>
 
   </welcome-file-list>
 
