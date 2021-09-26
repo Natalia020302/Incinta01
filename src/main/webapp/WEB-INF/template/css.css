@@ -1,0 +1,8 @@
+@charset "UTF-8";
+#p0 { text-indent: 2em; }
+
+card.ex1 {
+  border: 1px solid red;
+  outline-style: solid;
+  outline-color: invert;
+}
