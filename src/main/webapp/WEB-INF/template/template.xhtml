@@ -13,20 +13,20 @@
 		content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
-<link rel="stylesheet" 
-		href="css.css" />
+	<h:outputStylesheet name="css/template.css"/>
 
 	<link rel="stylesheet"
 		href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
 		integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
 		crossorigin="anonymous" />
 
+	
 
 </h:head>
 <h:body>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-3">
+			<div class="col-sm-3" id="menuv1">
 				<h:form>
 					<p:growl id="messages" showDetail="true" />
 
@@ -34,8 +34,6 @@
 						<p:menu label="Menu">
 							<p:submenu label="Menu">
 								<p:menuitem icon="pi pi-heart" value="Website" url="http://www.primefaces.org" />
-
-
 								<p:menuitem icon="pi pi-heart"  value="Save (Non-Ajax)" action="#{menuView.save}"
 									update="messages" ajax="false" />
 								<p:menuitem icon="pi pi-heart" value="Update" action="#{menuView.update}"
@@ -50,10 +48,10 @@
 				</h:form>
 			</div>
 
-			<div class="col-sm-9">
-
-				<h1 id="p0">Inicio</h1>
-
+			<div class="col-sm-9" id="menuv2">
+				<h:form>
+				<h1>Analizando</h1>
+				</h:form>
 
 			</div>
 		</div>
