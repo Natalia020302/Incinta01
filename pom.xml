@@ -39,14 +39,14 @@
 			<scope>provided</scope>
 		</dependency>
 
-
+		<!-- 
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
 			<version>6.2</version>
 		</dependency>
 
-		<!-- mvnrepository.com/artifact/org.omnifaces/omnifaces -->
+	mvnrepository.com/artifact/org.omnifaces/omnifaces -->
 
 		<dependency>
 			<groupId>org.omnifaces</groupId>
@@ -77,14 +77,20 @@
 		</dependency>
 
 
-
-		<!-- https://mvnrepository.com/artifact/com.sun.faces/jsf-api -->
+		<!-- https://mvnrepository.com/artifact/com.sun.faces/jsf-api 
 		<dependency>
 			<groupId>javax.faces</groupId>
 			<artifactId>jsf-impl</artifactId>
 			<version>2.3</version>
 		</dependency>
-		
+		-->
+
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-impl</artifactId>
+			<version>2.2.20</version>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.primefaces/primefaces -->
 		<dependency>
 			<groupId>org.primefaces</groupId>
@@ -92,13 +98,9 @@
 			<version>10.0.0</version>
 		</dependency>
 
-	
-	
-	
-	
-	
-	
-	
+		
+
+
 	</dependencies>
 
 

@@ -36,11 +36,13 @@ public class Eventos implements Serializable{
 	@Column(name="fechaEvento", nullable=false)
 	private Date fechaEvento;
 	
-	private String hInicio;
+	@Column(nullable=false)
+	private Date hInicio;
 	
-	private String hFin;
+	@Column(nullable=false)
+	private Date hFin;
 	
-	@Column(name="todoElDia", nullable=false)
+	@Column(name="todoElDia", nullable=true) //cambie por true
 	private Boolean boolTodoDia;
 	
 	private int qRepeticion;
@@ -50,8 +52,8 @@ public class Eventos implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Eventos(int iDEvento, Usuario iDGestante, String titulo, String descripcion, Date fechaEvento,
-			String hInicio, String hFin, Boolean boolTodoDia, int qRepeticion) {
+	public Eventos(int iDEvento, Usuario iDGestante, String titulo, String descripcion, Date fechaEvento, Date hInicio,
+			Date hFin, Boolean boolTodoDia, int qRepeticion) {
 		super();
 		this.iDEvento = iDEvento;
 		this.iDGestante = iDGestante;
@@ -104,19 +106,19 @@ public class Eventos implements Serializable{
 		this.fechaEvento = fechaEvento;
 	}
 
-	public String gethInicio() {
+	public Date gethInicio() {
 		return hInicio;
 	}
 
-	public void sethInicio(String hInicio) {
+	public void sethInicio(Date hInicio) {
 		this.hInicio = hInicio;
 	}
 
-	public String gethFin() {
+	public Date gethFin() {
 		return hFin;
 	}
 
-	public void sethFin(String hFin) {
+	public void sethFin(Date hFin) {
 		this.hFin = hFin;
 	}
 
@@ -136,5 +138,6 @@ public class Eventos implements Serializable{
 		this.qRepeticion = qRepeticion;
 	}
 
+	
 	
 }

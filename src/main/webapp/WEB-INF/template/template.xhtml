@@ -13,8 +13,7 @@
 		content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
-<link rel="stylesheet" 
-		href="css.css" />
+	<link rel="stylesheet" href="css.css" />
 
 	<link rel="stylesheet"
 		href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
@@ -33,15 +32,14 @@
 					<div class="card">
 						<p:menu label="Menu">
 							<p:submenu label="Menu">
-								<p:menuitem icon="pi pi-heart" value="Website" url="http://www.primefaces.org" />
 
-
-								<p:menuitem icon="pi pi-heart"  value="Save (Non-Ajax)" action="#{menuView.save}"
-									update="messages" ajax="false" />
-								<p:menuitem icon="pi pi-heart" value="Update" action="#{menuView.update}"
-									update="messages" />
-								<p:menuitem icon="pi pi-heart" value="Delete" action="#{menuView.delete}"
-									update="messages" />
+								<p:menuitem icon="pi pi-heart" value="Inicio"
+									 update="messages"
+									 />
+								<p:menuitem icon="pi pi-heart" value="Signos Vitales"
+									 update="messages" url="signosvitales.xhtml" />
+								<p:menuitem icon="pi pi-heart" value="Eventos"
+									 update="messages" url="eventos.xhtml" />
 							</p:submenu>
 
 						</p:menu>
@@ -52,7 +50,16 @@
 
 			<div class="col-sm-9">
 
-				<h1 id="p0">Inicio</h1>
+				<ui:insert name="title">
+
+
+
+				</ui:insert>
+
+				<ui:insert name="contenido">
+
+				</ui:insert>
+
 
 
 			</div>

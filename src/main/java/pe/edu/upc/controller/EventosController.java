@@ -9,12 +9,15 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.primefaces.event.SelectEvent;
+
 import pe.edu.upc.entity.Eventos;
 import pe.edu.upc.entity.Usuario;
 
 
 import pe.edu.upc.service.IEventosService;
 import pe.edu.upc.service.IUsuarioService;
+import pe.edu.upc.util.Message;
 
 @Named
 @RequestScoped
@@ -24,10 +27,16 @@ public class EventosController implements Serializable {
 	
 	@Inject
 	private IEventosService rService;
+	
+	@Inject
 	private IUsuarioService uService;
 
 	private Eventos eventos;
 	private Usuario usuario;
+	
+	//nuevo
+	//private Eventos eventoSelect;
+
 	
 	
 	List<Eventos> listaEventos;
@@ -50,7 +59,7 @@ public class EventosController implements Serializable {
 
 	public String nuevoEventos() {
 		this.setEventos(new Eventos());
-		return "eventos.xhtml";
+		return "insertEvento.xhtml";
 	}
 	
 	public void insertar() {
@@ -74,7 +83,71 @@ public class EventosController implements Serializable {
 	
 	public void eliminar(Eventos eventos) {
 		rService.eliminar(eventos.getiDEvento());
+		this.listareventos();
 	}
+	
+	/*	//<--!nuevo!-->
+	
+	public void eventoSelect(SelectEvent e) {
+		this.eventoSelect = (Eventos)e.getObject();
+	}
+	
+
+	
+	public String editEvento() {
+		String view = "";
+		try 
+		{
+			if (this.eventoSelect != null) 
+			{
+				this.eventos = eventoSelect;
+				view = "/updateEvento";
+			}
+			else 
+			{
+				Message.messageError("Debe Seleccionar un producto");
+			}
+		} 
+		catch (Exception e) {
+			Message.messageError("Error  en producto: " + e.getMessage());
+		}
+		return view;
+	}
+	
+	public String deleteEvento() {
+		String view = "";
+		try {
+			this.eventos = eventoSelect;
+			productService.delete(this.eventos);
+			Message.messageInfo("Registro Eliminado Correctamente");
+			this.getAllEventos();
+			view = "/product/list";
+		} catch (Exception e) {
+			Message.messageError("Error en producto " + e.getMessage());
+		}
+		return view;
+	}
+	
+	public void searchEventoByName() {
+		try {
+			products = productService.findByName(this.filterName.trim());
+			resetForm();
+			if (products.isEmpty()) {
+				Message.messageInfo("No se encontraron productos");
+			}
+		} catch (Exception e) {
+			Message.messageError("Error en producto " + e.getMessage());
+		}
+	}
+	
+	public void productSelect(SelectEvent e) {
+		this.productSelect = (Evento)e.getObject();
+	}
+	
+	//nuevo*/
+	
+	
+	
 
 	public IEventosService getrService() {
 		return rService;
