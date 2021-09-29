@@ -21,33 +21,33 @@ public class MetodoDePagoController implements Serializable {
 	
 	@Inject
 	private IMetodoDePagoService uService;
-	private MetodoDePago metpago;
-	List<MetodoDePago> listaMetodoDePagos;
+	private MetodoDePago metodoDePago;
+	List<MetodoDePago> listaMetodoDePago;
 
 	
 	@PostConstruct
 	public void init() {
-		this.listaMetodoDePagos = new ArrayList<MetodoDePago>();
+		this.listaMetodoDePago = new ArrayList<MetodoDePago>();
 		
-		this.metpago = new MetodoDePago();
+		this.metodoDePago = new MetodoDePago();
 
 		this.listar();
 
 	}
 
 	public String nuevoMetodoDePago() {
-		this.setMetpago(new MetodoDePago());
-		return "metpago.xhtml";
+		this.setMetodoDePago(new MetodoDePago());
+		return "metodoDePago.xhtml";
 	}
 	
 	public void insertar() {
-		uService.insertar(metpago);
+		uService.insertar(metodoDePago);
 		limpiarMetodoDePago();
-		this.listar();
+	//	this.listar();
 	}
 	
 	public void listar() {
-		listaMetodoDePagos = uService.listar();
+		listaMetodoDePago = uService.listar();
 	}
 	
 	
@@ -55,32 +55,35 @@ public class MetodoDePagoController implements Serializable {
 		this.init();
 	}
 	
-	public void eliminar(MetodoDePago metpago) {
-		uService.eliminar(metpago.getiDMetodoPago());
+	public void eliminar(MetodoDePago metodoDePago) {
+		uService.eliminar(metodoDePago.getiDMetodoPago());
 	}
 
-	public IMetodoDePagoService getuService() {
-		return uService;
+	public MetodoDePagoController() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	public void setuService(IMetodoDePagoService uService) {
-		this.uService = uService;
+	public MetodoDePagoController(MetodoDePago metodoDePago, List<MetodoDePago> listaMetodoDePago) {
+		super();
+		this.metodoDePago = metodoDePago;
+		this.listaMetodoDePago = listaMetodoDePago;
 	}
 
-	public MetodoDePago getMetpago() {
-		return metpago;
+	public MetodoDePago getMetodoDePago() {
+		return metodoDePago;
 	}
 
-	public void setMetpago(MetodoDePago metpago) {
-		this.metpago = metpago;
+	public void setMetodoDePago(MetodoDePago metodoDePago) {
+		this.metodoDePago = metodoDePago;
 	}
 
-	public List<MetodoDePago> getListaMetodoDePagos() {
-		return listaMetodoDePagos;
+	public List<MetodoDePago> getListaMetodoDePago() {
+		return listaMetodoDePago;
 	}
 
-	public void setListaMetodoDePagos(List<MetodoDePago> listaMetodoDePagos) {
-		this.listaMetodoDePagos = listaMetodoDePagos;
+	public void setListaMetodoDePago(List<MetodoDePago> listaMetodoDePago) {
+		this.listaMetodoDePago = listaMetodoDePago;
 	}
 
 }

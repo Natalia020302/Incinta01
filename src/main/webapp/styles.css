@@ -1,0 +1,30 @@
+body{
+	background: #F7ECF4;
+}
+btn{
+		color: red;
+}
+
+.boton{
+	 background-color: #9D186F !important;
+	color: white !important;
+	border: 0px !important;
+	height: 50% !important;
+	margin-top: 40px !important;
+	
+}
+.nombre1{
+	width: 100% !important;
+}
+
+.nombre2{
+	width: 100% !important;
+}
+.navbar {
+	
+		background-color: #FFFFFF !important;
+}
+
+#formLogin{
+	margin-top: 40px !important;
+}

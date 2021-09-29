@@ -32,7 +32,7 @@ public class MetodoDePagoDaoImpl implements IMetodoDePagoDao, Serializable{
 	@Override
 	public List<MetodoDePago> listar() {
 		List<MetodoDePago> lista = new ArrayList<MetodoDePago>();
-		Query q =em.createQuery("select metododePago from MetodoDePago metododePago");
+		Query q =em.createQuery("select m from MetodoDePago m");
 		lista =(List<MetodoDePago>) q.getResultList();
 		
 		return lista;
@@ -40,9 +40,9 @@ public class MetodoDePagoDaoImpl implements IMetodoDePagoDao, Serializable{
 
 	@Transactional 
 	@Override
-	public void eliminar(int idMetodoDePago) {
+	public void eliminar(int iDMetodoPago) {
 		MetodoDePago metododePago = new MetodoDePago();
-		metododePago = em.getReference(MetodoDePago.class, metododePago);
+		metododePago = em.getReference(MetodoDePago.class, iDMetodoPago);
 		em.remove(metododePago);
 		
 	}
