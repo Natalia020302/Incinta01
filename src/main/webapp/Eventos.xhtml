@@ -37,7 +37,10 @@
 							style="margin-bottom:0">
 
 
-
+							<p:column headerText="usuario">
+								<h:outputText value="#{evnt.iDGestante.nUsuario}">
+								</h:outputText>
+							</p:column>
 
 
 
@@ -48,7 +51,7 @@
 							</p:column>
 
 
-							<p:column headerText="Titulo" sortBy="#{evnt.titulo}">
+							<p:column headerText="Titulo" >
 								<h:outputText value="#{evnt.titulo}" />
 							</p:column>
 
@@ -58,32 +61,27 @@
 								</h:outputText>
 							</p:column>
 
-							<p:column headerText="H. Inicio" sortBy="#{evnt.hInicio}">
+							<p:column headerText="H. Inicio" >
 								<h:outputText value="#{evnt.hInicio}">
 									<f:convertDateTime pattern="HH:mm a" timeZone="UTC" />
 								</h:outputText>
 							</p:column>
 
-							<p:column headerText="H. Fin" sortBy="#{evnt.hFin}">
+							<p:column headerText="H. Fin" >
 								<h:outputText value="#{evnt.hFin}">
 									<f:convertDateTime pattern="HH:mm aaa" timeZone="UTC" />
 								</h:outputText>
 							</p:column>
 
 
-
-
-
 							<p:column headerText="Acciones" exportable="false">
-								<h:commandLink action="listMotor" value="Eliminar"
-									actionListener="#{motorController.eliminar(mot)}" />
-
-								<br></br>
-
-								<h:commandLink action="listMotor" value="Ver Descripcion"
-									actionListener="#{motorController.eliminar(mot)}" />
+								<h:commandLink action="eventos" value="Eliminar"
+									actionListener="#{eventosController.eliminar(evnt)}" />
 							</p:column>
 
+
+
+							
 
 
 						</p:dataTable>

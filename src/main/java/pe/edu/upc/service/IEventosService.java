@@ -8,4 +8,7 @@ public interface IEventosService {
 	public void insertar(Eventos eventos);
 	public List<Eventos> listar();
 	public void eliminar(int idEventos);
+	
+	//update
+	public int update(Eventos eventos) throws Exception;
 }

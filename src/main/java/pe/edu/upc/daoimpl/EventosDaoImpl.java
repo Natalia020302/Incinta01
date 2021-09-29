@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -42,8 +43,16 @@ public class EventosDaoImpl implements IEventosDao, Serializable{
 	@Override
 	public void eliminar(int idEventos) {
 		Eventos eventos = new Eventos();
-		eventos = em.getReference(Eventos.class, eventos);
+		eventos = em.getReference(Eventos.class, idEventos);
 		em.remove(eventos);
+		
+	}
+	
+	
+	//con int en vez de Long
+	public int update(Eventos eventos) throws Exception{
+		em.merge(eventos);
+		return eventos.getiDEvento();
 		
 	}
 

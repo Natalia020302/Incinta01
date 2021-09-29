@@ -24,6 +24,7 @@
 
 					<div class="form-group box-main-btn">
 						<span style="display: block; height: 30px;"></span>
+
 						<p:commandButton value="Grabar"
 							actionListener="#{eventosController.insertar()}"
 							styleClass="btn btn-primary " update="@form"
@@ -50,21 +51,24 @@
 
 				<div class="row">
 
-cambiando en esta parte con parte xhtml>
 
-					<p:outputLabel for="cboUsuario" value="Usuario" />
-					<p:selectOneMenu id="cboUsuario"
-						value="#{eventosController.eventos.iDGestante}"
-						converter="omnifaces.SelectItemsConverter">
-						<f:selectItems value="#{eventosController.listaUsuarios}" var="d"
-							itemLabel="#{d.usuarioID}" itemValue="#{d}" />
-					</p:selectOneMenu>
+					<h:panelGrid columns="1" cellpadding="3" style="width:100%">
 
 
+						<p:selectOneMenu id="usuario"
+							value="#{eventosController.eventos.iDGestante}" effect="fold"
+							editable="true" converter="omnifaces.SelectItemsConverter">
+							<f:selectItems value="#{eventosController.listaUsuarios}" var="d"
+								itemLabel="#{d.nUsuario}" itemValue="#{d}" />
+						</p:selectOneMenu>
 
-					<p:inputText autocomplete="off" id="iDGestante"
-						styleClass="form-control"
-						value="#{eventosController.eventos.iDGestante}" required="true" />
+
+
+
+					</h:panelGrid>
+
+
+
 
 
 
@@ -103,14 +107,13 @@ cambiando en esta parte con parte xhtml>
 
 
 					<h:panelGrid columns="1" cellpadding="3" style="width:100%">
-						<h:outputLabel for="hInicio" value="H. Inicio"
+						<h:outputLabel for="timeonly" value="H. Inicio"
 							styleClass="control-label" />
 
-
-						<p:calendar columns="2" id="hInicio" pattern="hh:mm aa"
-							value="#{eventosController.eventos.hInicio}" timeZone="UTC"
-							required="true" timeOnly="true">
-						</p:calendar>
+						<p:datePicker id="timeonly"
+							value="#{eventosController.eventos.hInicio}" timeOnly="true"
+							required="true" pattern="hh:mm aa">
+						</p:datePicker>
 					</h:panelGrid>
 
 
@@ -142,7 +145,7 @@ cambiando en esta parte con parte xhtml>
 
 
 
-					<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+					<p:growl id="messages" sticky="true" showDetail="true" life="3000" />
 				</div>
 
 			</div>

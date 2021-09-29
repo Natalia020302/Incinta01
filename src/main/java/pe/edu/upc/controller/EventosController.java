@@ -34,8 +34,8 @@ public class EventosController implements Serializable {
 	private Eventos eventos;
 	private Usuario usuario;
 	
-	//nuevo
-	//private Eventos eventoSelect;
+	
+	private Eventos eventoSelect;
 
 	
 	
@@ -84,6 +84,35 @@ public class EventosController implements Serializable {
 	public void eliminar(Eventos eventos) {
 		rService.eliminar(eventos.getiDEvento());
 		this.listareventos();
+	}
+	
+	//agregando select product y edit evento
+	
+	
+	public void eventoSelect(SelectEvent e) {
+		this.eventoSelect = (Eventos)e.getObject();
+		
+	}
+	
+	
+	
+	public String editEvento() {
+		String view =" ";
+		try {
+			if(this.eventoSelect !=null)
+			{
+				this.eventos = this.eventoSelect;
+				view ="updateEvento";
+			}
+			else {
+				Message.messageError("Debe seleccionar un evento");
+			}
+		}
+		catch (Exception e) {
+			Message.messageError("Error en evento: " + e.getMessage());
+		}
+		return view;
+		
 	}
 	
 	/*	//<--!nuevo!-->
