@@ -23,7 +23,6 @@ public class EventosDaoImpl implements IEventosDao, Serializable{
 	@Transactional
 	@Override
 	public void insertar(Eventos eventos) {
-		// TODO Auto-generated method stub
 		em.persist(eventos);
 	}
 	
@@ -34,7 +33,6 @@ public class EventosDaoImpl implements IEventosDao, Serializable{
 		List<Eventos> lista = new ArrayList<Eventos>();
 		Query q =em.createQuery("select eventos from Eventos eventos");
 		lista =(List<Eventos>) q.getResultList();
-		
 		return lista;
 	}
 
@@ -42,7 +40,7 @@ public class EventosDaoImpl implements IEventosDao, Serializable{
 	@Override
 	public void eliminar(int idEventos) {
 		Eventos eventos = new Eventos();
-		eventos = em.getReference(Eventos.class, eventos);
+		eventos = em.getReference(Eventos.class, idEventos);
 		em.remove(eventos);
 		
 	}

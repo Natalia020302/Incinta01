@@ -47,7 +47,6 @@ public class Eventos implements Serializable{
 
 	public Eventos() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Eventos(int iDEvento, Usuario iDGestante, String titulo, String descripcion, Date fechaEvento,

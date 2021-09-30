@@ -8,11 +8,12 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.transaction.Transactional;
 
 import pe.edu.upc.entity.Unidad;
 import pe.edu.upc.entity.Parametro;
-
 import pe.edu.upc.service.IUnidadService;
+
 import pe.edu.upc.service.IParametroService;
 
 @Named
@@ -23,30 +24,27 @@ public class ParametroController implements Serializable {
 	
 	@Inject
 	private IUnidadService uService;
-	private IParametroService pService;
 	
+	@Inject
+	private IParametroService pService;
 	
 	private Unidad unidad;
 	private Parametro parametro;
-	
+	private Parametro parametroselecionado;
 	
 	List<Unidad> listaUnidades;
 	List<Parametro> listaParametros;
 
-	
 	@PostConstruct
 	public void init() {
 		this.listaUnidades = new ArrayList<Unidad>();
 		this.listaParametros = new ArrayList<Parametro>();
-
-		
 		this.parametro = new Parametro();
+		this.parametroselecionado = new Parametro();
 		this.unidad = new Unidad();
-
 
 		this.listar();
 		this.listarUnidades();
-
 	}
 
 	public String nuevoParametro() {
@@ -57,7 +55,16 @@ public class ParametroController implements Serializable {
 	public void insertar() {
 		pService.insertar(parametro);
 		limpiarParametro();
-		this.listar();
+	}
+	
+	public String Actualizar(Parametro ps) {
+		this.setParametroselecionado(ps);
+		return "parametroUpdate.xhtml";
+	}
+	
+	@Transactional
+	public void Update() {
+		pService.update(this.getParametroselecionado());
 	}
 	
 	public void listar() {
@@ -68,31 +75,15 @@ public class ParametroController implements Serializable {
 		listaUnidades = uService.listar();
 	}
 	
-	
 	public void limpiarParametro() {
 		this.init();
 	}
 	
 	public void eliminar(Parametro parametro) {
 		pService.eliminar(parametro.getiDParametro());
+		this.listar();
 	}
-
-	public IUnidadService getuService() {
-		return uService;
-	}
-
-	public void setuService(IUnidadService uService) {
-		this.uService = uService;
-	}
-
-	public IParametroService getpService() {
-		return pService;
-	}
-
-	public void setpService(IParametroService pService) {
-		this.pService = pService;
-	}
-
+	
 	public Unidad getUnidad() {
 		return unidad;
 	}
@@ -124,6 +115,15 @@ public class ParametroController implements Serializable {
 	public void setListaParametros(List<Parametro> listaParametros) {
 		this.listaParametros = listaParametros;
 	}
+
+	public Parametro getParametroselecionado() {
+		return parametroselecionado;
+	}
+
+	public void setParametroselecionado(Parametro parametroselecionado) {
+		this.parametroselecionado = parametroselecionado;
+	}
+	
 	
 	
 }

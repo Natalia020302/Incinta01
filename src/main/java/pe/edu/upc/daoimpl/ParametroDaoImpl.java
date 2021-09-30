@@ -18,23 +18,24 @@ public class ParametroDaoImpl implements IParametroDao, Serializable{
 	
 	@PersistenceContext(unitName="pu")
 	private EntityManager em;
-
 	
 	@Transactional
 	@Override
 	public void insertar(Parametro parametro) {
-		// TODO Auto-generated method stub
 		em.persist(parametro);
 	}
 	
+	public int update(Parametro parametro) {
+		em.merge(parametro);
+		return parametro.getiDParametro();
+	}
 	
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Parametro> listar() {
 		List<Parametro> lista = new ArrayList<Parametro>();
-		Query q =em.createQuery("select parametro from Parametro parametro");
+		Query q =em.createQuery("select p from Parametro p");
 		lista =(List<Parametro>) q.getResultList();
-		
 		return lista;
 	}
 
@@ -42,7 +43,7 @@ public class ParametroDaoImpl implements IParametroDao, Serializable{
 	@Override
 	public void eliminar(int idParametro) {
 		Parametro parametro = new Parametro();
-		parametro = em.getReference(Parametro.class, parametro);
+		parametro = em.getReference(Parametro.class, idParametro);
 		em.remove(parametro);
 		
 	}

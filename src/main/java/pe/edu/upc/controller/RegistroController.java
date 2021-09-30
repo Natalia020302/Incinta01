@@ -2,6 +2,7 @@ package pe.edu.upc.controller;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -26,7 +27,9 @@ public class RegistroController implements Serializable {
 	
 	@Inject
 	private IRegistroService rService;
+	@Inject
 	private IUsuarioService uService;
+	@Inject
 	private IParametroService pService;
 
 
@@ -34,6 +37,11 @@ public class RegistroController implements Serializable {
 	private Registro registro;
 	private Usuario usuario;
 	private Parametro parametro;
+	
+	private Registro registroseleccionado;
+	
+	private int sup1;
+	private Date sup2;
 	
 	
 	List<Registro> listaRegistros;
@@ -65,9 +73,18 @@ public class RegistroController implements Serializable {
 	}
 	
 	public void insertar() {
+		registro.setUsuarioID(this.filtrar(sup1));
 		rService.insertar(registro);
-		limpiarRegistro();
 		this.listarregistro();
+	}
+	
+	public String Seleccionar(Registro r) {
+		this.setRegistroseleccionado(r);
+		return "registroInfo.xhtml";
+	}
+	
+	public Usuario filtrar(int IDUsuario) {
+		return listaUsuarios.get(IDUsuario);
 	}
 	
 	public void listarregistro() {
@@ -88,6 +105,7 @@ public class RegistroController implements Serializable {
 	
 	public void eliminar(Registro registro) {
 		rService.eliminar(registro.getiDRegistro());
+		this.listarregistro();
 	}
 
 	public IRegistroService getrService() {
@@ -162,5 +180,28 @@ public class RegistroController implements Serializable {
 		this.listaParametros = listaParametros;
 	}
 
+	public Registro getRegistroseleccionado() {
+		return registroseleccionado;
+	}
+
+	public void setRegistroseleccionado(Registro registroseleccionado) {
+		this.registroseleccionado = registroseleccionado;
+	}
+
+	public int getSup1() {
+		return sup1;
+	}
+
+	public void setSup1(int sup1) {
+		this.sup1 = sup1;
+	}
+
+	public Date getSup2() {
+		return sup2;
+	}
+
+	public void setSup2(Date sup2) {
+		this.sup2 = sup2;
+	}
 	
 }

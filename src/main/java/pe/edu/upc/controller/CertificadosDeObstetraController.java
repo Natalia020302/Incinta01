@@ -21,7 +21,8 @@ import pe.edu.upc.service.IObstetraService;
 @RequestScoped
 public class CertificadosDeObstetraController implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+	
+	private static final long serialVersionUID = 5453815704021424175L;
 	
 	@Inject
 	private ICertificadosDeObstetraService uService;

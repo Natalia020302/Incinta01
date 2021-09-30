@@ -19,7 +19,6 @@ public class Parametro implements Serializable{
 
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int iDParametro;
 	
 	
@@ -34,7 +33,6 @@ public class Parametro implements Serializable{
 
 	public Parametro() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 
