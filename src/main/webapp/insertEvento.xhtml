@@ -9,7 +9,7 @@
 
 	<ui:define name="title">
 
-		<h1>Eventos</h1>
+		EVENTOS
 
 	</ui:define>
 
@@ -28,8 +28,7 @@
 						<p:commandButton value="Grabar"
 							actionListener="#{eventosController.insertar()}"
 							styleClass="btn btn-primary " 
-							action="eventos?faces-redirect=true" icon="pi pi-save" />
-
+							action="Eventos?faces-redirect=true" icon="pi pi-save" />
 
 					</div>
 				</div>
@@ -37,13 +36,9 @@
 					<div class="form-group box-main-btn">
 						<span style="display: block; height: 30px;"></span>
 						<p:commandButton value="Cancelar"
-							action="eventos?faces-redirect=true" immediate="true"
+							action="Eventos?faces-redirect=true" immediate="true"
 							styleClass="btn btn-default" ajax="false" icon="pi pi-times" />
-
 					</div>
-
-
-
 
 				</div>
 
@@ -62,18 +57,7 @@
 								itemLabel="#{d.nUsuario}" itemValue="#{d}" />
 						</p:selectOneMenu>
 
-
-
-
 					</h:panelGrid>
-
-
-
-
-
-
-
-
 
 
 					<h:outputLabel for="id" value="Num Evento " styleClass="control-label" />
@@ -92,7 +76,6 @@
 					</h:panelGrid>
 
 
-
 					<h:panelGrid columns="1" cellpadding="3" style="width:100%">
 
 						<h:outputLabel for="fechaEvento" value="Fecha "
@@ -103,7 +86,6 @@
                              showButtonBar="true" mask="true" required="true">
                         </p:datePicker>
 					</h:panelGrid>
-
 
 
 					<h:panelGrid columns="1" cellpadding="3" style="width:100%">
@@ -129,7 +111,6 @@
 						</p:calendar>
 
 					</h:panelGrid>
-
 
 
 					<h:panelGrid columns="1" cellpadding="3" style="width:100%">

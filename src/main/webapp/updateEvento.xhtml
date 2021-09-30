@@ -9,7 +9,7 @@
 
 	<ui:define name="title">
 
-		<h1>Modificar</h1>
+		MODIFICAR EVENTO
 
 	</ui:define>
 
@@ -28,7 +28,7 @@
 						<p:commandButton value="Grabar"
 							actionListener="#{eventosController.updatec()}"
 							styleClass="btn btn-primary " update="@form"
-							action="eventos?faces-redirect=true" icon="pi pi-save" />
+							action="Eventos?faces-redirect=true" icon="pi pi-save" />
 
 
 					</div>
@@ -42,11 +42,7 @@
 
 					</div>
 
-
-
-
 				</div>
-
 
 
 				<div class="row">
@@ -56,23 +52,12 @@
 						value="#{eventosController.eventoSeleccionado.iDEvento}" required="true" />
 				
 				
-				
-				
 				<p:inputText  id="usuario"
 						modifyValueOnWheel="false"
 						value="#{eventosController.eventoSeleccionado.iDGestante}" required="true" />
 						
-						
-						
-					
-						
-						
-						
-
 
 					<h:panelGrid columns="1" cellpadding="3" style="width:100%">
-
-
 
 						<h:outputLabel for="titulo" value="Titulo "
 							styleClass="control-label" />
@@ -81,7 +66,6 @@
 							value="#{eventosController.eventoSeleccionado.titulo}"
 							maxlength="30" required="true" />
 					</h:panelGrid>
-
 
 
 				<h:panelGrid columns="1" cellpadding="3" style="width:100%">
@@ -94,7 +78,6 @@
 							required="true">
 						</p:calendar>
 					</h:panelGrid>
-
 
 
 					<h:panelGrid columns="1" cellpadding="3" style="width:100%">
@@ -132,9 +115,7 @@
 							maxlength="10000" required="false" />
 
 
-
 					</h:panelGrid>
-
 
 
 					<p:growl id="messages" sticky="true" showDetail="true" life="3000" />
