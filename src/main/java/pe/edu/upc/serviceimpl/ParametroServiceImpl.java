@@ -25,7 +25,12 @@ public class ParametroServiceImpl implements IParametroService, Serializable{
 	@Override
 	public void insertar(Parametro parametro) {
 		mD.insertar(parametro);
-		
+	}
+	
+	
+	public int update(Parametro parametro) {
+		mD.update(parametro);
+		return parametro.getiDParametro();
 	}
 
 	@Override

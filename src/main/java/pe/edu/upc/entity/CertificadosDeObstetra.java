@@ -11,7 +11,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.lowagie.text.Image;
 
 @Entity
 @Table(name="modelo")
@@ -39,7 +38,6 @@ public class CertificadosDeObstetra implements Serializable{
 	@Column(name="tdescripcion", nullable=true)
 	private String tdescripcion;
 	
-	private Image imgcertificado;
 	
 	/* SUPER CLASS */
 
@@ -51,13 +49,12 @@ public class CertificadosDeObstetra implements Serializable{
 	/* CONSTRUCTOR */
 
 	public CertificadosDeObstetra(int idcertificadoobstetra, TipoCertificado tipocertificado, Obstetra obstetra,
-			String tdescripcion, Image imgcertificado) {
+			String tdescripcion) {
 		super();
 		this.idcertificadoobstetra = idcertificadoobstetra;
 		this.tipocertificado = tipocertificado;
 		this.obstetra = obstetra;
 		this.tdescripcion = tdescripcion;
-		this.imgcertificado = imgcertificado;
 	}
 	
 	/* GETTERS AND SETTERS */
@@ -94,12 +91,6 @@ public class CertificadosDeObstetra implements Serializable{
 		this.tdescripcion = tdescripcion;
 	}
 
-	public Image getImgcertificado() {
-		return imgcertificado;
-	}
-
-	public void setImgcertificado(Image imgcertificado) {
-		this.imgcertificado = imgcertificado;
-	}
+	
 
 }

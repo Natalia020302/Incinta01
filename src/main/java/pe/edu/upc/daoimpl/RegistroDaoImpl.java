@@ -23,7 +23,6 @@ public class RegistroDaoImpl implements IRegistroDao, Serializable{
 	@Transactional
 	@Override
 	public void insertar(Registro registro) {
-		// TODO Auto-generated method stub
 		em.persist(registro);
 	}
 	
@@ -42,7 +41,7 @@ public class RegistroDaoImpl implements IRegistroDao, Serializable{
 	@Override
 	public void eliminar(int idRegistro) {
 		Registro registro = new Registro();
-		registro = em.getReference(Registro.class, registro);
+		registro = em.getReference(Registro.class, idRegistro);
 		em.remove(registro);
 		
 	}

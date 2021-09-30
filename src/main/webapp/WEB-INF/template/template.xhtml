@@ -13,62 +13,68 @@
 		content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
+	<h:outputStylesheet name="css/template.css" />
+
 	<link rel="stylesheet"
 		href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
 		integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
 		crossorigin="anonymous" />
 
-
 </h:head>
 <h:body>
+	<div class="container">
+		<div class="row">
+
+			<!--left-->
+			<div class="col-md-3 v1" id="leftCol">
+
+				<h:form>
+					<p:menu class="menult">
+						<p:submenu label="Menu">
+						
+							
+								
+							<p:menuitem icon="pi pi-heart" value="ESTADÍSTICAS"
+								url="/Incinta01/listaEstadistica" />
+							
+							<p:menuitem icon="pi pi-heart" value="CALENDARIO"
+								url="/Incinta01/listaEstadistica" />
+								
+							<p:menuitem icon="pi pi-heart" value="SIGNOS VITALES"
+								url="/Incinta01/listaRegistros.xhtml" />
+							
+							<p:menuitem icon="pi pi-heart" value="ANOTACIONES"
+								url="/Incinta01/listaEstadistica" />
+								
+							<p:menuitem icon="pi pi-heart" value="OBSTETRAS"
+								url="/Incinta01/listaEstadistica" />
+							
+							<p:menuitem icon="pi pi-heart" value="PARÁMETROS"
+								url="/Incinta01/listaParametros.xhtml" />
+								
+							
+						</p:submenu>
+					</p:menu>
+				</h:form>
+
+			</div>
+			<!--/left-->
+
+			<!--right-->
+			<div class="col-md-9 contvt">
+				<h2 id="sec0" class="title-style">
+					<ui:insert name="titleCont"></ui:insert>
+				</h2>
+				<!-- seccion para el contenido -->
+				<ui:insert name="contenido">
+				</ui:insert>
+			</div>
+			<!--/right-->
 
 
-		<div class="d-flex" id="wrapper">
-            <!-- Sidebar-->
-            <div class="border-end bg-white" id="sidebar-wrapper">
-                <div class="list-group list-group-flush">
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="inicio.xhtml">Inicio</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="vista.xhtml">Vista</a>
+		</div>
 
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="Eventos.xhtml">Overview</a>
-
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="signosvitales.xhtml">Signos Vitales</a>
-
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
-                </div>
-            </div>
-            <!-- Page content wrapper-->
-            <div id="page-content-wrapper">
-                <!-- Top navigation-->
-                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-                    <div class="container-fluid">
-                      <ui:insert name="title">
-                      </ui:insert>
-                    </div>
-                </nav>
-                <!-- Page content-->
-                <div class="container-fluid">
-                	<!-- Form -->
-                    
-					<ui:insert name="contenido">
-					
-					<!-- Content -->
-					
-					
-					
-					
-					</ui:insert>
-
-                    <!-- Form -->
-                </div>
-            </div>
-        </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+	</div>
 
 
 </h:body>

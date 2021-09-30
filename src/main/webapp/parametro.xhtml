@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<ui:composition lang="es" class="no-js"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/template/template.xhtml">
+
+
+	<ui:define name="titleCont">	REGISTRAR PARÁMETRO	</ui:define>
+
+
+	<ui:define name="contenido">
+
+		<h:form id="form">
+
+			<p:panel header="ID PARÁMETRO:">
+				<h:outputLabel for="idParametro" styleClass="control-label" />
+				<p:inputText autocomplete="off" id="idParametro"
+					styleClass="form-control"
+					value="#{parametroController.parametro.iDParametro}" maxlength="30"
+					required="true" />
+			</p:panel>
+
+			<p:panel header="NOMBRE PARÁMETRO:">
+				<h:outputLabel for="nombreParametro" styleClass="control-label" />
+				<p:inputText autocomplete="off" id="nombreParametro"
+					styleClass="form-control"
+					value="#{parametroController.parametro.nParametro}" maxlength="30"
+					required="true" />
+			</p:panel>
+
+			<p:panel header="UNIDAD:">
+				<p:outputLabel for="cbxUnidad" />
+				<p:selectOneMenu id="cbxUnidad"
+					value="#{parametroController.parametro.iDUnidad}" editable="true"
+					converter="omnifaces.SelectItemsConverter">
+					<f:selectItem itemValue="#{null}" itemLabel="--select--" />
+					<f:selectItems value="#{parametroController.listaUnidades}" var="d"
+						itemLabel="#{d.nUnidad}" itemValue="#{d}" />
+				</p:selectOneMenu>
+			</p:panel>
+			
+			<br/> <br/>
+
+			<div class="row">
+				<div class="col-sm-4 text-right">
+					<div class="form-group box-main-btn">
+						<p:commandButton value="Grabar"
+							actionListener="#{parametroController.insertar()}"
+							styleClass="btn btn-primary " update="@form"
+							action="listaParametros?faces-redirect=true" />
+					</div>
+				</div>
+				<div class="col-sm-4 text-right">
+					<div class="form-group box-main-btn"></div>
+				</div>
+				<div class="col-sm-4 text-left">
+					<div class="form-group box-main-btn">
+						<p:commandButton value="Cancelar"
+							action="listaParametros?faces-redirect=true" immediate="true"
+							styleClass="btn btn-default" ajax="false" />
+					</div>
+				</div>
+			</div>
+
+
+			<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+
+		</h:form>
+
+
+
+
+	</ui:define>
+
+</ui:composition>

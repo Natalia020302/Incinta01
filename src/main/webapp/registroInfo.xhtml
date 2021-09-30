@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<ui:composition lang="es" class="no-js"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/template/template.xhtml">
+
+
+	<ui:define name="titleCont">	REGISTRO DETALLADO	</ui:define>
+
+
+	<ui:define name="contenido">
+
+		<h:form id="form">
+
+			<p:panel header="Parámetro:">
+				<h:outputText value="#{registroController.registroseleccionado.iDParametro.nParametro}" /> - 
+				<h:outputText value="#{registroController.registroseleccionado.iDParametro.iDUnidad.nUnidad}" />
+			</p:panel>
+			<p:panel header="Valor:">
+				<h:outputText value="#{registroController.registroseleccionado.numValor}" />
+			</p:panel>
+			<p:panel header="Fecha:">
+				<h:outputText value="#{registroController.registroseleccionado.fechaFicha}">
+				<f:convertDateTime pattern="dd.MM.yyyy" />
+				</h:outputText>
+			</p:panel>
+			<p:panel header="Comentario:">
+				<h:outputText value="#{registroController.registroseleccionado.tAnotaciones}" />
+			</p:panel>
+			
+			<br/>
+
+			<p:commandButton value="Cancelar"
+				action="listaRegistros?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false" />
+
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<ui:composition lang="es" class="no-js"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/template/template.xhtml">
+
+
+	<ui:define name="titleCont">	Lista de Parámetros	</ui:define>
+
+
+	<ui:define name="contenido">
+
+		<h:form id="form">
+			<div class="card crud-demo">
+				<p:growl id="messages" showDetail="true" />
+
+				<div class="row">
+					<div class="col-sm-8 text-right">
+						<div class="form-group box-main-btn">
+							<span style="display: block; height: 30px;"></span>
+							<p:commandButton value="Nuevo"
+								action="#{parametroController.nuevoParametro()}"
+								styleClass="ui-button-success" />
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="form-group table-responsive box-table-class">
+							<p:dataTable id="lstParametros" var="parametro"
+								value="#{parametroController.listaParametros}" paginator="true"
+								paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
+								rows="10" styleClass="table table-bordered"
+								emptyMessage="No existen registros" rowIndexVar="item"
+								style="margin-bottom:0">
+
+								<p:column headerText="Id" sortBy="#{parametro.iDParametro}">
+									<h:outputText value="#{parametro.iDParametro}" />
+								</p:column>
+
+								<p:column headerText="Nombre Parametro"
+									sortBy="#{parametro.nParametro}">
+									<h:outputText value="#{parametro.nParametro}" />
+								</p:column>
+
+								<p:column headerText="Unidad" sortBy="#{parametro.iDUnidad}">
+									<h:outputText value="#{parametro.iDUnidad.nUnidad}" />
+								</p:column>
+
+								<p:column exportable="false">
+									<p:commandButton icon="pi pi-trash"
+										styleClass="ui-button-warning rounded-button ui-button-success"
+										process="@this"
+										actionListener="#{parametroController.eliminar(parametro)}"
+										update="@form">
+									</p:commandButton>
+
+								</p:column>
+
+								<p:column exportable="false">
+									<p:commandButton value="Editar" action="#{parametroController.Actualizar(parametro)}"
+										styleClass="ui-button-success" update="@form">
+										
+									</p:commandButton>
+								</p:column>
+								
+
+							</p:dataTable>
+						</div>
+					</div>
+				</div>
+			</div>
+		</h:form>
+
+
+	</ui:define>
+
+</ui:composition>

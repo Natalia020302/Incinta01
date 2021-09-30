@@ -74,6 +74,7 @@ public class EventosController implements Serializable {
 	
 	public void eliminar(Eventos eventos) {
 		rService.eliminar(eventos.getiDEvento());
+		this.listareventos();
 	}
 
 	public IEventosService getrService() {
