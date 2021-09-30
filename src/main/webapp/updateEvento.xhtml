@@ -9,7 +9,7 @@
 
 	<ui:define name="title">
 
-		<h1>Eventos</h1>
+		<h1>Modificar</h1>
 
 	</ui:define>
 
@@ -26,7 +26,7 @@
 						<span style="display: block; height: 30px;"></span>
 
 						<p:commandButton value="Grabar"
-							actionListener="#{eventosController.insertar()}"
+							actionListener="#{eventosController.updatec()}"
 							styleClass="btn btn-primary " update="@form"
 							action="eventos?faces-redirect=true" icon="pi pi-save" />
 
@@ -50,27 +50,47 @@
 
 
 				<div class="row">
+				
+				<p:inputText autocomplete="off" id="iDEvento"
+						styleClass="form-control" editable="true"
+						value="#{eventosController.eventoSeleccionado.iDEvento}" required="true" />
+				
+				
+				
+				
+				<p:inputText  id="usuario"
+						modifyValueOnWheel="false"
+						value="#{eventosController.eventoSeleccionado.iDGestante}" required="true" />
+						
+						
+						
+					
+						
+						
+						
 
 
 					<h:panelGrid columns="1" cellpadding="3" style="width:100%">
+
+
 
 						<h:outputLabel for="titulo" value="Titulo "
 							styleClass="control-label" />
 						<p:inputText autocomplete="off" id="titulo"
 							styleClass="form-control"
-							value="#{eventosController.eventos.titulo}" maxlength="30"
-							required="true" />
+							value="#{eventosController.eventoSeleccionado.titulo}"
+							maxlength="30" required="true" />
 					</h:panelGrid>
 
 
 
-					<h:panelGrid columns="1" cellpadding="3" style="width:100%">
+				<h:panelGrid columns="1" cellpadding="3" style="width:100%">
 
 						<h:outputLabel for="fechaEvento" value="Fecha "
 							styleClass="control-label" />
 
 						<p:calendar id="fechaEvento" pattern="dd/MM/yyyy"
-							value="#{eventosController.eventos.fechaEvento}" timeZone="UTC"
+							value="#{eventosController.eventoSeleccionado.fechaEvento}" timeZone="GMT-5"
 							required="true">
 						</p:calendar>
 					</h:panelGrid>
@@ -78,13 +98,14 @@
 
 
 					<h:panelGrid columns="1" cellpadding="3" style="width:100%">
-						<h:outputLabel for="timeonly" value="H. Inicio"
+						<h:outputLabel for="hInicio" value="H. Inicio"
 							styleClass="control-label" />
 
-						<p:datePicker id="timeonly"
-							value="#{eventosController.eventos.hInicio}" timeOnly="true"
-							required="true" pattern="hh:mm aa">
-						</p:datePicker>
+
+						<p:calendar columns="2" id="hInicio" pattern="hh:mm aa"
+							value="#{eventosController.eventoSeleccionado.hInicio}" timeZone="GMT-5"
+							required="true" timeOnly="true">
+						</p:calendar>
 					</h:panelGrid>
 
 
@@ -94,7 +115,7 @@
 
 
 						<p:calendar columns="2" id="hFin" pattern="hh:mm aa"
-							value="#{eventosController.eventos.hFin}" timeZone="UTC"
+							value="#{eventosController.eventoSeleccionado.hFin}" timeZone="GMT-5"
 							required="true" timeOnly="true">
 						</p:calendar>
 
@@ -107,8 +128,8 @@
 							styleClass="control-label" />
 						<p:inputText autocomplete="off" id="descripcion"
 							styleClass="form-control"
-							value="#{eventosController.eventos.descripcion}"
-							maxlength="10000" required="true" />
+							value="#{eventosController.eventoSeleccionado.descripcion}"
+							maxlength="10000" required="false" />
 
 
 

@@ -13,6 +13,6 @@ public interface IEventosDao {
 	
 	public void eliminar(int idEventos);
 	
-	public int update(Eventos evento) throws Exception;
+	public int update(Eventos eventos);
 
 }

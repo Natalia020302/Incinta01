@@ -42,7 +42,7 @@ public class UsuarioDaoImpl implements IUsuarioDao, Serializable{
 	@Override
 	public void eliminar(int idUsuario) {
 		Usuario usuario = new Usuario();
-		usuario = em.getReference(Usuario.class, usuario);
+		usuario = em.getReference(Usuario.class, idUsuario);
 		em.remove(usuario);
 		
 	}

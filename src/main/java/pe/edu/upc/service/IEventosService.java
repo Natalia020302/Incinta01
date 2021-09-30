@@ -10,5 +10,5 @@ public interface IEventosService {
 	public void eliminar(int idEventos);
 	
 	//update
-	public int update(Eventos eventos) throws Exception;
+	public int update(Eventos eventos);
 }

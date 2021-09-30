@@ -38,8 +38,13 @@ public class EventosServiceImpl implements IEventosService, Serializable{
 		mD.eliminar(idEventos);
 	}
 	
-	public int update(Eventos eventos) throws Exception {
-		return mD.update(eventos);
+	
+	
+	
+	public int update(Eventos eventos) {
+		mD.update(eventos);
+		return eventos.getiDEvento();
+
 	}
 	
 

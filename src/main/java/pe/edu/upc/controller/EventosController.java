@@ -8,8 +8,9 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.transaction.Transactional;
 
-import org.primefaces.event.SelectEvent;
+
 
 import pe.edu.upc.entity.Eventos;
 import pe.edu.upc.entity.Usuario;
@@ -35,7 +36,7 @@ public class EventosController implements Serializable {
 	private Usuario usuario;
 	
 	
-	private Eventos eventoSelect;
+	private Eventos eventoSeleccionado;
 
 	
 	
@@ -51,6 +52,7 @@ public class EventosController implements Serializable {
 		
 		this.eventos = new Eventos();
 		this.usuario = new Usuario();
+		this.eventoSeleccionado = new Eventos();
 
 		this.listareventos();
 		this.listarusuario();
@@ -62,11 +64,31 @@ public class EventosController implements Serializable {
 		return "insertEvento.xhtml";
 	}
 	
+	
+	
+	
+	
+	
 	public void insertar() {
 		rService.insertar(eventos);
 		limpiarEventos();
-		this.listareventos();
 	}
+	
+	
+	public String Atrapar(Eventos eventos) {
+		this.setEventoSeleccionado(eventos);
+		return "updateEvento.xhtml";
+	}
+	
+	@Transactional
+	public void updatec(){
+		rService.update(this.getEventoSeleccionado());
+	}
+	
+	
+	
+	
+	
 	
 	public void listareventos() {
 		listaEventos = rService.listar();
@@ -86,113 +108,10 @@ public class EventosController implements Serializable {
 		this.listareventos();
 	}
 	
-	//agregando select product y edit evento
-	
-	
-	public void eventoSelect(SelectEvent e) {
-		this.eventoSelect = (Eventos)e.getObject();
-		
-	}
 	
 	
 	
-	public String editEvento() {
-		String view =" ";
-		try {
-			if(this.eventoSelect !=null)
-			{
-				this.eventos = this.eventoSelect;
-				view ="updateEvento";
-			}
-			else {
-				Message.messageError("Debe seleccionar un evento");
-			}
-		}
-		catch (Exception e) {
-			Message.messageError("Error en evento: " + e.getMessage());
-		}
-		return view;
-		
-	}
 	
-	/*	//<--!nuevo!-->
-	
-	public void eventoSelect(SelectEvent e) {
-		this.eventoSelect = (Eventos)e.getObject();
-	}
-	
-
-	
-	public String editEvento() {
-		String view = "";
-		try 
-		{
-			if (this.eventoSelect != null) 
-			{
-				this.eventos = eventoSelect;
-				view = "/updateEvento";
-			}
-			else 
-			{
-				Message.messageError("Debe Seleccionar un producto");
-			}
-		} 
-		catch (Exception e) {
-			Message.messageError("Error  en producto: " + e.getMessage());
-		}
-		return view;
-	}
-	
-	public String deleteEvento() {
-		String view = "";
-		try {
-			this.eventos = eventoSelect;
-			productService.delete(this.eventos);
-			Message.messageInfo("Registro Eliminado Correctamente");
-			this.getAllEventos();
-			view = "/product/list";
-		} catch (Exception e) {
-			Message.messageError("Error en producto " + e.getMessage());
-		}
-		return view;
-	}
-	
-	public void searchEventoByName() {
-		try {
-			products = productService.findByName(this.filterName.trim());
-			resetForm();
-			if (products.isEmpty()) {
-				Message.messageInfo("No se encontraron productos");
-			}
-		} catch (Exception e) {
-			Message.messageError("Error en producto " + e.getMessage());
-		}
-	}
-	
-	public void productSelect(SelectEvent e) {
-		this.productSelect = (Evento)e.getObject();
-	}
-	
-	//nuevo*/
-	
-	
-	
-
-	public IEventosService getrService() {
-		return rService;
-	}
-
-	public void setrService(IEventosService rService) {
-		this.rService = rService;
-	}
-
-	public IUsuarioService getuService() {
-		return uService;
-	}
-
-	public void setuService(IUsuarioService uService) {
-		this.uService = uService;
-	}
 
 	public Eventos getEventos() {
 		return eventos;
@@ -210,6 +129,14 @@ public class EventosController implements Serializable {
 		this.usuario = usuario;
 	}
 
+	public Eventos getEventoSeleccionado() {
+		return eventoSeleccionado;
+	}
+
+	public void setEventoSeleccionado(Eventos eventoSeleccionado) {
+		this.eventoSeleccionado = eventoSeleccionado;
+	}
+
 	public List<Eventos> getListaEventos() {
 		return listaEventos;
 	}
@@ -225,6 +152,23 @@ public class EventosController implements Serializable {
 	public void setListaUsuarios(List<Usuario> listaUsuarios) {
 		this.listaUsuarios = listaUsuarios;
 	}
+
+	
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+
+
 	
 	
 }

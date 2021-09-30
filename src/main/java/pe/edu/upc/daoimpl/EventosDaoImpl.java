@@ -49,8 +49,8 @@ public class EventosDaoImpl implements IEventosDao, Serializable{
 	}
 	
 	
-	//con int en vez de Long
-	public int update(Eventos eventos) throws Exception{
+	@Override
+	public int update(Eventos eventos){
 		em.merge(eventos);
 		return eventos.getiDEvento();
 		

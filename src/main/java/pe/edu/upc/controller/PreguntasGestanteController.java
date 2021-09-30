@@ -49,7 +49,7 @@ public class PreguntasGestanteController implements Serializable {
 
 	public String nuevoPreguntasGestante() {
 		this.setPreguntasGestante(new PreguntasGestante());
-		return "PreguntasGestante.xhtml";
+		return "insertPregunta.xhtml";
 	}
 	
 	public void insertar() {
