@@ -8,6 +8,9 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.transaction.Transactional;
+
+
 
 import pe.edu.upc.entity.Eventos;
 import pe.edu.upc.entity.Usuario;
@@ -15,6 +18,7 @@ import pe.edu.upc.entity.Usuario;
 
 import pe.edu.upc.service.IEventosService;
 import pe.edu.upc.service.IUsuarioService;
+import pe.edu.upc.util.Message;
 
 @Named
 @RequestScoped
@@ -24,11 +28,16 @@ public class EventosController implements Serializable {
 	
 	@Inject
 	private IEventosService rService;
+	
 	@Inject
 	private IUsuarioService uService;
 
 	private Eventos eventos;
 	private Usuario usuario;
+	
+	
+	private Eventos eventoSeleccionado;
+
 	
 	
 	List<Eventos> listaEventos;
@@ -43,6 +52,7 @@ public class EventosController implements Serializable {
 		
 		this.eventos = new Eventos();
 		this.usuario = new Usuario();
+		this.eventoSeleccionado = new Eventos();
 
 		this.listareventos();
 		this.listarusuario();
@@ -51,14 +61,34 @@ public class EventosController implements Serializable {
 
 	public String nuevoEventos() {
 		this.setEventos(new Eventos());
-		return "eventos.xhtml";
+		return "insertEvento.xhtml";
 	}
+	
+	
+	
+	
+	
 	
 	public void insertar() {
 		rService.insertar(eventos);
 		limpiarEventos();
-		this.listareventos();
 	}
+	
+	
+	public String Atrapar(Eventos eventos) {
+		this.setEventoSeleccionado(eventos);
+		return "updateEvento.xhtml";
+	}
+	
+	@Transactional
+	public void updatec(){
+		rService.update(this.getEventoSeleccionado());
+	}
+	
+	
+	
+	
+	
 	
 	public void listareventos() {
 		listaEventos = rService.listar();
@@ -77,22 +107,11 @@ public class EventosController implements Serializable {
 		rService.eliminar(eventos.getiDEvento());
 		this.listareventos();
 	}
-
-	public IEventosService getrService() {
-		return rService;
-	}
-
-	public void setrService(IEventosService rService) {
-		this.rService = rService;
-	}
-
-	public IUsuarioService getuService() {
-		return uService;
-	}
-
-	public void setuService(IUsuarioService uService) {
-		this.uService = uService;
-	}
+	
+	
+	
+	
+	
 
 	public Eventos getEventos() {
 		return eventos;
@@ -110,6 +129,14 @@ public class EventosController implements Serializable {
 		this.usuario = usuario;
 	}
 
+	public Eventos getEventoSeleccionado() {
+		return eventoSeleccionado;
+	}
+
+	public void setEventoSeleccionado(Eventos eventoSeleccionado) {
+		this.eventoSeleccionado = eventoSeleccionado;
+	}
+
 	public List<Eventos> getListaEventos() {
 		return listaEventos;
 	}
@@ -125,6 +152,23 @@ public class EventosController implements Serializable {
 	public void setListaUsuarios(List<Usuario> listaUsuarios) {
 		this.listaUsuarios = listaUsuarios;
 	}
+
+	
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+
+
 	
 	
 }

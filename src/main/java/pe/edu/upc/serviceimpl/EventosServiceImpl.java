@@ -39,5 +39,13 @@ public class EventosServiceImpl implements IEventosService, Serializable{
 	}
 	
 	
+	
+	
+	public int update(Eventos eventos) {
+		mD.update(eventos);
+		return eventos.getiDEvento();
+
+	}
+	
 
 }
