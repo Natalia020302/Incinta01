@@ -21,7 +21,9 @@ public class MetodoDePagoController implements Serializable {
 	
 	@Inject
 	private IMetodoDePagoService uService;
+	
 	private MetodoDePago metpago;
+	
 	List<MetodoDePago> listaMetodoDePagos;
 
 	

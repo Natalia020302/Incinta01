@@ -42,7 +42,7 @@ public class CertificadosDeObstetraDaoImpl implements ICertificadosDeObstetraDao
 	@Override
 	public void eliminar(int idCertificadosDeObstetra) {
 		CertificadosDeObstetra cdo = new CertificadosDeObstetra();
-		cdo = em.getReference(CertificadosDeObstetra.class, cdo);
+		cdo = em.getReference(CertificadosDeObstetra.class, idCertificadosDeObstetra);
 		em.remove(cdo);
 		
 	}

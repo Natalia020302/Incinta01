@@ -42,7 +42,7 @@ public class PeriodoGestacionDaoImpl implements IPeriodoGestacionDao, Serializab
 	@Override
 	public void eliminar(int idPeriodoGestacion) {
 		PeriodoGestacion periodoGestacion = new PeriodoGestacion();
-		periodoGestacion = em.getReference(PeriodoGestacion.class, periodoGestacion);
+		periodoGestacion = em.getReference(PeriodoGestacion.class, idPeriodoGestacion);
 		em.remove(periodoGestacion);
 		
 	}

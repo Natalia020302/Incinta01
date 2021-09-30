@@ -42,7 +42,7 @@ public class HorarioCitasObstetrasDaoImpl implements IHorarioCitasObstetrasDao, 
 	@Override
 	public void eliminar(int idHorarioCitasObstetras) {
 		HorarioCitasObstetras hco = new HorarioCitasObstetras();
-		hco = em.getReference(HorarioCitasObstetras.class, hco);
+		hco = em.getReference(HorarioCitasObstetras.class, idHorarioCitasObstetras);
 		em.remove(hco);
 		
 	}

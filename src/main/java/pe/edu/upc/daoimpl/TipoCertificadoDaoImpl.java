@@ -42,7 +42,7 @@ public class TipoCertificadoDaoImpl implements ITipoCertificadoDao, Serializable
 	@Override
 	public void eliminar(int idTipoCertificado) {
 		TipoCertificado tc = new TipoCertificado();
-		tc = em.getReference(TipoCertificado.class, tc);
+		tc = em.getReference(TipoCertificado.class, idTipoCertificado);
 		em.remove(tc);
 		
 	}

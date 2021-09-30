@@ -42,7 +42,7 @@ public class ObstetraDaoImpl implements IObstetraDao, Serializable{
 	@Override
 	public void eliminar(int idObstetra) {
 		Obstetra obs = new Obstetra();
-		obs = em.getReference(Obstetra.class, obs);
+		obs = em.getReference(Obstetra.class, idObstetra);
 		em.remove(obs);
 		
 	}

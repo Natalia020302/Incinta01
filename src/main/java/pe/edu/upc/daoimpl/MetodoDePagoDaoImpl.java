@@ -42,7 +42,7 @@ public class MetodoDePagoDaoImpl implements IMetodoDePagoDao, Serializable{
 	@Override
 	public void eliminar(int idMetodoDePago) {
 		MetodoDePago metododePago = new MetodoDePago();
-		metododePago = em.getReference(MetodoDePago.class, metododePago);
+		metododePago = em.getReference(MetodoDePago.class, idMetodoDePago);
 		em.remove(metododePago);
 		
 	}

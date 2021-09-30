@@ -42,7 +42,7 @@ public class ObstetraSuscripcionDaoImpl implements IObstetraSuscripcionDao, Seri
 	@Override
 	public void eliminar(int idObstetraSuscripcion) {
 		ObstetraSuscripcion os = new ObstetraSuscripcion();
-		os = em.getReference(ObstetraSuscripcion.class, os);
+		os = em.getReference(ObstetraSuscripcion.class, idObstetraSuscripcion);
 		em.remove(os);
 		
 	}

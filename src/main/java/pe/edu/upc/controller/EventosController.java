@@ -24,6 +24,7 @@ public class EventosController implements Serializable {
 	
 	@Inject
 	private IEventosService rService;
+	@Inject
 	private IUsuarioService uService;
 
 	private Eventos eventos;

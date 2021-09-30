@@ -42,7 +42,7 @@ public class UnidadDaoImpl implements IUnidadDao, Serializable{
 	@Override
 	public void eliminar(int idUnidad) {
 		Unidad unidad = new Unidad();
-		unidad = em.getReference(Unidad.class, unidad);
+		unidad = em.getReference(Unidad.class, idUnidad);
 		em.remove(unidad);
 		
 	}
