@@ -19,6 +19,7 @@ public class Parametro implements Serializable{
 
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int iDParametro;
 	
 	

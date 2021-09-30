@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<ui:composition lang="es" class="no-js"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/template/template.xhtml">
+
+	<ui:define name="title">
+
+		ANOTACIONES
+
+	</ui:define>
+
+	<ui:define name="contenido">
+		<h:form>
+
+
+			<div class="row">
+				<div class="col-sm-12">
+
+					<div class="form-group box-main-btn">
+						<span style="display: block; height: 30px;"></span>
+						<p:commandButton value="Nuevo"
+							action="#{preguntasGestanteController.nuevoPreguntasGestante()}"
+							styleClass="btn btn-primary ajax=false" />
+					</div>
+
+
+					<div class="form-group table-responsive box-table-class">
+						<p:dataTable id="lstEvento" var="pre"
+							value="#{preguntasGestanteController.listaPreguntasGestante}" paginator="true"
+							paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
+							rows="10" styleClass="table table-bordered"
+							emptyMessage="No hay anotaciones o preguntas registradas" rowIndexVar="item"
+							style="margin-bottom:0" 
+							
+							
+							
+							>
+
+
+					
+
+							<p:column headerText="usuario">
+								<h:outputText value="#{pre.usuario.nUsuario}">
+								</h:outputText>
+							</p:column>
+
+
+
+
+							<p:column headerText="Num" sortBy="#{pre.idPregunta}">
+								<h:outputText value="#{pre.idPregunta}" />
+
+							</p:column>
+
+
+							<p:column headerText="Titulo">
+								<h:outputText value="#{pre.nTitulo}" />
+							</p:column>
+
+							<p:column headerText="Fecha" sortBy="#{pre.fecha}">
+								<h:outputText value="#{pre.fecha}">
+									<f:convertDateTime pattern="dd-MM-yyyy" timeZone="GMT-5" />
+								</h:outputText>
+							</p:column>
+
+							<p:column headerText="Anotacion">
+								<h:outputText value="#{pre.tPregunta}" />
+							</p:column>
+
+
+							<p:column headerText="Delete" exportable="false">
+								<h:commandLink action="listPreguntas" value="X"
+									actionListener="#{preguntasGestanteController.eliminar(pre)}" />
+
+						
+									
+					
+									
+
+							</p:column>
+
+
+
+
+
+
+						</p:dataTable>
+					</div>
+				</div>
+			</div>
+		</h:form>
+
+
+
+
+
+	</ui:define>
+
+</ui:composition>

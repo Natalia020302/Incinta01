@@ -60,6 +60,7 @@ public class RegistroController implements Serializable {
 		this.registro = new Registro();
 		this.parametro = new Parametro();
 		this.usuario = new Usuario();
+		this.registroseleccionado = new Registro();
 
 		this.listarregistro();
 		this.listarparametro();

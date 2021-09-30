@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<ui:composition lang="es" class="no-js"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/template/template.xhtml">
+
+	<ui:define name="title">
+
+		<h1>Anotacion</h1>
+
+	</ui:define>
+
+	<ui:define name="contenido">
+
+
+		<h:form>
+			<p:growl id="men" />
+
+			<div class="row">
+				<div class="col-sm-6">
+
+					<div class="form-group box-main-btn">
+						<span style="display: block; height: 30px;"></span>
+
+						<p:commandButton value="Grabar"
+							actionListener="#{preguntasGestanteController.insertar()}"
+							styleClass="btn btn-primary ajax=false"
+							action="listPreguntas?faces-redirect=true" icon="pi pi-save" />
+
+
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="form-group box-main-btn">
+						<span style="display: block; height: 30px;"></span>
+						<p:commandButton value="Cancelar"
+							action="listPreguntas?faces-redirect=true" immediate="true"
+							styleClass="btn btn-default" ajax="false" icon="pi pi-times" />
+
+					</div>
+
+
+
+
+				</div>
+
+
+
+				<div class="row">
+
+
+					<h:panelGrid columns="1" cellpadding="3" style="width:100%">
+
+						<p:selectOneMenu id="usuario"
+							value="#{preguntasGestanteController.preguntasGestante.usuario}" effect="fold"
+							editable="true" converter="omnifaces.SelectItemsConverter">
+							<f:selectItems value="#{preguntasGestanteController.listaUsuario}" var="d"
+								itemLabel="#{d.nUsuario}" itemValue="#{d}" />
+						</p:selectOneMenu>
+
+					</h:panelGrid>
+
+
+
+					<h:outputLabel for="id" value="Id " styleClass="control-label" />
+					<p:inputText autocomplete="off" id="iDPregunta"
+						styleClass="form-control"
+						value="#{preguntasGestanteController.preguntasGestante.idPregunta}" required="true" />
+
+					
+					
+					<h:panelGrid columns="1" cellpadding="3" style="width:100%">
+						<h:outputLabel for="titulo" value="Titulo "
+							styleClass="control-label" />
+						<p:inputText autocomplete="off" id="titulo"
+							styleClass="form-control"
+							value="#{preguntasGestanteController.preguntasGestante.nTitulo}" maxlength="30"
+							required="true" />
+					</h:panelGrid>
+
+
+
+					<h:panelGrid columns="1" cellpadding="3" style="width:100%">
+
+						<h:outputLabel for="fecha" value="Fecha "
+							styleClass="control-label" />
+
+						<p:datePicker id="fecha" pattern="dd/MM/yyyy"
+							value="#{preguntasGestanteController.preguntasGestante.fecha}" timeZone="GMT-5"
+							 showButtonBar="true" mask="true" required="true">
+						</p:datePicker>
+					</h:panelGrid>
+
+
+
+					
+
+
+					<h:panelGrid columns="1" cellpadding="3" style="width:100%">
+						<h:outputLabel for="anotacion" value="Anotacion "
+							styleClass="control-label" />
+						<p:inputText autocomplete="off" id="anotacion"
+							styleClass="form-control"
+							value="#{preguntasGestanteController.preguntasGestante.tPregunta}"
+							maxlength="10000" required="false" />
+
+
+
+					</h:panelGrid>
+
+
+
+					<p:growl id="messages" sticky="true" showDetail="true" life="3000" />
+				</div>
+
+			</div>
+
+		</h:form>
+
+
+
+
+
+
+
+	</ui:define>
+
+</ui:composition>

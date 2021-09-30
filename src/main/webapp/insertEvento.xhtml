@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<ui:composition lang="es" class="no-js"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/template/template.xhtml">
+
+	<ui:define name="title">
+
+		EVENTOS
+
+	</ui:define>
+
+	<ui:define name="contenido">
+
+
+		<h:form>
+			<p:growl id="men" />
+
+			<div class="row">
+				<div class="col-sm-6">
+
+					<div class="form-group box-main-btn">
+						<span style="display: block; height: 30px;"></span>
+
+						<p:commandButton value="Grabar"
+							actionListener="#{eventosController.insertar()}"
+							styleClass="btn btn-primary " 
+							action="Eventos?faces-redirect=true" icon="pi pi-save" />
+
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="form-group box-main-btn">
+						<span style="display: block; height: 30px;"></span>
+						<p:commandButton value="Cancelar"
+							action="Eventos?faces-redirect=true" immediate="true"
+							styleClass="btn btn-default" ajax="false" icon="pi pi-times" />
+					</div>
+
+				</div>
+
+
+
+				<div class="row">
+
+
+					<h:panelGrid columns="1" cellpadding="3" style="width:100%">
+
+
+						<p:selectOneMenu id="usuario"
+							value="#{eventosController.eventos.iDGestante}" effect="fold"
+							editable="true" converter="omnifaces.SelectItemsConverter">
+							<f:selectItems value="#{eventosController.listaUsuarios}" var="d"
+								itemLabel="#{d.nUsuario}" itemValue="#{d}" />
+						</p:selectOneMenu>
+
+					</h:panelGrid>
+
+
+					<h:outputLabel for="id" value="Num Evento " styleClass="control-label" />
+					<p:inputText autocomplete="off" id="iDEvento"
+						styleClass="form-control"
+						value="#{eventosController.eventos.iDEvento}" required="true" />
+
+					<h:panelGrid columns="1" cellpadding="3" style="width:100%">
+
+						<h:outputLabel for="titulo" value="Titulo "
+							styleClass="control-label" />
+						<p:inputText autocomplete="off" id="titulo"
+							styleClass="form-control"
+							value="#{eventosController.eventos.titulo}" maxlength="30"
+							required="true" />
+					</h:panelGrid>
+
+
+					<h:panelGrid columns="1" cellpadding="3" style="width:100%">
+
+						<h:outputLabel for="fechaEvento" value="Fecha "
+							styleClass="control-label" />
+						
+						<p:datePicker id="fechaEvento" pattern="dd/MM/yyyy"
+                            value="#{eventosController.eventos.fechaEvento}" timeZone="GMT-5"
+                             showButtonBar="true" mask="true" required="true">
+                        </p:datePicker>
+					</h:panelGrid>
+
+
+					<h:panelGrid columns="1" cellpadding="3" style="width:100%">
+						<h:outputLabel for="hInicio" value="H. Inicio"
+							styleClass="control-label" />
+
+
+						<p:calendar columns="2" id="hInicio" pattern="hh:mm aa"
+							value="#{eventosController.eventos.hInicio}" timeZone="GMT-5"
+							required="true" timeOnly="true">
+						</p:calendar>
+					</h:panelGrid>
+
+
+					<h:panelGrid columns="1" cellpadding="3" style="width:100%">
+						<h:outputLabel for="hFin" value="H. Fin"
+							styleClass="control-label" />
+
+
+						<p:calendar columns="2" id="hFin" pattern="hh:mm aa"
+							value="#{eventosController.eventos.hFin}" timeZone="GMT-5"
+							required="true" timeOnly="true">
+						</p:calendar>
+
+					</h:panelGrid>
+
+
+					<h:panelGrid columns="1" cellpadding="3" style="width:100%">
+						<h:outputLabel for="descripcion" value="Descripcion "
+							styleClass="control-label" />
+						<p:inputText autocomplete="off" id="descripcion"
+							styleClass="form-control"
+							value="#{eventosController.eventos.descripcion}"
+							maxlength="10000" required="false" />
+
+
+
+					</h:panelGrid>
+
+
+
+					<p:growl id="messages" sticky="true" showDetail="true" life="3000" />
+				</div>
+
+			</div>
+
+		</h:form>
+
+
+
+
+
+
+
+	</ui:define>
+
+</ui:composition>
