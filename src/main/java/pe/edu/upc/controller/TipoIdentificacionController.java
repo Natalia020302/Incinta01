@@ -49,15 +49,7 @@ public class TipoIdentificacionController implements Serializable {
 	}
 	
 	public void eliminar(TipoIdentificacion tipoIdentificacion) {
-		uService.eliminar(tipoIdentificacion.getIdTipoIdentificacion());
-	}
-
-	public ITipoIdentificacionService getuService() {
-		return uService;
-	}
-
-	public void setuService(ITipoIdentificacionService uService) {
-		this.uService = uService;
+		uService.eliminar(tipoIdentificacion.getiDTipoIdentificacion());
 	}
 
 	public TipoIdentificacion getTipoIdentificacion() {
@@ -75,6 +67,5 @@ public class TipoIdentificacionController implements Serializable {
 	public void setListaTipoIdentificacion(List<TipoIdentificacion> listaTipoIdentificacion) {
 		this.listaTipoIdentificacion = listaTipoIdentificacion;
 	}
-
 
 }

@@ -20,40 +20,35 @@ public class MetodoDePago implements Serializable{
 	private int iDMetodoPago;
 	
 	@Column(name="nombreMetodoPago", nullable=false, length=30)
-	private String nMetodoPago;
-	
+	private String nombreMetodoPago;
 
 	public MetodoDePago() {
 		super();
-		
+		// TODO Auto-generated constructor stub
 	}
 
-
-	public MetodoDePago(int iDMetodoPago, String nMetodoPago) {
+	public MetodoDePago(int iDMetodoPago, String nombreMetodoPago) {
 		super();
 		this.iDMetodoPago = iDMetodoPago;
-		this.nMetodoPago = nMetodoPago;
+		this.nombreMetodoPago = nombreMetodoPago;
 	}
-
 
 	public int getiDMetodoPago() {
 		return iDMetodoPago;
 	}
 
-
 	public void setiDMetodoPago(int iDMetodoPago) {
 		this.iDMetodoPago = iDMetodoPago;
 	}
 
-
-	public String getnMetodoPago() {
-		return nMetodoPago;
+	public String getNombreMetodoPago() {
+		return nombreMetodoPago;
 	}
 
-
-	public void setnMetodoPago(String nMetodoPago) {
-		this.nMetodoPago = nMetodoPago;
+	public void setNombreMetodoPago(String nombreMetodoPago) {
+		this.nombreMetodoPago = nombreMetodoPago;
 	}
+	
 
 	
 }
