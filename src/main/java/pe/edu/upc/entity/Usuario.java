@@ -32,7 +32,7 @@ public class Usuario implements Serializable{
 	
 	private String uPassword;
 	
-	private int numIdentificacion;
+	private String numIdentificacion;
 	
 	private Date dNacimiento;
 	
@@ -62,7 +62,7 @@ public class Usuario implements Serializable{
 	}
 
 	public Usuario(int usuarioID, String nUsuario, String uApellido, String uCorreo, String uPassword,
-			int numIdentificacion, Date dNacimiento, TipoIdentificacion iDTipoIdentificacion, Pais iDPais,
+			String numIdentificacion, Date dNacimiento, TipoIdentificacion iDTipoIdentificacion, Pais iDPais,
 			MetodoDePago iDMetodoPago, int numMetodoPago) {
 		super();
 		this.usuarioID = usuarioID;
@@ -119,11 +119,11 @@ public class Usuario implements Serializable{
 		this.uPassword = uPassword;
 	}
 
-	public int getNumIdentificacion() {
+	public String getNumIdentificacion() {
 		return numIdentificacion;
 	}
 
-	public void setNumIdentificacion(int numIdentificacion) {
+	public void setNumIdentificacion(String numIdentificacion) {
 		this.numIdentificacion = numIdentificacion;
 	}
 
