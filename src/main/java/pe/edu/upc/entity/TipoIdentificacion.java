@@ -17,36 +17,38 @@ public class TipoIdentificacion implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idTipoIdentificacion;
+	private int iDTipoIdentificacion;
 	
 	@Column(name="nombreIdentificacion", nullable=false, length=30)
-	private String nIdentificacion;
+	private String nombreIdentificacion;
 
 	public TipoIdentificacion() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	public TipoIdentificacion(int idTipoIdentificacion, String nIdentificacion) {
+
+	public TipoIdentificacion(int iDTipoIdentificacion, String nombreIdentificacion) {
 		super();
-		this.idTipoIdentificacion = idTipoIdentificacion;
-		this.nIdentificacion = nIdentificacion;
+		this.iDTipoIdentificacion = iDTipoIdentificacion;
+		this.nombreIdentificacion = nombreIdentificacion;
 	}
 
-	public int getIdTipoIdentificacion() {
-		return idTipoIdentificacion;
+	public int getiDTipoIdentificacion() {
+		return iDTipoIdentificacion;
 	}
 
-	public void setIdTipoIdentificacion(int idTipoIdentificacion) {
-		this.idTipoIdentificacion = idTipoIdentificacion;
+	public void setiDTipoIdentificacion(int iDTipoIdentificacion) {
+		this.iDTipoIdentificacion = iDTipoIdentificacion;
 	}
 
-	public String getnIdentificacion() {
-		return nIdentificacion;
+	public String getNombreIdentificacion() {
+		return nombreIdentificacion;
 	}
 
-	public void setnIdentificacion(String nIdentificacion) {
-		this.nIdentificacion = nIdentificacion;
+	public void setNombreIdentificacion(String nombreIdentificacion) {
+		this.nombreIdentificacion = nombreIdentificacion;
 	}
 
+	
+	
 }

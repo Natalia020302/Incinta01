@@ -40,9 +40,9 @@ public class TipoIdentificacionDaoImpl implements ITipoIdentificacionDao, Serial
 
 	@Transactional 
 	@Override
-	public void eliminar(int idTipoIdentificacion) {
+	public void eliminar(int iDTipoIdentificacion) {
 		TipoIdentificacion tipoIdentificacion = new TipoIdentificacion();
-		tipoIdentificacion = em.getReference(TipoIdentificacion.class, idTipoIdentificacion);
+		tipoIdentificacion = em.getReference(TipoIdentificacion.class, iDTipoIdentificacion);
 		em.remove(tipoIdentificacion);
 		
 	}

@@ -41,42 +41,36 @@
 	<div class="container">
 		<div class="row">
 			<div class="col">
-					<div class="hroup1">
-					
-					
-					
-					
-					
-					
+					<div class="group1">	
 					<h1 style="height: 60px">Suscripcion</h1>
 					<!-- esta es la primera fila, la de nombre y apellido -->
 					
 					<div class="form-row" style="height: 60px">
 						<div class="col">
 						<span class="ui-float-label">
-      						<p:inputText class="nombre1" autocomplete="off" id="nomusuario" stylesClass="form-control" value="#{usuarioController.usuario.nUsuario}" maxlength="45" required="true"/> <!-- ESTO NO -->
-      						<p:outputLabel for="@previous" value="Nombre"/>
+      						<p:inputText class="nombre" autocomplete="off" id="nomobs" stylesClass="form-control" value="#{obstetraController.obstetra.nobstetra}" maxlength="45" required="true"/> <!-- ESTO NO -->
+      						<p:outputLabel for="@previous" value="Nombreo"/>
    						</span>
    						</div>
    						<div class="col">
 						<span class="ui-float-label">
-      						<p:inputText  class="nombre2"  autocomplete="off" id="apellidousuario" stylesClass="form-control" value="#{usuarioController.usuario.uApellido}" maxlength="45" required="true"/> <!-- ESTO NO -->
-							<p:outputLabel for="@previous" value="Apellidos"/>
+      						<p:inputText  class="apellido"  autocomplete="off" id="apellidoobs" stylesClass="form-control" value="#{obstetraController.obstetra.napellidoobstetra}" maxlength="45" required="true"/> <!-- ESTO NO -->
+							<p:outputLabel for="@previous" value="Apellidoso"/>
    						</span>
    						</div>
    					</div>
 					
 					<!-- aca está el correo, está en un div para que se pueda poner el "correo" arriba del text -->			
 					<div class="ui-fluid">
-      			  		<label for="usuariocorreo">Correo</label>
-      					<p:inputText autocomplete="off" id="usuariocorreo" stylesClass="form-control" value="#{usuarioController.usuario.uCorreo}" maxlength="45" required="true"/> <!-- ESTO NO -->
+      			  		<label for="obstetracorreo">Correo</label>
+      					<p:inputText autocomplete="off" id="obstetracorreo" stylesClass="form-control" value="#{obstetraController.obstetra.correo}" maxlength="45" required="true"/> <!-- ESTO NO -->
 					</div>
 					
 					
 					<!-- contraseña -->
 					<div class="ui-fluid">
-      			  		<label for="usuariocontra">Password</label>
-      					<p:inputText autocomplete="off" id="usuariocontra" stylesClass="form-control" value="#{usuarioController.usuario.uPassword}" maxlength="45" required="true"/> <!-- ESTO NO -->
+      			  		<label for="obstetracontra">Password</label>
+      					<p:inputText autocomplete="off" id="obstetracontra" stylesClass="form-control" value="#{obstetraController.obstetra.password}" maxlength="45" required="true"/> <!-- ESTO NO -->
 					</div>
 					
 					<!-- la parte de tipoID, numid y pais, otra vez en span para que salga el nombre dentro de la caja (porque si pongo el texto arriba, y se pasa mobile puede cambiar -->
@@ -85,8 +79,8 @@
 					
 					 <div class="col">
 						<span class="ui-float-label">
-      						<p:selectOneMenu id="tyy" value="#{usuarioController.usuario.iDTipoIdentificacion}" effect="fold" editable="true" converter="omnifaces.SelectItemsConverter">
-                   			<f:selectItems value="#{usuarioController.listatipoidentificacion}" var = "d" itemLabel="#{d.nombreIdentificacion}" itemValue="#{d}"/>
+      						<p:selectOneMenu id="tipod" value="#{obstetraController.obstetra.tipoidentificacion}" effect="fold" editable="true" converter="omnifaces.SelectItemsConverter">
+                   			<f:selectItems value="#{obstetraController.listapaistipoidentificacion}" var = "d" itemLabel="#{d.nombreIdentificacion}" itemValue="#{d}"/>
                				</p:selectOneMenu>
                				<p:outputLabel for="@previous" value="Tipoidenti"/>
    						</span>
@@ -94,14 +88,14 @@
    					
    					<div class="col">
 						<span class="ui-float-label">
-      								<p:inputText autocomplete="off" id="numeroident" stylesClass="form-control" value="#{usuarioController.usuario.numIdentificacion}" maxlength="45" required="true"/> <!-- ESTO NO -->
+      								<p:inputText autocomplete="off" id="numeroident" stylesClass="form-control" value="#{obstetraController.obstetra.numoidentificacion}" maxlength="45" required="true"/> <!-- ESTO NO -->
 									<p:outputLabel for="@previous" value="Num de ident"/>
    						</span>
    					</div>
    					<div class="col">
    						<span class="ui-float-label">
-      						 <p:selectOneMenu id="city" value="#{usuarioController.usuario.iDPais}" effect="fold" editable="true" converter="omnifaces.SelectItemsConverter">
-                  		 	<f:selectItems value="#{usuarioController.listapaises}" var = "d" itemLabel="#{d.nombrePais}" itemValue="#{d}"/>
+      						 <p:selectOneMenu id="paiss" value="#{obstetraController.obstetra.pais}" effect="fold" editable="true" converter="omnifaces.SelectItemsConverter">
+                  		 	<f:selectItems value="#{obstetraController.listapais}" var = "d" itemLabel="#{d.nombrePais}" itemValue="#{d}"/>
                 			</p:selectOneMenu>
                 			<p:outputLabel for="@previous" value="Pais"/>
    						</span>
@@ -112,26 +106,35 @@
 					
 				<!-- fecha de nacimiento -->	
 				<div class="ui-fluid">
-				<h:outputLabel for="naciusuario" value="Fecha de nacimiento " styleClass="control-label" />
-				<p:calendar id="naciusuario" pattern="dd/MM/yyyy"
-				value="#{usuarioController.usuario.dNacimiento}" showOn="button"
+				<h:outputLabel for="nacobstetra" value="Fecha de nacimiento " styleClass="control-label" />
+				<p:calendar id="nacobstetra" pattern="dd/MM/yyyy"
+				value="#{obstetraController.obstetra.donacimiento}" showOn="button"
 				timeZone="UTC" required="true">
 				</p:calendar>
 				</div>
 				
-				<!-- semana de gestacion -->
+					<!-- poner GENERO -->	
 				<div class="ui-fluid">
-				<h:outputLabel for="semgestacion" value="Semana de gestión" styleClass="control-label" />
-				<p:inputText autocomplete="off" id="semgestacion" stylesClass="form-control"  maxlength="45" /> 
+				<h:outputLabel for="generoobs" value="Genero: " styleClass="control-label" />
+				<p:inputText autocomplete="off" id="generoobs" stylesClass="form-control" value="#{obstetraController.obstetra.ngenero}" maxlength="45" required="true"/> <!-- ESTO NO -->
+				</div>
+				
+				<!-- fecha de egreso -->	
+				<div class="ui-fluid">
+				<h:outputLabel for="egresoobs" value="Fecha de egreso " styleClass="control-label" />
+				<p:calendar id="egresoobs" pattern="dd/MM/yyyy"
+				value="#{obstetraController.obstetra.fechaegreso}" showOn="button"
+				timeZone="UTC" required="true">
+				</p:calendar>
 				</div>
 				
 				<!-- creo este div para poder hacer las columnas -->
 			<div class="form-row" style="height: 60px">
 				<div class="col">
 				<!--Tipo de tarjeta  -->	
-				<h:outputLabel for="metdepago" value="Metodo de pago" styleClass="control-label" />
-					<p:selectOneMenu id="dd" value="#{usuarioController.usuario.iDMetodoPago}" effect="fold" editable="true" converter="omnifaces.SelectItemsConverter">
-                 	<f:selectItems value="#{usuarioController.listametododepago}" var = "d" 
+				<h:outputLabel for="metdepagoobs" value="Metodo de pago" styleClass="control-label" />
+					<p:selectOneMenu id="metdepagoobs" value="#{obstetraController.obstetra.metododepago}" effect="fold" editable="true" converter="omnifaces.SelectItemsConverter">
+                 	<f:selectItems value="#{obstetraController.listapaismetododepago}" var = "d" 
 					itemLabel="#{d.nombreMetodoPago}" itemValue="#{d}"/>
                 </p:selectOneMenu>	
              	</div>
@@ -139,8 +142,8 @@
 				<div class="col">
 				<!--numero de tarjeta  -->	
 				
-					<h:outputLabel for="numerotarjeta" value="Numero de tarjeta:" styleClass="control-label" />
-					<p:inputText autocomplete="off" id="numerotarjeta" stylesClass="form-control" value="#{usuarioController.usuario.numMetodoPago}" maxlength="45" required="true"/>
+					<h:outputLabel for="numerotarjetaobs" value="Numero de tarjeta:" styleClass="control-label" />
+					<p:inputText autocomplete="off" id="numerotarjetaobs" stylesClass="form-control" value="#{obstetraController.obstetra.numometodopago}" maxlength="45" required="true"/>
 				 </div>
 			</div>
 				
@@ -159,7 +162,7 @@
 								<h:graphicImage width="90%"  value="img/usuario.png"></h:graphicImage>
 								<div class="row">
 									<div class="col-4 col-sm-6">
-									<p:commandButton value="Grabar" actionListener="#{usuarioController.insertar()}" class="boton"  update="@form" />
+									<p:commandButton value="Grabar" actionListener="#{obstetraController.insertar()}" class="boton"  update="@form" />
 									</div>
 									<div class="col-4 col-sm-6">
 										<p:linkButton value="Cancelar" outcome="landingpage"   class="boton"   />

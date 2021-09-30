@@ -77,6 +77,10 @@ public class UsuarioController implements Serializable {
 		return "usuario.xhtml";
 	}
 	
+	public String ingreso() {
+		return "/WEB-INF/template/template.xhtml";
+	}
+	
 	public void insertar() {
 		uService.insertar(usuario);
 		limpiarUsuario();
@@ -107,38 +111,6 @@ public class UsuarioController implements Serializable {
 		uService.eliminar(usuario.getUsuarioID());
 	}
 
-	public IUsuarioService getuService() {
-		return uService;
-	}
-
-	public void setuService(IUsuarioService uService) {
-		this.uService = uService;
-	}
-
-	public ITipoIdentificacionService getTipService() {
-		return tipService;
-	}
-
-	public void setTipService(ITipoIdentificacionService tipService) {
-		this.tipService = tipService;
-	}
-
-	public IPaisService getPaService() {
-		return paService;
-	}
-
-	public void setPaService(IPaisService paService) {
-		this.paService = paService;
-	}
-
-	public IMetodoDePagoService getmService() {
-		return mService;
-	}
-
-	public void setmService(IMetodoDePagoService mService) {
-		this.mService = mService;
-	}
-
 	public Usuario getUsuario() {
 		return usuario;
 	}
@@ -158,7 +130,6 @@ public class UsuarioController implements Serializable {
 	public Pais getPais() {
 		return pais;
 	}
-	
 
 	public void setPais(Pais pais) {
 		this.pais = pais;
@@ -203,6 +174,5 @@ public class UsuarioController implements Serializable {
 	public void setListametododepago(List<MetodoDePago> listametododepago) {
 		this.listametododepago = listametododepago;
 	}
-
 
 }

@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<ui:composition lang="es" class="no-js"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/template/template.xhtml">
+
+	<ui:define name="titleCont">	NUEVO PARÁMETRO	</ui:define>
+
+
+	<ui:define name="contenido">
+
+		<h:form id="form">
+
+			<p:panel header="ID REGISTRO:" toggleable="true">
+				<h:outputLabel for="iDRegistro" styleClass="control-label" />
+				<p:inputText autocomplete="off" id="iDRegistro"
+					styleClass="form-control"
+					value="#{registroController.registro.iDRegistro}" maxlength="30"
+					required="true" />
+			</p:panel>
+
+			<p:panel header="ID USUARIO:" toggleable="true">
+				<h:outputLabel for="UsuarioID" styleClass="control-label" />
+				<p:inputNumber autocomplete="off" id="UsuarioID"
+					value="#{registroController.sup1}" required="true" />
+
+			</p:panel>
+
+			<p:panel header="FECHA:" toggleable="true">
+				<h:outputLabel for="fechaEvento" styleClass="control-label" />
+				<p:datePicker id="fechaEvento" pattern="dd/MM/yyyy"
+					value="#{registroController.registro.fechaFicha}" timeZone="GMT-5"
+					showButtonBar="true" mask="true" required="true">
+				</p:datePicker>
+			</p:panel>
+
+			<p:panel header="COMENTARIOS:" toggleable="true">
+				<h:outputLabel for="TAnotaciones" styleClass="control-label" />
+				<p:inputText autocomplete="off" id="TAnotaciones"
+					styleClass="form-control"
+					value="#{registroController.registro.tAnotaciones}" required="true" />
+			</p:panel>
+
+			<p:panel header="VALOR:" toggleable="true">
+				<h:outputLabel for="numValor" styleClass="control-label" />
+				<p:inputText autocomplete="off" id="numValor"
+					styleClass="form-control"
+					value="#{registroController.registro.numValor}" required="true" />
+			</p:panel>
+
+			<p:panel header="PARÁMETRO:" toggleable="true">
+				<p:outputLabel for="cbxParametro" />
+				<p:selectOneMenu id="cbxParametro"
+					value="#{registroController.registro.iDParametro}" editable="true"
+					converter="omnifaces.SelectItemsConverter">
+					<f:selectItem itemValue="#{null}" itemLabel="--select--" />
+					<f:selectItems value="#{registroController.listaParametros}"
+						var="d" itemLabel="#{d.nParametro}" itemValue="#{d}" />
+				</p:selectOneMenu>
+			</p:panel>
+			
+			<br/> <br/>
+
+			<div class="row">
+				<div class="col-sm-4 text-right">
+					<div class="form-group box-main-btn">
+						<p:commandButton value="Grabar"
+							actionListener="#{registroController.insertar()}"
+							styleClass="btn btn-primary " update="@form"
+							action="listaRegistros?faces-redirect=true" />
+					</div>
+				</div>
+				<div class="col-sm-4 text-right">
+					<div class="form-group box-main-btn"></div>
+				</div>
+				<div class="col-sm-4 text-left">
+					<div class="form-group box-main-btn">
+						<p:commandButton value="Cancelar"
+							action="listaRegistros?faces-redirect=true" immediate="true"
+							styleClass="btn btn-default" ajax="false" />
+					</div>
+				</div>
+			</div>
+
+
+			<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+		</h:form>
+
+
+
+
+	</ui:define>
+
+</ui:composition>

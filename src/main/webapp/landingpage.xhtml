@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta charset="utf-8" />
+	<title><ui:insert name="title"></ui:insert></title>
+	<meta name="generator" content="Bootply" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+	<link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+		integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+		crossorigin="anonymous" />
+	<link
+		href='https://fonts.googleapis.com/css?family=Roboto:400,300,500|Ubuntu+Condensed'
+		rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="styles.css"></link>
+
+</h:head>
+<h:body>
+
+
+	<nav class="navbar navbar-light bg-light">
+		<span class="h1"><h:graphicImage height="80px"
+				value="img/logo1.png"></h:graphicImage> </span> <span class="h1"><h:graphicImage
+				width="90%" value="img/logo.png"></h:graphicImage> </span> <span class="h1"><h:graphicImage
+				height="80px" value="img/logo2.png"></h:graphicImage> </span>
+	</nav>
+	<h:form id="formLogin">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<h1 style="height: 60px">INGRESOS RECIENTES</h1>
+				</div>
+				<div class="col">
+					<h1 style="height: 60px">LOGIN</h1>
+				</div>
+			</div>
+			<div class="row">
+
+				<div class="col">
+					<span class="h1"><h:graphicImage width="250px"
+							value="img/perfil1.jpg"></h:graphicImage></span> <span class="h1"><h:graphicImage
+							width="250px" value="img/perfil2.jpg"></h:graphicImage></span>
+				</div>
+
+				<!-- FORMULARIO -->
+				<div class="col">
+
+					<div class="ui-fluid">
+						<label for="usuariologin">Nombre:</label>
+						<p:inputText autocomplete="off" id="usuariologin"
+							 stylesClass="form-control" maxlength="45"
+							required="true" />
+					</div>
+					<div class="ui-fluid">
+						<label for="passwordlogin">Password:</label>
+						<p:inputText autocomplete="off" id="passwordlogin"
+							 stylesClass="form-control" maxlength="45"
+							required="true" />
+					</div>
+
+					<!-- botones -->
+					<div class="ui-fluid">
+						<h:commandButton value="Log In" class="boton" action="#{usuarioController.ingreso()}" />
+					</div>
+					<div class="ui-fluid">
+						<p:commandButton value="Olvide mi contraseña" class="boton" />
+					</div>
+
+					<!-- no tienes una cuenta? -->
+					<div class="ui-fluid">
+						<label for="notenercuenta">¿No tienes una cuenta?</label>
+					</div>
+					<div class="ui-fluid">
+						<label for="suscribase">Suscribete:</label>
+					</div>
+
+					<!-- para los botones en una sola fila:  -->
+					<div class="row">
+						<div class="col">
+							<p:linkButton value="Gestante. Costo unico $4.00"
+								outcome="registro" class="boton" />
+						</div>
+						<div class="col">
+							<p:linkButton value="Obstetra. Ver planes disponibles"
+								outcome="registroobstetra" class="boton" />
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+	</h:form>
+</h:body>
+</html>
