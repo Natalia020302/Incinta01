@@ -70,7 +70,7 @@ public class RegistroController implements Serializable {
 
 	public String nuevoRegistro() {
 		this.setRegistro(new Registro());
-		return "registro.xhtml";
+		return "registroNuevo.xhtml";
 	}
 	
 	public void insertar() {
