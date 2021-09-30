@@ -77,6 +77,10 @@ public class UsuarioController implements Serializable {
 		return "usuario.xhtml";
 	}
 	
+	public String ingreso() {
+		return "/WEB-INF/template/template.xhtml";
+	}
+	
 	public void insertar() {
 		uService.insertar(usuario);
 		limpiarUsuario();
